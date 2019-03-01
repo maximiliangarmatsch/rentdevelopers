@@ -52,7 +52,7 @@ class Members extends Component {
 
 	deletePickedMember = (index) => {
 		const pickedTeam = this.state.pickedTeam.slice();
-		const pickedMember = this.state.employees[index];
+		const pickedMember = pickedTeam[index];
 		let cost = this.state.cost;
 		pickedTeam.splice(index, 1);
 		cost -= pickedMember.price;
