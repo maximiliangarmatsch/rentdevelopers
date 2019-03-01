@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardUp, MDBCardImage, MDBCardBody, MDBBtn } from "mdbreact";
 import axios from "axios";
+import "./Members.css";
 
 class Members extends Component {
 	state = {
@@ -24,7 +25,7 @@ class Members extends Component {
 				name: "Sima",
 				img: "https://m.media-amazon.com/images/M/MV5BZWFkYjZlYWYtMTVlNi00MDUzLTgzMjMtNTVhZjc5Y2QxN2FkXkEyXkFqcGdeQXVyNjcyOTkzNTI@._V1_.jpg",
 				price: 50
-			},
+			}
 		],
 		pickedTeam: [],
 		cost: 0
@@ -63,11 +64,11 @@ class Members extends Component {
 		const {employees} = this.state;
 		const members = employees.map((member, i) => {
 			return (
-				<MDBCol key={i} lg="3" smd="12" className="mb-lg-0 mb-4">
-					<MDBCard>
-						<MDBCardImage style={{height: "200px"}} cascade className="img-fluid" src={member.img} />
-						<MDBCardBody>
-							<h4 className="font-weight-bold mb-4">{member.name}</h4>
+				<MDBCol md="2">
+					<MDBCard key={i}>
+						<MDBCardImage className="memberImage" src={member.img} />
+						<MDBCardBody className="memberCard">
+							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
 							<hr />
 							<p className="dark-grey-text mt-4">
 								Rate per/hour {member.price}$
@@ -82,26 +83,30 @@ class Members extends Component {
 		});
 		const pickedTeam = this.state.pickedTeam.map((pick, i) => {
 			return (
-				<div key={i}>
-					<img src={pick.img}/>
-					<h1>{pick.name}</h1>
-					<button onClick={() => this.deletePickedMember(i)}>X</button>
+				<div className="pickedTeam" key={i}>
+					<img className="white" width="100px" src={pick.img}/>
+					<h3>{pick.name}</h3>
+					<MDBBtn className="deleteBtn" onClick={() => this.deletePickedMember(i)} color="danger" size="sm">
+						X
+					</MDBBtn>
 				</div>
 			);
 		});
 		return (
-			<MDBContainer>
-				<h2 className="h1-responsive font-weight-bold my-5">
-					Members
-				</h2>
-				<MDBRow>
-					{members}
-				</MDBRow>
-				<h1>Developers</h1>
-				{pickedTeam}
-				{/*<p>Izabrani developers -> desno</p>*/}
-				<p>Total cost: ${this.state.cost} per/h</p>
-				<button>Submit</button>
+			<MDBContainer fluid className="members-container">
+					<h2 className="h2-responsive font-weight-bold my-5">
+						Members
+					</h2>
+					<MDBRow>
+						{members}
+						<MDBCol md="4">
+							<h1>Your team</h1>
+							{pickedTeam}
+							{/*<p>Izabrani developers -> desno</p>*/}
+							<p>Total cost: ${this.state.cost} per/h</p>
+							<button>Submit</button>
+						</MDBCol>
+					</MDBRow>
 			</MDBContainer>
 		);
 	}

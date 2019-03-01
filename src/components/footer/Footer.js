@@ -19,7 +19,7 @@ class Footer extends Component{
 						</MDBCol>
 						<MDBCol md="6" smd="6"/>
 						<MDBCol className="colCard" md="3" smd="3">
-							<MDBCard className="card-body" style={{ width: "22rem", marginTop: "0.1rem", background: "#4b99ff	"}}>
+							<MDBCard className="cardBody" style={{ width: "22rem", marginTop: "0.1rem", background: "#4b99ff	"}}>
 								<MDBCardTitle>Useful links</MDBCardTitle>
 								<MDBCardText>
 									Here are some useful links
