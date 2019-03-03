@@ -64,10 +64,9 @@ class Members extends Component {
 		const {employees} = this.state;
 		const members = employees.map((member, i) => {
 			return (
-				<MDBCol md="2">
-					<MDBCard key={i}>
+					<MDBCard className="memberCard" md="2" key={i}>
 						<MDBCardImage className="memberImage" src={member.img} />
-						<MDBCardBody className="memberCard">
+						<MDBCardBody className="memberCardBody">
 							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
 							<hr />
 							<p className="dark-grey-text mt-4">
@@ -78,7 +77,6 @@ class Members extends Component {
 							</MDBBtn>
 						</MDBCardBody>
 					</MDBCard>
-				</MDBCol>
 			);
 		});
 		const pickedTeam = this.state.pickedTeam.map((pick, i) => {
@@ -98,11 +96,12 @@ class Members extends Component {
 						Members
 					</h2>
 					<MDBRow>
-						{members}
-						<MDBCol md="4">
+						<MDBCol md="8">
+							{members}
+						</MDBCol>
+						<MDBCol className="picked" md="4">
 							<h1>Your team</h1>
 							{pickedTeam}
-							{/*<p>Izabrani developers -> desno</p>*/}
 							<p>Total cost: ${this.state.cost} per/h</p>
 							<button>Submit</button>
 						</MDBCol>

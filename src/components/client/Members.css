@@ -1,3 +1,7 @@
+.picked {
+  border-left: 1px solid grey;
+}
+
 .pickedTeam {
   margin-bottom: 1em;
 }
@@ -13,6 +17,11 @@
   background-color: red;
 }
 
+.memberCard {
+  width: 50%;
+  display: inline-block;
+}
+
 .memberImage {
   width: 150px;
   height: 150px;
@@ -21,7 +30,7 @@
   margin:auto;
 }
 
-.memberCard {
+.memberCardBody {
   text-align: center;
   background: #FFFFFF;
 }
