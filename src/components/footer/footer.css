@@ -1,19 +1,23 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-body {
+  background: #ccc;
+  color: #d6d4d4;
+  margin-right: 1em;
+}
 .par1 {
   margin-top: 1rem;
 }
 .colCard{
   padding-bottom: 1.3rem;
 }
-.card-body {
-  background: #ccc;
-  color: #d6d4d4;
-  margin-right: 1em;
-}
+
 
 .card-body .flex-row a {
   color: #e8d292;
 }
 
-.btn-li{
-
-}

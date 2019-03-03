@@ -7,7 +7,7 @@ import "./footer.css";
 class Footer extends Component{
 	render(){
 		return (
-			<MDBFooter color="blue" className="font-small pt-4 mt-4">
+			<MDBFooter color="blue" className="footer font-small pt-4 mt-4">
 				<MDBContainer fluid className="text-center text-md-left">
 					<MDBRow>
 						<MDBCol md="3" smd="3">
@@ -19,17 +19,17 @@ class Footer extends Component{
 						</MDBCol>
 						<MDBCol md="6" smd="6"/>
 						<MDBCol className="colCard" md="3" smd="3">
-							<MDBCard className="card-body" style={{ width: "22rem", marginTop: "0.1rem", background: "#4b99ff	"}}>
+							<MDBCard className="card-body" style={{ width: "100%", marginTop: "0.1rem", background: "#4b99ff	"}}>
 								<MDBCardTitle>Useful links</MDBCardTitle>
 								<MDBCardText>
 									Here are some useful links
 								</MDBCardText>
 								<div className="flex-row">
-									<MDBBtn size="lg" social="li">
+									<MDBBtn size="10" social="li" href="https://www.linkedin.com/company/coder-consulting/">
 										<MDBIcon fab icon="linkedin-in" />
 									</MDBBtn>
-									<MDBBtn size="lg" social="fb">
-										<MDBIcon fab icon="facebook-f" />
+									<MDBBtn size="10" social="comm" href="http://coderconsulting.de/contact/">
+										<MDBIcon icon="comments" />
 									</MDBBtn>
 								</div>
 							</MDBCard>
