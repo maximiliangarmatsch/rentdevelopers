@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { MDBListGroup, MDBListGroupItem, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import "../styles/employeeDetails.css";
 const dummyEmployee = {
-	avatar: "http://icons.iconarchive.com/icons/dapino/people/256/brown-man-icon.png",
+	avatar: "http://www.stickpng.com/assets/images/585e4bcdcb11b227491c3396.png",
 	nick: "Lorem",
 	title: "Lorem",
 	communication_skills: "Lorem",
@@ -27,7 +27,7 @@ class EmployeeDetails extends Component{
 					<h1 className="heading">Overview</h1>
 				</MDBRow>
 				<MDBRow  className={center}>
-				<MDBCol md="3">
+				<MDBCol md="13" >
 					<img src={dummyEmployee.avatar} className="img-fluid" alt="employee avatar" />
 				</MDBCol>
 			  </MDBRow>
