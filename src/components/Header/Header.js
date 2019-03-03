@@ -1,8 +1,17 @@
 import React, {Component} from 'react';
 import {
-	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink} from "mdbreact";
+	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+	MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+} from "mdbreact";
 
-class Header extends Component{
+class Header extends Component {
+	state = {
+		isOpen: false
+	};
+
+	toggleCollapse = () => {
+		this.setState({ isOpen: !this.state.isOpen });
+	};
 
    /*DEV COMMENTARY AFTER IMPLEMENTING DELETE MenuItem1... texts AND QUOTES IN to ATTRIBUTE*/
 	render() {
@@ -11,6 +20,8 @@ class Header extends Component{
 				<MDBNavbarBrand>
 					<strong className="white-text">Coder Consulting</strong>
 				</MDBNavbarBrand>
+				<MDBNavbarToggler onClick={this.toggleCollapse} />
+				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
 					<MDBNavbarNav left>
 						<MDBNavItem active>
 							<MDBNavLink to="{this.props.route1}">{this.props.text1} MenuItem1</MDBNavLink>
@@ -32,6 +43,7 @@ class Header extends Component{
 							<MDBNavLink to="{this.props.route5}">{this.props.text5}| MenuItem5</MDBNavLink>
 						</MDBNavItem>
 					</MDBNavbarNav>
+				</MDBCollapse>
 			</MDBNavbar>
 		);
 	}
