@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import { MDBCard, MDBCardTitle, MDBCardText } from "mdbreact";
 import {MDBBtn, MDBIcon} from "mdbreact";
-import "./footer.css";
+import "../../styles/footer.css";
 
 class Footer extends Component{
 	render(){

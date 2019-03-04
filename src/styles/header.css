@@ -1,5 +1,12 @@
+
+.nav-display{
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
 .nav-heading{
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-}
+  margin: auto;
 
+}

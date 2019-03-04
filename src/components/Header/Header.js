@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {
-	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBRow,MDBCol,
-	MDBFormInline, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, NavbarBrand
+	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
-import "./header.css";
+import "../../styles/header.css";
 class Header extends Component {
 	state = {
 		isOpen: false
@@ -17,11 +16,12 @@ class Header extends Component {
 	render() {
 		return (
 			<MDBNavbar color="blue-gradient" dark expand="md">
-
+        <div className="nav-display">
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
-						<MDBNavbarNav center  style={{flexDirection: "row"}}>{/*active*/}
+						<MDBNavbarNav   style={{flexDirection: "row"}}>{/*active*/}
 							<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
 						</MDBNavbarNav>
+				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
 					{/*	<MDBNavbarNav left>
 						<MDBNavItem >
