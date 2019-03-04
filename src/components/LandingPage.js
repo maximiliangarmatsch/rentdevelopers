@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MDBContainer, MDBRow, MDBCol, MDBJumbotron } from "mdbreact";
-import Logo from "../images/logo.png";
-import Leftlogo from "../images/leftlogo.png";
+import Footer from "./footer/Footer";
+import Header from "./Header/Header";
 
 import "./Land.css";
 
 class LandingPage extends Component {
-	render() {
-		return (
-
-			<MDBContainer>
-
-				<MDBRow>
-					<MDBJumbotron className="mx-auto">
-						<img src={Logo} className="img-fluid" alt="Responsive image" />
-					</MDBJumbotron>
-				</MDBRow>
-
-				<MDBRow className="links">
-					<Link to='/developer/register'>I am Developer</Link>
-					<hr />
-					<Link to='/members'>I am Client</Link>
-				</MDBRow>
-
-			</MDBContainer>
-
-		)
-	}
+  render() {
+    return (
+      <div>
+				<Header
+					text4="Login"
+					route4="/developer/login"
+					text5="Register"
+				  route5="/developer/register"
+				/>
+				<Footer/>
+      </div>
+    )
+  }
 }
 
 export default LandingPage;
