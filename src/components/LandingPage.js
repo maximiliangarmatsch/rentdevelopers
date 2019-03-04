@@ -7,10 +7,12 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-				<Header />
-        <Link to='/developer/register'>I am Developer</Link>
-        <hr />
-        <Link to='/members'>I am Client</Link>
+				<Header
+					text4="Login"
+					route4="/developer/login"
+					text5="Register"
+				  route5="/developer/register"
+				/>
 				<Footer/>
       </div>
     )

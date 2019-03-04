@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {
-	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
-	MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBRow,MDBCol,
+	MDBFormInline, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, NavbarBrand
 } from "mdbreact";
-
+import "./header.css";
 class Header extends Component {
 	state = {
 		isOpen: false
@@ -17,35 +17,51 @@ class Header extends Component {
 	render() {
 		return (
 			<MDBNavbar color="blue-gradient" dark expand="md">
-				<MDBNavbarBrand>
-					<strong className="white-text">Coder Consulting</strong>
-				</MDBNavbarBrand>
+
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
+						<MDBNavbarNav center  style={{flexDirection: "row"}}>{/*active*/}
+							<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
+						</MDBNavbarNav>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-					<MDBNavbarNav left>
-						<MDBNavItem active>
-							<MDBNavLink to="{this.props.route1}">{this.props.text1} MenuItem1</MDBNavLink>
+					{/*	<MDBNavbarNav left>
+						<MDBNavItem >
+							<MDBNavLink to={this.props.route1}>{this.props.text1}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
-							<MDBNavLink to="{this.props.route2}">{this.props.text2}| MenuItem2</MDBNavLink>
+							<MDBNavLink to={this.props.route2}>{this.props.text2}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
-							<MDBNavLink to="{this.props.route3}">{this.props.text3}| MenuItem3</MDBNavLink>
+							<MDBNavLink to={this.props.route3}>{this.props.text3}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
 						</MDBNavItem>
-					</MDBNavbarNav>
-					<MDBNavbarNav right>
+					</MDBNavbarNav> */}
+					<MDBNavbarNav right >
 						<MDBNavItem>
-							<MDBNavLink to="{this.props.route4}">{this.props.text4}| MenuItem4</MDBNavLink>
+							<MDBNavLink to={this.props.route4}>{this.props.text4}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
-							<MDBNavLink to="{this.props.route5}">{this.props.text5}| MenuItem5</MDBNavLink>
+							<MDBNavLink to={this.props.route5}>{this.props.text5}</MDBNavLink>
 						</MDBNavItem>
 					</MDBNavbarNav>
 				</MDBCollapse>
+
 			</MDBNavbar>
 		);
 	}
 }
+
+Header.defaultProps = {
+  route1: "",
+  route2: "",
+	route3: "",
+	route4: "",
+	route5: "",
+	text1: null,
+	text2: null,
+	text3: null,
+	text4: null,
+	text5: null
+};
+
 export default Header;
