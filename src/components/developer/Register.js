@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBModalFooter,
+  MDBIcon,
+  MDBCardHeader,
+  MDBBtn,
+  MDBInput
+} from "mdbreact";
+import RegisterStyle from './RegisterStyle.css'
 
 
 class Register extends Component {
@@ -39,15 +52,56 @@ class Register extends Component {
   render() {
     console.log(this.state)
     return (
-      <div>
-        <h1>Register</h1>
-        <form onSubmit={this.getUserData.bind(this)}>
-          <input id="username" type="username" placeholder="username" />
-          <input id="email" type="email" placeholder="email" />
-          <input id="password" type="password" placeholder="password" />
-          <input type="submit" />
-        </form>
-      </div>
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="6" className="register">
+              <MDBCard>
+                <MDBCardBody>
+                  <form>
+                    <p className="h4 text-center py-4">Sign up</p>
+                    <div className="grey-text">
+                      <MDBInput
+                          label="Your name"
+                          icon="user"
+                          group
+                          type="text"
+                          validate
+                          error="wrong"
+                          success="right"
+                      />
+                      <MDBInput
+                          label="Type your email"
+                          icon="envelope"
+                          group
+                          type="email"
+                          validate
+                          error="wrong"
+                          success="right"
+                      />
+                      <MDBInput
+                          label="Type your password"
+                          icon="lock"
+                          group
+                          type="password"
+                          validate
+                      />
+                    </div>
+
+                    <div className="text-center py-4 mt-3">
+                      <MDBBtn
+                          color="cyan"
+                          className="mb-3"
+                          type="submit"
+                      >
+                        Register
+                      </MDBBtn>
+                    </div>
+                  </form>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
     )
   }
 }
