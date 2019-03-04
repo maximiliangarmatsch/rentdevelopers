@@ -1,0 +1,43 @@
+.picked {
+  border-left: 1px solid grey;
+}
+
+.pickedTeam {
+  margin-bottom: 1em;
+}
+
+.pickedTeam h3 {
+  display: inline;
+  margin-left: 1%;
+}
+
+.pickedTeam h4 {
+  margin-left: 5%;
+  display:inline;
+  background-color: red;
+}
+
+.memberCard {
+  width: 50%;
+  display: inline-block;
+  margin: auto;
+}
+
+.memberImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.memberCardBody {
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.deleteBtn {
+  float: right;
+}
+
+
