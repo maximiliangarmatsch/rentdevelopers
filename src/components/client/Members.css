@@ -17,9 +17,20 @@
   background-color: red;
 }
 
-.memberCard {
-  width: 50%;
+.withoutSidebar {
+  width: 20%;
+  margin: 2.5%;
   display: inline-block;
+}
+
+.withSidebar {
+  width: 25%;
+  margin: 4%;
+  display: inline-block;
+}
+
+.membersContainer h2 {
+  text-align: center;
 }
 
 .memberImage {
@@ -32,11 +43,24 @@
 
 .memberCardBody {
   text-align: center;
-  background: #FFFFFF;
 }
 
 .deleteBtn {
-  float: right;
+  background: #D4514E;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  float: right
 }
 
-
+@media only screen and (max-width: 768px) {
+  .memberImage {
+    width: 100px;
+    height: 100px;
+  }
+  .withoutSidebar, .withSidebar {
+    width: 80%;
+    margin: 10%;
+  }
+}

@@ -25,6 +25,21 @@ class Members extends Component {
 				name: "Sima",
 				img: "https://m.media-amazon.com/images/M/MV5BZWFkYjZlYWYtMTVlNi00MDUzLTgzMjMtNTVhZjc5Y2QxN2FkXkEyXkFqcGdeQXVyNjcyOTkzNTI@._V1_.jpg",
 				price: 50
+			},
+			{
+				name: "Zivko",
+				img: "https://m.media-amazon.com/images/M/MV5BZWFkYjZlYWYtMTVlNi00MDUzLTgzMjMtNTVhZjc5Y2QxN2FkXkEyXkFqcGdeQXVyNjcyOTkzNTI@._V1_.jpg",
+				price: 50
+			},
+			{
+				name: "Rambo",
+				img: "http://www.tarzanija.com/wp-content/uploads/2014/08/rambo.jpg",
+				price: 5
+			},
+			{
+				name: "Glavna medicinska sestra Antonija",
+				img: "https://i.ytimg.com/vi/pMsMopOr1xU/hqdefault.jpg",
+				price: 80
 			}
 		],
 		pickedTeam: [],
@@ -61,10 +76,10 @@ class Members extends Component {
 	}
 
 	render() {
-		const {employees} = this.state;
+		const {employees, pickedTeam, cost} = this.state;
 		const members = employees.map((member, i) => {
 			return (
-					<MDBCard className="memberCard" md="2" key={i}>
+					<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
 						<MDBCardImage className="memberImage" src={member.img} />
 						<MDBCardBody className="memberCardBody">
 							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
@@ -79,32 +94,35 @@ class Members extends Component {
 					</MDBCard>
 			);
 		});
-		const pickedTeam = this.state.pickedTeam.map((pick, i) => {
+		const pickedMembers = pickedTeam.map((pick, i) => {
 			return (
 				<div className="pickedTeam" key={i}>
-					<img className="white" width="100px" src={pick.img}/>
 					<h3>{pick.name}</h3>
-					<MDBBtn className="deleteBtn" onClick={() => this.deletePickedMember(i)} color="danger" size="sm">
+					<button className="deleteBtn" onClick={() => this.deletePickedMember(i)}>
 						X
-					</MDBBtn>
+					</button>
 				</div>
 			);
 		});
+		const sidebar = (
+			<MDBCol className="picked" md="3">
+				<h1>Your team</h1>
+				{pickedMembers}
+				<p>Total cost: ${cost} per/h</p>
+				<MDBBtn color="deep-orange">Submit</MDBBtn>
+			</MDBCol>
+		);
+
 		return (
-			<MDBContainer fluid className="members-container">
-					<h2 className="h2-responsive font-weight-bold my-5">
-						Members
-					</h2>
+			<MDBContainer fluid className="membersContainer">
+				<h2 className="h2-responsive font-weight-bold my-5">
+					Pick a member
+				</h2>
 					<MDBRow>
-						<MDBCol md="8">
+						<MDBCol md={pickedTeam.length < 1 ? "12" : "9"}>
 							{members}
 						</MDBCol>
-						<MDBCol className="picked" md="4">
-							<h1>Your team</h1>
-							{pickedTeam}
-							<p>Total cost: ${this.state.cost} per/h</p>
-							<button>Submit</button>
-						</MDBCol>
+						{pickedTeam.length > 0 && sidebar}
 					</MDBRow>
 			</MDBContainer>
 		);
