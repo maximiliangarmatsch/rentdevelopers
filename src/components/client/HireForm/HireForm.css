@@ -3,9 +3,21 @@
   margin: 5% auto;
 }
 
-.hireFormCard h1, h2 {
+.hireFormCard h1, h2, h4 {
   text-align: center;
-  display: inline-block;
+}
+
+.hireFormCard h4 {
+  margin: 3%;
+}
+
+.hireFormCard input {
+  margin: auto;
+  display: block;
+}
+
+.hireFormSubmit {
+  text-align: center;
 }
 
 .rc-calendar {
