@@ -15,7 +15,7 @@ class Header extends Component {
    /*DEV COMMENTARY AFTER IMPLEMENTING DELETE MenuItem1... texts AND QUOTES IN to ATTRIBUTE*/
 	render() {
 		return (
-			<MDBNavbar color="blue-gradient" dark expand="md">
+			<MDBNavbar color="blue-gradient" style={{lineHeight: "2em"}} dark expand="md">
         <div className="nav-display">
 				<MDBNavbarToggler onClick={this.toggleCollapse} />
 						<MDBNavbarNav   style={{flexDirection: "row"}}>{/*active*/}
@@ -38,10 +38,10 @@ class Header extends Component {
 					</MDBNavbarNav> */}
 					<MDBNavbarNav right >
 						<MDBNavItem>
-							<MDBNavLink to={this.props.route4}>{this.props.text4}</MDBNavLink>
+							<MDBNavLink className="HeadLink" to={this.props.route4}>{this.props.text4}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
-							<MDBNavLink to={this.props.route5}>{this.props.text5}</MDBNavLink>
+							<MDBNavLink className="HeadLink" to={this.props.route5}>{this.props.text5}</MDBNavLink>
 						</MDBNavItem>
 					</MDBNavbarNav>
 				</MDBCollapse>
