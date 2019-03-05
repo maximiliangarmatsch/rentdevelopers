@@ -9,13 +9,24 @@ class Footer extends Component{
 			<MDBFooter color="blue" className="footer font-small pt-4 mt-4">
 				<MDBContainer fluid className="text-center text-md-left">
 					<MDBRow>
-						<MDBCol md="3" smd="3"/>
-						<MDBCol md="6" smd="6">
-							<div className="par1 text-center">
-								<p className="footer-text">
-								Our core development team is located all across europe which let us attract talent from a wider pool.
-									Through our international network of freelancers, we can call in short-term assistance when needed.</p>
-								<div className="flex-row">
+						<MDBCol md="1" smd="1"/>
+
+						<MDBCol md="3" smd="3">
+								<p className="footer-text text-justify">
+							Our core development team is located all across europe which let us attract talent from a wider pool.
+							</p>
+						</MDBCol>
+
+						<MDBCol md="1" smd="1"/>
+
+						<MDBCol md="3" smd="3">
+						<p className="footer-text text-justify">
+							Through our international network of freelancers, we can call in short-term assistance when needed.</p>
+						</MDBCol>
+
+						    <MDBCol md="1" smd="1"/>
+						<MDBCol md="3" smd="3">
+								<div className="flex-row text-center">
 									<div className="footer-follow">Follow us:</div>
 									<MDBBtn size="10" social="li" href="https://www.linkedin.com/company/coder-consulting/">
 										<MDBIcon fab icon="linkedin-in" />
@@ -24,8 +35,8 @@ class Footer extends Component{
 										<MDBIcon icon="comments" />
 									</MDBBtn>
 								</div>
-							</div>
 						</MDBCol>
+
 						<MDBCol className="colCard" md="3" smd="3"/>
 					</MDBRow>
 				</MDBContainer>
