@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Footer from "./footer/Footer";
 import Header from "./Header/Header";
 
+import "./Land.css";
+
 class LandingPage extends Component {
   render() {
     return (

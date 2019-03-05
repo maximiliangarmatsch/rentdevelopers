@@ -1,0 +1,66 @@
+.picked {
+  border-left: 1px solid grey;
+}
+
+.pickedTeam {
+  margin-bottom: 1em;
+}
+
+.pickedTeam h3 {
+  display: inline;
+  margin-left: 1%;
+}
+
+.pickedTeam h4 {
+  margin-left: 5%;
+  display:inline;
+  background-color: red;
+}
+
+.withoutSidebar {
+  width: 20%;
+  margin: 2.5%;
+  display: inline-block;
+}
+
+.withSidebar {
+  width: 25%;
+  margin: 4%;
+  display: inline-block;
+}
+
+.membersContainer h2 {
+  text-align: center;
+}
+
+.memberImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display:block;
+  margin:auto;
+}
+
+.memberCardBody {
+  text-align: center;
+}
+
+.deleteBtn {
+  background: #D4514E;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  float: right
+}
+
+@media only screen and (max-width: 768px) {
+  .memberImage {
+    width: 100px;
+    height: 100px;
+  }
+  .withoutSidebar, .withSidebar {
+    width: 80%;
+    margin: 10%;
+  }
+}
