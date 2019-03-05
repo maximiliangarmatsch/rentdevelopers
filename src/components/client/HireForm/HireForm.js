@@ -4,6 +4,22 @@ import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
 import 'rc-calendar/assets/index.css';
 import "./HireForm.css";
 
+const formatStr = 'YYYY-MM-DD';
+function format(v) {
+	return v ? v.format(formatStr) : '';
+}
+
+function onStandaloneSelect(value) {
+	console.log('onSelect');
+	console.log(format(value[0]), format(value[1]));
+
+	const date2 = new Date(format(value[0]));
+	const date1 = new Date(format(value[1]));
+	const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+	const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+	console.log("Dana oznaceno:" + dayDifference);
+}
+
 class HireForm extends Component {
 	state = {
 		dailyInput: 0,
@@ -27,7 +43,7 @@ class HireForm extends Component {
 								<MDBRow>
 									<MDBCol>
 										<h2>Choose date</h2>
-										<RangeCalendar />
+										<RangeCalendar onSelect={onStandaloneSelect}/>
 										<MDBInput onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
 										<MDBInput onChange={this.onChangeWeekly} label="Working days through week" type="number" outline/>
 										<h4>Total hours: {this.state.dailyInput * this.state.weeklyInput}/h</h4>
