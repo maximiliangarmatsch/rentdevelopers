@@ -14,12 +14,12 @@
 .HeadLink {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 26px;
+  font-size: 1.3em;
   padding: 10px;
   letter-spacing: 1px;
 }
 
 .HeadLink:hover{
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
