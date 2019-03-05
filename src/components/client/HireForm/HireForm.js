@@ -1,21 +1,26 @@
 import React, {Component} from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardUp, MDBCardImage, MDBCardBody, MDBBtn } from "mdbreact";
-import Calendar from 'rc-calendar';
+import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
+import 'rc-calendar/assets/index.css';
+import "./HireForm.css";
 
 class HireForm extends Component {
 	render() {
 		return (
-			<MDBContainer className="hireForm">
-				<MDBRow>
-					<MDBCol>
-						<MDBCard>
+			<MDBContainer fluid className="hireForm">
+
+						<MDBCard className="hireFormCard">
+							<h1>Hire Form</h1>
 							<MDBCardBody>
-								Hire Form
-								<Calendar />
+								<MDBRow>
+									<MDBCol>
+										<h2>Choose date</h2>
+										<RangeCalendar />
+									</MDBCol>
+								</MDBRow>
 							</MDBCardBody>
 						</MDBCard>
-					</MDBCol>
-				</MDBRow>
+
 			</MDBContainer>
 		)
 	}
