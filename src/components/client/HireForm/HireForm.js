@@ -6,8 +6,16 @@ import "./HireForm.css";
 
 class HireForm extends Component {
 	state = {
-		hours: 0,
+		dailyInput: 0,
+		weeklyInput: 0,
 		cost: 0
+	}
+
+	onChangeDaily = (e) => {
+		this.setState({dailyInput: e.target.value})
+	}
+	onChangeWeekly = (e) => {
+		this.setState({weeklyInput: e.target.value})
 	}
 
 	render() {
@@ -20,17 +28,14 @@ class HireForm extends Component {
 									<MDBCol>
 										<h2>Choose date</h2>
 										<RangeCalendar />
-										<h4>Daily work hours</h4>
-										<MDBInput type="number" outline/>
-										<h4>How many working days throughout this week </h4>
-										<MDBInput type="number" outline/>
-										<h4>Total hours: {this.state.hours}/h</h4>
+										<MDBInput onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
+										<MDBInput onChange={this.onChangeWeekly} label="Working days through week" type="number" outline/>
+										<h4>Total hours: {this.state.dailyInput * this.state.weeklyInput}/h</h4>
 										<hr/>
 										<h1>Total Cost: ${this.state.cost}</h1>
 										<div className="hireFormSubmit">
 											<MDBBtn color="primary">Make an order</MDBBtn>
 										</div>
-
 									</MDBCol>
 								</MDBRow>
 							</MDBCardBody>
