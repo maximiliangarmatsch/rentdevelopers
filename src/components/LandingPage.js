@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from "./footer/Footer";
+import Header from "./Header/Header";
 
 class LandingPage extends Component {
   render() {
     return (
       <div>
-        <Link to='/developer/register'>I am Developer</Link>
-        <hr />
-        <Link to='/members'>I am Client</Link>
+				<Header
+					text4="Login"
+					route4="/developer/login"
+					text5="Register"
+				  route5="/developer/register"
+				/>
 				<Footer/>
       </div>
     )
