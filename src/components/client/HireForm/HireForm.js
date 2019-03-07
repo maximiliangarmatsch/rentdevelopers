@@ -16,25 +16,45 @@ function onStandaloneSelect(value) {
 	const date2 = new Date(format(value[0]));
 	const date1 = new Date(format(value[1]));
 	const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-	const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
-	console.log("Dana oznaceno:" + dayDifference);
+	window.dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+	// console.log("Dana oznaceno:" + dayDifference);
 }
 
 class HireForm extends Component {
 	state = {
 		dailyInput: 0,
 		weeklyInput: 0,
-		cost: 0
+		dayDifference: 0
+	}
+
+	onChange = (value) => {
+		console.log('onChange', value);
+		const date2 = new Date(format(value[0]));
+		const date1 = new Date(format(value[1]));
+		const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+		const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+		this.setState({ dayDifference });
 	}
 
 	onChangeDaily = (e) => {
-		this.setState({dailyInput: e.target.value})
+		let { value, min, max } = e.target;
+		value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+		this.setState({dailyInput: value });
 	}
 	onChangeWeekly = (e) => {
-		this.setState({weeklyInput: e.target.value})
+		let { value, min } = e.target;
+		const dayDifference = window.dayDifference;
+		value = Math.max(Number(min), Math.min(Number(dayDifference), Number(value)));
+		this.setState({weeklyInput: value})
 	}
 
 	render() {
+		console.log(window.dayDifference);
+		const {dailyInput, weeklyInput} = this.state;
+		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
+		const totalHours = dailyInput * weeklyInput;
+		const totalCost = totalHours * cost;
+		const labelString = window.dayDifference ? `Max ${window.dayDifference} days` : "Fill the calendar"
 		return (
 			<MDBContainer fluid className="hireForm">
 						<MDBCard className="hireFormCard">
@@ -43,12 +63,12 @@ class HireForm extends Component {
 								<MDBRow>
 									<MDBCol>
 										<h2>Choose date</h2>
-										<RangeCalendar onSelect={onStandaloneSelect}/>
-										<MDBInput onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
-										<MDBInput onChange={this.onChangeWeekly} label="Working days through week" type="number" outline/>
-										<h4>Total hours: {this.state.dailyInput * this.state.weeklyInput}/h</h4>
+										<RangeCalendar onChange={this.onChange} onSelect={onStandaloneSelect}/>
+										<MDBInput value={dailyInput ? String(dailyInput) : ""} min="1" max="24" onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
+										<MDBInput value={weeklyInput ? String(weeklyInput) : ""} onChange={this.onChangeWeekly} min="1" label={`Working days through week(${labelString})`} type="number" outline/>
+										<h4>Total hours: {totalHours}/h</h4>
 										<hr/>
-										<h1>Total Cost: ${this.state.cost}</h1>
+										<h1>Total Cost: ${totalCost}</h1>
 										<div className="hireFormSubmit">
 											<MDBBtn color="primary">Make an order</MDBBtn>
 										</div>
@@ -56,7 +76,6 @@ class HireForm extends Component {
 								</MDBRow>
 							</MDBCardBody>
 						</MDBCard>
-
 			</MDBContainer>
 		)
 	}
