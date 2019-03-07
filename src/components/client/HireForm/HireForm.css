@@ -42,6 +42,9 @@
   .rc-calendar-range-part {
     width: 50%
   }
+    .form-control {
+        width: 300px;
+    }
 
   .rc-calendar-range-part {
     width: 50%;
