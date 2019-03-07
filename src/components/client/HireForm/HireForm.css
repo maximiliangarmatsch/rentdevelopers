@@ -1,6 +1,13 @@
 .hireFormCard {
-  width: 80%;
-  margin: 5% auto;
+  width: 100%
+}
+
+.rc-calendar-range {
+  width: 100%;
+}
+
+.rc-calendar-range-part {
+  width: 100%
 }
 
 .hireFormCard h1, h2, h4 {
@@ -24,4 +31,19 @@
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 600px) {
+  .hireFormCard {
+    width: 60%;
+    margin: 5% auto;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .rc-calendar-range-part {
+    width: 50%
+  }
+
+  .rc-calendar-range-part {
+    width: 100%
+  }
+}
