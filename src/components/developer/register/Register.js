@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { MDBAlert, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
-import './register.css';
+import '../../../styles/register.css';
 
 
 class Register extends Component {

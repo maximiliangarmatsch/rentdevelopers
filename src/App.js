@@ -8,6 +8,7 @@ import Members from './components/client/Members';
 import HireForm from './components/client/HireForm/HireForm';
 import Member from './components/developer/Member';
 import { Provider } from './context';
+import OrderReceived from "./components/client/HireForm/OrderReceived";
 
 class App extends Component {
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
             {/* For Client */}
             <Route exact path='/members' component={Members} />
             <Route exact path='/hire' component={HireForm} />
-
+            <Route exact path='/order' component={OrderReceived}/>
           </React.Fragment>
         </Router>
       </Provider>

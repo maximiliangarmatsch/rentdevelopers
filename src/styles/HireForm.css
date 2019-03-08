@@ -1,0 +1,57 @@
+.hireFormCard {
+  width: 100%;
+  font-family: Roboto serif;
+}
+
+.rc-calendar-range {
+  width: 100%;
+}
+
+.rc-calendar-range-part {
+  width: 100%
+}
+
+.hireFormCard h1, h2, h4 {
+  text-align: center;
+}
+
+.hireFormCard h4 {
+  margin: 3%;
+}
+
+.hireFormCard input {
+  margin: auto;
+  display: block;
+}
+
+.hireFormSubmit {
+  text-align: center;
+}
+
+.rc-calendar {
+  margin: 0 auto;
+}
+
+.rc-calendar-input {
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .hireFormCard {
+    width: 60%;
+    margin: 5% auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .rc-calendar-range-part {
+    width: 50%
+  }
+    .form-control {
+        width: 300px;
+    }
+
+  .rc-calendar-range-part {
+    width: 50%;
+  }
+}

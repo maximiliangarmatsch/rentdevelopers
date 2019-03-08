@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-import './login.css'
+import '../../../styles/login.css'
 import { Consumer } from '../../../context';
 
 class Login extends Component {

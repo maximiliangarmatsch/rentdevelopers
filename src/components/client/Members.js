@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardUp, MDBCardImage, MDBCardBody, MDBBtn } from "mdbreact";
 import axios from "axios";
 import "./Members.css";
@@ -109,7 +110,9 @@ class Members extends Component {
 				<h1>Your team</h1>
 				{pickedMembers}
 				<p>Total cost: ${cost} per/h</p>
-				<MDBBtn color="deep-orange">Submit</MDBBtn>
+				<Link to={{ pathname: '/hire', state: { cost } }}>
+					<MDBBtn color="deep-orange">Submit</MDBBtn>
+				</Link>
 			</MDBCol>
 		);
 
