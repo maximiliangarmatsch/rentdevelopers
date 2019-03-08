@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput, MDBCardBody, MDBBtn } from "mdbreact";
+import {Link} from "react-router-dom";
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
 import 'rc-calendar/assets/index.css';
 import "./HireForm.css";
@@ -52,7 +53,7 @@ class HireForm extends Component {
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
 		const totalHours = dailyInput * weeklyInput;
 		const totalCost = totalHours * cost;
-		const labelString = dayDifference ? `Max ${dayDifference} days` : "Fill the calendar"
+		const labelString = dayDifference ? `Max ${dayDifference} days` : "Fill the calendar";
 		return (
 			<MDBContainer fluid className="hireForm">
 						<MDBCard className="hireFormCard">
@@ -68,7 +69,9 @@ class HireForm extends Component {
 										<hr/>
 										<h1>Total Cost: ${totalCost}</h1>
 										<div className="hireFormSubmit">
+											<Link to="/order">
 											<MDBBtn color="primary">Make an order</MDBBtn>
+											</Link>
 										</div>
 									</MDBCol>
 								</MDBRow>
