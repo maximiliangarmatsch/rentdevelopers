@@ -3,7 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBInput, MDBCardBody, MDBBtn } 
 import {Link} from "react-router-dom";
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
 import 'rc-calendar/assets/index.css';
-import "./HireForm.css";
+import "../../../styles/HireForm.css";
 
 const formatStr = 'YYYY-MM-DD';
 function format(v) {
@@ -69,9 +69,10 @@ class HireForm extends Component {
 										<hr/>
 										<h1>Total Cost: ${totalCost}</h1>
 										<div className="hireFormSubmit">
-											<Link to="/order">
-											<MDBBtn color="primary">Make an order</MDBBtn>
-											</Link>
+											{totalCost?<Link to="/order">
+												<MDBBtn color="primary">Make an order</MDBBtn>
+											</Link>: <MDBBtn color="#d84315 deep-orange darken-3">Please fill the calendar and inputs</MDBBtn> }
+
 										</div>
 									</MDBCol>
 								</MDBRow>

@@ -13,7 +13,7 @@ import {
   MDBBtn,
   MDBInput
 } from "mdbreact";
-import RegisterStyle from './RegisterStyle.css'
+import RegisterStyle from '../../styles/RegisterStyle.css'
 
 
 class Register extends Component {

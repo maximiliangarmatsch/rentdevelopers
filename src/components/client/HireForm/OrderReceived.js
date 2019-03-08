@@ -1,6 +1,6 @@
 import React from 'react'
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import "./OrderRecieved.css"
+import "../../../styles/OrderRecieved.css"
 
 const OrderReceived = () => {
 	return (
