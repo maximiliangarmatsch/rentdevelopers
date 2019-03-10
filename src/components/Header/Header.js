@@ -38,10 +38,10 @@ class Header extends Component {
 					</MDBNavbarNav> */}
 					<MDBNavbarNav right >
 						<MDBNavItem>
-							<MDBNavLink className="HeadLink" to={this.props.route4}>{this.props.text4}</MDBNavLink>
+							<MDBNavLink className="head-link-base head-link-4" to={this.props.route4}>{this.props.text4}</MDBNavLink>
 						</MDBNavItem>
 						<MDBNavItem>
-							<MDBNavLink className="HeadLink" to={this.props.route5}>{this.props.text5}</MDBNavLink>
+							<MDBNavLink className="head-link-base head-link-5" to={this.props.route5}>{this.props.text5}</MDBNavLink>
 						</MDBNavItem>
 					</MDBNavbarNav>
 				</MDBCollapse>
