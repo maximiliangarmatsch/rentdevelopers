@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect, withRouter } from 'react-router-dom';
-import { MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import { MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import '../../../styles/login.css'
 
 
@@ -61,43 +61,46 @@ class Login extends Component {
       // return this.props.history.push(`/developer/member/${this.props.match.params.user_nicename}`)
     }
     return (
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="6" className="login">
+            <MDBCard>
+              <MDBCardBody>
+                <form>
+                  <p className="h4 text-center py-4">Login</p>
+                  <div className="grey-text">
+                    <MDBInput
+                      id='username'
+                      label="Type your email"
+                      icon="user"
+                      group
+                      type="text"
+                      validate
+                      error="wrong"
+                      success="right"
+                    />
+                    <MDBInput
+                      id='password'
+                      label="Type your password"
+                      icon="lock"
+                      group
+                      type="password"
+                      validate
+                    />
+                  </div>
+                  {err}
+                  <div className="text-center py-4 mt-3">
 
-      <div className="loginContainer col-centered align-middle">
-        <MDBContainer className='col-md-6 col-centered align-middle'>
-          <MDBRow>
-            <MDBCol>
-              <form>
-                <p className="h5 text-center mb-4">Log in</p>
-                <div className="grey-text">
-                  <MDBInput
-                    id='username'
-                    label="Type your email"
-                    icon="envelope"
-                    group
-                    type="email"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
-                  <MDBInput
-                    id='password'
-                    label="Type your password"
-                    icon="lock"
-                    group
-                    type="password"
-                    validate
-                  />
-                </div>
-                {err}
-                <div className="text-center">
-                  <MDBBtn color='primary' onClick={this.onSubmit.bind(this)}>Login</MDBBtn>
-                </div>
-              </form>
-            </MDBCol>
-          </MDBRow>
-
-        </MDBContainer>
-      </div>
+                    <MDBBtn color='primary' onClick={this.onSubmit.bind(this)}>
+                      Login
+                      </MDBBtn>
+                  </div>
+                </form>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     )
 
   }
