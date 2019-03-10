@@ -29,6 +29,10 @@
   display: inline-block;
 }
 
+.membersContainer{
+  margin-top: 5rem;
+}
+
 .membersContainer h2 {
   text-align: center;
 }

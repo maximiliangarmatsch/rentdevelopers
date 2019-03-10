@@ -19,12 +19,12 @@
 .HeadLink {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 10px;
   letter-spacing: 1px;
 }
 
 .HeadLink:hover{
-  font-size: 1.7em;
+  font-size: 1.25em;
 }
 
