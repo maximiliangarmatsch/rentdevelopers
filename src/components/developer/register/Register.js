@@ -64,7 +64,7 @@ class Register extends Component {
 
       axios.post(`https://rentdeveloper.000webhostapp.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=test&user_pass=${password}&insecure=cool`)
         .then(res => {
-          console.log(res)
+          console.log(res.data)
           this.setState({
             user_id: res.data.user_id
           })
@@ -82,17 +82,20 @@ class Register extends Component {
   }
 
   render() {
-    if (localStorage.getItem('token') !== '') {
-      return <Redirect to='/developer/member' />
-    }
     let err = null;
     if (this.state.error) {
       err = <MDBAlert color="danger" >
         <div dangerouslySetInnerHTML={{ __html: this.state.errMessage }}></div>
       </MDBAlert>
     }
-    console.log(this.state)
+
+    if (localStorage.getItem('token') !== '') {
+      return <Redirect to={`/developer/member/${localStorage.getItem('username')}`} />
+    }
     return (
+
+
+
       <MDBContainer className=''>
         <MDBRow>
           <MDBCol md="6" className='registerContainer'>
@@ -149,6 +152,8 @@ class Register extends Component {
         </MDBRow>
       </MDBContainer>
     )
+
+
   }
 }
 

@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
 	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 import "../../styles/header.css";
+import { withRouter } from 'react-router-dom';
+
 class Header extends Component {
 	state = {
 		isOpen: false
@@ -12,15 +14,51 @@ class Header extends Component {
 		this.setState({ isOpen: !this.state.isOpen });
 	};
 
-   /*DEV COMMENTARY AFTER IMPLEMENTING DELETE MenuItem1... texts AND QUOTES IN to ATTRIBUTE*/
+	onLogout = (e) => {
+		localStorage.setItem('token', '');
+		localStorage.setItem('username', '');
+		localStorage.setItem('user_id', '');
+		this.props.history.push('/')
+	}
+
+	onUserDetails = (e) => {
+		this.props.history.push(`/developer/member/${localStorage.getItem('username')}/details`);
+		e.preventDefault()
+	}
+
+	/*DEV COMMENTARY AFTER IMPLEMENTING DELETE MenuItem1... texts AND QUOTES IN to ATTRIBUTE*/
 	render() {
+		let clientHeader = null;
+		if (localStorage.getItem('username') === '') {
+			clientHeader = <MDBNavbarNav right >
+				<MDBNavItem>
+					<MDBNavLink to={this.props.route4}>{this.props.text4}</MDBNavLink>
+				</MDBNavItem>
+				<MDBNavItem>
+					<MDBNavLink to={this.props.route5}>{this.props.text5}</MDBNavLink>
+				</MDBNavItem>
+			</MDBNavbarNav>
+		} else {
+			clientHeader = <MDBNavbarNav right >
+				<MDBNavItem>
+					<MDBNavLink to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
+				</MDBNavItem>
+				<MDBNavItem>
+					<MDBNavLink to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>
+				</MDBNavItem>
+				<MDBNavItem >
+					<MDBNavLink to={this.props.route1}>{this.props.text1}</MDBNavLink>
+				</MDBNavItem>
+			</MDBNavbarNav>
+		}
+
 		return (
 			<MDBNavbar color="blue-gradient" dark expand="md">
-        <div className="nav-display">
-				<MDBNavbarToggler onClick={this.toggleCollapse} />
-						<MDBNavbarNav   style={{flexDirection: "row"}}>{/*active*/}
-							<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
-						</MDBNavbarNav>
+				<div className="nav-display">
+					<MDBNavbarToggler onClick={this.toggleCollapse} />
+					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}
+						<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
+					</MDBNavbarNav>
 				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
 					{/*	<MDBNavbarNav left>
@@ -36,14 +74,7 @@ class Header extends Component {
 						<MDBNavItem>
 						</MDBNavItem>
 					</MDBNavbarNav> */}
-					<MDBNavbarNav right >
-						<MDBNavItem>
-							<MDBNavLink to={this.props.route4}>{this.props.text4}</MDBNavLink>
-						</MDBNavItem>
-						<MDBNavItem>
-							<MDBNavLink to={this.props.route5}>{this.props.text5}</MDBNavLink>
-						</MDBNavItem>
-					</MDBNavbarNav>
+					{clientHeader}
 				</MDBCollapse>
 
 			</MDBNavbar>
@@ -52,8 +83,8 @@ class Header extends Component {
 }
 
 Header.defaultProps = {
-  route1: "",
-  route2: "",
+	route1: "",
+	route2: "",
 	route3: "",
 	route4: "",
 	route5: "",
@@ -64,4 +95,4 @@ Header.defaultProps = {
 	text5: null
 };
 
-export default Header;
+export default withRouter(Header);

@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Footer from "./footer/Footer";
 import Header from "./Header/Header";
 
 class LandingPage extends Component {
-  render() {
-    return (
-      <div>
+	render() {
+		return (
+			<div>
 				<Header
+					text1='User'
+					route1={`/developer/member/${localStorage.getItem('username')}`}
 					text4="Login"
+					text2='Logout'
 					route4="/developer/login"
 					text5="Register"
-				  route5="/developer/register"
+					text3='Details'
+					route5="/developer/register"
 				/>
-				<Footer/>
-      </div>
-    )
-  }
+				<Footer />
+			</div>
+		)
+	}
 }
 
 export default LandingPage;
