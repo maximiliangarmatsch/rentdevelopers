@@ -78,16 +78,24 @@ class Members extends Component {
 
 	render() {
 		const {employees, pickedTeam, cost} = this.state;
+		const colors = ["#FD9716", "#4FA952", "#E94440", "#18BACF"];
+		let colorsIndex = -1;
 		const members = employees.map((member, i) => {
+			colorsIndex = colorsIndex >= 3 ? -1 : colorsIndex;
+			colorsIndex += 1;
+			console.log(colorsIndex);
 			return (
 					<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
-						<MDBCardImage className="memberImage" src={member.img} />
+						<div className="memberUp" style={{background: `linear-gradient(${colors[colorsIndex]} 50%, transparent 50%) no-repeat`}}>
+							<MDBCardImage className="memberImage" src={member.img} />
+						</div>
+
 						<MDBCardBody className="memberCardBody">
 							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
 							<hr />
-							<p className="dark-grey-text mt-4">
-								Rate per/hour {member.price}$
-							</p>
+							<h3 className="price mt-4">
+								{member.price}$/h
+							</h3>
 							<MDBBtn onClick={() => this.pickMe(i)} color="primary" size="md">
 								Pick me
 							</MDBBtn>
