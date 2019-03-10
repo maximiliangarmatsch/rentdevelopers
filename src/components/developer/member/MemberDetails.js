@@ -41,19 +41,19 @@ class MemberDetails extends Component {
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='8'>
 
-              <MDBInput label='Nickname' size='md' id='nickname' style={{ marginBottom }} />
-              <MDBInput label='Title' size='md' id='title' style={{ marginBottom }} />
-              <MDBInput label='Communication skills' size='md' id='communication_skills' style={{ marginBottom }} />
-              <MDBInput label='Language' size='md' id='language' style={{ marginBottom }} />
-              <MDBInput label='Tech skills' size='md' id='tech_skills' style={{ marginBottom }} />
-              <MDBInput label='Personal skills' size='md' id='personal_skills' style={{ marginBottom }} />
-              <MDBInput label='Other skills' size='md' id='other_skills' style={{ marginBottom }} />
-              <MDBInput label='Price' size='md' id='price' style={{ marginBottom }} />
-              <MDBInput label='Position in CC' size='md' id='position_in_cc' style={{ marginBottom }} />
-              <MDBInput label='Previous projects' size='md' id='previous_projects' style={{ marginBottom }} />
-              <MDBInput label='Education' size='md' id='education' style={{ marginBottom }} />
-              <MDBInput label='Location' size='md' id='location' style={{ marginBottom }} />
-              <MDBInput label='Note' size='md' id='note' style={{ marginBottom }} />
+              <MDBInput label='Nickname' size='md' id='nickname' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Title' size='md' id='title' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Communication skills' size='md' id='communication_skills' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Language' size='md' id='language' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Tech skills' size='md' id='tech_skills' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Personal skills' size='md' id='personal_skills' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Other skills' size='md' id='other_skills' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Price' size='md' id='price' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Position in CC' size='md' id='position_in_cc' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Previous projects' size='md' id='previous_projects' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Education' size='md' id='education' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Location' size='md' id='location' style={{ marginBottom, width: '100%' }} />
+              <MDBInput label='Note' size='md' id='note' style={{ marginBottom, width: '100%' }} />
 
               <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
             </MDBCol>

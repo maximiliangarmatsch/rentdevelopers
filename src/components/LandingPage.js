@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Footer from "./footer/Footer";
 import Header from "./Header/Header";
 
+import "./Land.css";
+
 class LandingPage extends Component {
 	render() {
 		return (

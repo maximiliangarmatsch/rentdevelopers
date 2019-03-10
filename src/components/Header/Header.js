@@ -53,7 +53,7 @@ class Header extends Component {
 		}
 
 		return (
-			<MDBNavbar color="blue-gradient" dark expand="md">
+			<MDBNavbar color="blue-gradient" style={{ lineHeight: "2em" }} dark expand="md">
 				<div className="nav-display">
 					<MDBNavbarToggler onClick={this.toggleCollapse} />
 					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}

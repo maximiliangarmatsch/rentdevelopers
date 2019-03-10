@@ -3,7 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../../Header/Header';
 import axios from 'axios';
-import './member.css';
+import '../../../styles/member.css';
 
 class Member extends Component {
   state = {

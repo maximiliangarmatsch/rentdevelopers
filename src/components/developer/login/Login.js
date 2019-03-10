@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect, withRouter } from 'react-router-dom';
 import { MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-import './login.css'
+import '../../../styles/login.css'
 
 
 class Login extends Component {
@@ -27,7 +27,7 @@ class Login extends Component {
     axios.post(`https://rentdeveloper.000webhostapp.com/wp-json/jwt-auth/v1/token?username=${username}&password=${password}`)
       .then(response => {
         console.log('### Login ', response.data);
-        // localStorage.setItem('token', response.data.token)
+        localStorage.setItem('token', response.data.token)
         localStorage.setItem('username', response.data.user_nicename);
         localStorage.setItem('user_id', response.data.user_id);
         this.props.history.push(`/developer/member/${response.data.user_nicename}`);

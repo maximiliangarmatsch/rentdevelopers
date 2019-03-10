@@ -4,9 +4,22 @@
   margin: auto;
   width: 100%;
 }
+
 .nav-heading{
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   margin: auto;
-
 }
+
+.HeadLink {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.3em;
+  padding: 10px;
+  letter-spacing: 1px;
+}
+
+.HeadLink:hover{
+  font-size: 1.7em;
+}
+
