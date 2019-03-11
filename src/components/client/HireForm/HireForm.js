@@ -44,17 +44,19 @@ class HireForm extends Component {
 
 	onChangeWeekly = (e) => {
 		let { value, max } = e.target;
-		value = Number(value) > Number(max) ? 7 : Number(value);
+		value = Number(value) > Number(max) ? Number(max) : Number(value);
 		this.setState({weeklyInput: value})
 	}
 
 	render() {
 		const {dailyInput, weeklyInput, dayDifference} = this.state;
+		console.log(dayDifference,dailyInput, weeklyInput);
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
-		const workingDays = (Math.floor(dayDifference / 7)) * weeklyInput + (dayDifference % weeklyInput) - 1;
+		const moreThanSevenDays = (Math.floor(dayDifference / 7)) * weeklyInput + (dayDifference % weeklyInput) - 1;
+		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
 		const totalHours = workingDays ? dailyInput * workingDays : 0;
 		const totalCost = totalHours ? totalHours * cost : 0;
-		const labelString = dayDifference ? `Max 7 days` : "Fill the calendar";
+		const labelString = dayDifference ? `Max ${dayDifference > 7 ? "7" : dayDifference} days` : "Fill the calendar";
 		return (
 			<MDBContainer fluid className="hireForm">
 						<MDBCard className="hireFormCard">
@@ -65,7 +67,7 @@ class HireForm extends Component {
 										<h2>Choose date</h2>
 										<RangeCalendar onChange={this.onChange} />
 										<MDBInput className="in" value={dailyInput ? String(dailyInput) : ""} max="24" onChange={this.onChangeDaily} label="Daily work hours" outline/>
-										<MDBInput className="in" value={weeklyInput ? String(weeklyInput) : ""} max="7" onChange={this.onChangeWeekly} label={`Working days through week(${labelString})`} outline/>
+										<MDBInput className="in" value={weeklyInput ? String(weeklyInput) : ""} max={dayDifference > 7 ? "7" : String(dayDifference)} onChange={this.onChangeWeekly} label={`Working days through week(${labelString})`} outline/>
 										<h4>Total hours: {totalHours}h</h4>
 										<hr/>
 										<h1>Total Cost: ${totalCost}</h1>
