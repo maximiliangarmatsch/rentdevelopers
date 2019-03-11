@@ -2,27 +2,30 @@ import React, { Component } from 'react'
 import Header from '../../Header/Header';
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput } from 'mdbreact';
 import axios from 'axios';
+import '../../../styles/member.css';
 
 class MemberDetails extends Component {
 
   onSubmit = (e) => {
-
     const data = {
       title: 'title'
     }
-
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
     }
-
     const user_id = localStorage.getItem('user_id')
-    axios.options(`https://rentdeveloper.000webhostapp.com/wp-json/acf/v3/users/${user_id}`, data, { headers: headers })
+    axios.post(`https://rentdeveloper.000webhostapp.com/wp-json/acf/v3/users/${user_id}`, data, config)
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
 
-
     e.preventDefault();
+  }
+
+  onAvatarClick = () => {
+    console.log('aaaaaaaaaaaaa')
   }
 
   render() {

@@ -3,6 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../../Header/Header';
 import axios from 'axios';
+import Gravatar from 'react-gravatar';
 import '../../../styles/member.css';
 
 class Member extends Component {
@@ -20,14 +21,14 @@ class Member extends Component {
     price: "",
     tech_skills: "",
     title: "",
-    avatar_url: "",
     isLoaded: false
   }
 
   componentDidMount() {
 
-    axios.get(`https://rentdeveloper.000webhostapp.com/wp-json/wp/v2/users/${localStorage.getItem('user_id')}`)
+    axios.get(`https://rentdeveloper.000webhostapp.com/wp-json/acf/v3/users/${localStorage.getItem('user_id')}`)
       .then(res => {
+        console.log(res.data.acf)
         this.setState({
           communication_skills: res.data.acf.communication_skills,
           education: res.data.acf.education,
@@ -42,7 +43,6 @@ class Member extends Component {
           price: res.data.acf.price,
           tech_skills: res.data.acf.tech_skills,
           title: res.data.acf.title,
-          avatar_url: res.data.avatar_urls['96'],
           isLoaded: true
         })
       })
@@ -76,9 +76,9 @@ class Member extends Component {
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='9'>
               <MDBCard className='face font mt-5'>
-                <img src={this.state.avatar_url} className="img-fluid rounded-circle hoverable mx-auto d-block mt-3" alt="aligment" />
+                <Gravatar email="blahblah@blah.com" size={150} default='monsterid' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" />
                 <MDBCardBody>
-                  <MDBCardTitle className='mdb-color white-text'>{this.state.position_in_cc}</MDBCardTitle>
+                  <MDBCardTitle className='mdb-color white-text text-left'>{this.state.position_in_cc}</MDBCardTitle>
 
                   <dl className="row">
                     <dt className="col-sm-3 mt-2">Nickname:</dt>
@@ -103,7 +103,7 @@ class Member extends Component {
                     <dd className="col-sm-9 mt-2">{this.state.personal_skills}</dd>
 
                     <dt className="col-sm-3 mt-2">Price:</dt>
-                    <dd className="col-sm-9 mt-2">{this.state.price}</dd>
+                    <dd className="col-sm-9 mt-2">{this.state.price} $</dd>
 
                     <dt className="col-sm-3 mt-2">Position In CC:</dt>
                     <dd className="col-sm-9 mt-2">{this.state.position_in_cc}</dd>
