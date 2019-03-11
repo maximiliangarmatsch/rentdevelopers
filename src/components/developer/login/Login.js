@@ -58,7 +58,6 @@ class Login extends Component {
             return <Redirect to='/developer/member' />
           }
           return (
-              <div className="backgroundImage">
                 <div className="loginContainer col-centered align-middle">
                   <MDBContainer className='col-md-6 col-centered align-middle'>
                     <MDBRow>
@@ -95,7 +94,6 @@ class Login extends Component {
 
                   </MDBContainer>
                 </div>
-              </div>
           )
         }}
       </Consumer>

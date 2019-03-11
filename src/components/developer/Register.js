@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import '../../../styles/register.css'
+import '../../styles/register.css'
 import {
   MDBContainer,
   MDBRow,
@@ -53,7 +53,6 @@ class Register extends Component {
   render() {
     console.log(this.state)
     return (
-        <div className="backgroundImage">
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6" className="register">
@@ -104,7 +103,6 @@ class Register extends Component {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </div>
     )
   }
 }
