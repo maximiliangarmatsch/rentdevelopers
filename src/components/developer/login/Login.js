@@ -58,42 +58,44 @@ class Login extends Component {
             return <Redirect to='/developer/member' />
           }
           return (
-            <div className="loginContainer col-centered align-middle">
-              <MDBContainer className='col-md-6 col-centered align-middle'>
-                <MDBRow>
-                  <MDBCol>
-                    <form>
-                      <p className="h5 text-center mb-4">Log in</p>
-                      <div className="grey-text">
-                        <MDBInput
-                          id='username'
-                          label="Type your email"
-                          icon="envelope"
-                          group
-                          type="email"
-                          validate
-                          error="wrong"
-                          success="right"
-                        />
-                        <MDBInput
-                          id='password'
-                          label="Type your password"
-                          icon="lock"
-                          group
-                          type="password"
-                          validate
-                        />
-                      </div>
-                      {err}
-                      <div className="text-center">
-                        <MDBBtn color='primary' onClick={this.onSubmit.bind(this, dispatch)}>Login</MDBBtn>
-                      </div>
-                    </form>
-                  </MDBCol>
-                </MDBRow>
+              <div className="backgroundImage">
+                <div className="loginContainer col-centered align-middle">
+                  <MDBContainer className='col-md-6 col-centered align-middle'>
+                    <MDBRow>
+                      <MDBCol>
+                        <form>
+                          <p className="h5 text-center mb-4">Log in</p>
+                          <div className="grey-text">
+                            <MDBInput
+                              id='username'
+                              label="Type your email"
+                              icon="envelope"
+                              group
+                              type="email"
+                              validate
+                              error="wrong"
+                              success="right"
+                            />
+                            <MDBInput
+                              id='password'
+                              label="Type your password"
+                              icon="lock"
+                              group
+                              type="password"
+                              validate
+                            />
+                          </div>
+                          {err}
+                          <div className="text-center">
+                            <MDBBtn color='primary' onClick={this.onSubmit.bind(this, dispatch)}>Login</MDBBtn>
+                          </div>
+                        </form>
+                      </MDBCol>
+                    </MDBRow>
 
-              </MDBContainer>
-            </div>
+                  </MDBContainer>
+                </div>
+              </div>
           )
         }}
       </Consumer>
