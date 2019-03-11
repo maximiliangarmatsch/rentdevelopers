@@ -61,6 +61,7 @@ class Login extends Component {
       // return this.props.history.push(`/developer/member/${this.props.match.params.user_nicename}`)
     }
     return (
+        <div className="backgroundImage">
       <MDBContainer>
         <MDBRow>
           <MDBCol md="6" className="login">
@@ -101,6 +102,7 @@ class Login extends Component {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+        </div>
     )
 
   }

@@ -93,10 +93,7 @@ class Register extends Component {
       return <Redirect to={`/developer/member/${localStorage.getItem('username')}`} />
     }
     return (
-
-
-
-
+        <div className="backgroundImage">
       <MDBContainer className=''>
         <MDBRow>
           <MDBCol md="6" className='registerContainer'>
@@ -156,6 +153,7 @@ class Register extends Component {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+        </div>
     )
 
 
