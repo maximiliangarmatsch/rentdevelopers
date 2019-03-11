@@ -1,3 +1,7 @@
+.hireFormCard .in{
+  background: rgba(255,255,235,0.8) !important;
+  border: 1px solid green !important;
+}
 .hireFormCard {
   width: 100%;
   font-family: Roboto serif;

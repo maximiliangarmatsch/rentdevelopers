@@ -63,8 +63,8 @@ class HireForm extends Component {
 									<MDBCol>
 										<h2>Choose date</h2>
 										<RangeCalendar onChange={this.onChange} />
-										<MDBInput value={dailyInput ? String(dailyInput) : ""} min="1" max="24" onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
-										<MDBInput value={weeklyInput ? String(weeklyInput) : ""} onChange={this.onChangeWeekly} min="1" label={`Working days through week(${labelString})`} type="number" outline/>
+										<MDBInput className="in" value={dailyInput ? String(dailyInput) : ""} min="1" max="24" onChange={this.onChangeDaily} label="Daily work hours" type="number" outline/>
+										<MDBInput className="in" value={weeklyInput ? String(weeklyInput) : ""} onChange={this.onChangeWeekly} min="1" label={`Working days through week(${labelString})`} type="number" outline/>
 										<h4>Total hours: {totalHours}/h</h4>
 										<hr/>
 										<h1>Total Cost: ${totalCost}</h1>
