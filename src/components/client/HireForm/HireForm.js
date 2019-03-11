@@ -32,7 +32,7 @@ class HireForm extends Component {
 		const date2 = new Date(format(value[0]));
 		const date1 = new Date(format(value[1]));
 		const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-		const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+		const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
 		this.setState({ dayDifference });
 	}
 
@@ -52,7 +52,7 @@ class HireForm extends Component {
 		const {dailyInput, weeklyInput, dayDifference} = this.state;
 		console.log(dayDifference,dailyInput, weeklyInput);
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
-		const moreThanSevenDays = (Math.floor(dayDifference / 7)) * weeklyInput + (dayDifference % weeklyInput) - 1;
+		const moreThanSevenDays = ((Math.floor(dayDifference / 7))  + (dayDifference % weeklyInput)) * weeklyInput;
 		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
 		const totalHours = workingDays ? dailyInput * workingDays : 0;
 		const totalCost = totalHours ? totalHours * cost : 0;
