@@ -15,6 +15,11 @@
   font-style: italic;
   margin: auto;
 }
+.nav-toggler{
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+}
 
 .head-link-base {
   top: 0.3rem;
