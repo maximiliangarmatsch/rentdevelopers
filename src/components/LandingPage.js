@@ -19,6 +19,7 @@ class LandingPage extends Component {
 					text3='Details'
 					route5="/developer/register"
 				/>
+				<Members />
 				<Footer />
 			</div>
 		)
