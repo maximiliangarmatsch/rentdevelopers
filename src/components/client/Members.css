@@ -1,7 +1,10 @@
 .picked {
   border-left: 1px solid grey;
 }
-
+.picked h1{
+  font-family: "Roboto", serif;
+  font-weight: bold;
+}
 .pickedTeam {
   margin-bottom: 1em;
 }
@@ -67,10 +70,11 @@
 }
 
 .deleteBtn {
-  background: #D4514E;
+  background: #FF3708;
   border: 1px solid #fff;
   border-radius: 50%;
   color: white;
+  font-size: 0.9rem;
   font-weight: bold;
   float: right
 }
