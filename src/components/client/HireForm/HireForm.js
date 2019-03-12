@@ -50,7 +50,7 @@ class HireForm extends Component {
 
 	render() {
 		const {dailyInput, weeklyInput, dayDifference} = this.state;
-		console.log(dayDifference,dailyInput, weeklyInput);
+		console.log(dayDifference, dailyInput, weeklyInput);
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
 		const moreThanSevenDays = ((Math.floor(dayDifference / 7))  + (dayDifference % weeklyInput)) * weeklyInput;
 		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
