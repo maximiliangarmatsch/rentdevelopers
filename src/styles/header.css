@@ -15,12 +15,19 @@
   font-style: italic;
   margin: auto;
 }
+.nav-toggler{
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+}
 
 .head-link-base {
-  top: 0;
-  font-family: "Times New Roman", Times, serif;
+  top: 0.3rem;
+  font-family: "Roboto", serif;
+  /*
   font-style: italic;
   font-size: 1.2em;
+  */
   padding: 10px;
   letter-spacing: 1px;
 }
@@ -32,17 +39,17 @@
     right:    7rem;
   }
 
-  .head-link-4:hover{
+  /*.head-link-4:hover{
     font-size: 1.25em;
-  }
+  }*/
 
   .head-link-5{
     position: absolute;
     right:    1rem;
   }
-
+  /*
   .head-link-5:hover{
     font-size: 1.25em;
   }
-
+ */
 }

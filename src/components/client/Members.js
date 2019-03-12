@@ -1,7 +1,7 @@
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardUp, MDBCardImage, MDBCardBody, MDBBtn } from "mdbreact";
-import axios from "axios";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBBtn } from "mdbreact";
+// import axios from "axios";
 import "./Members.css";
 
 class Members extends Component {
@@ -67,7 +67,7 @@ class Members extends Component {
 		const pickedTeam = this.state.pickedTeam.slice();
 		const pickedMember = this.state.employees[index];
 		let cost = this.state.cost;
-		if(!pickedTeam.includes(pickedMember)) {
+		if (!pickedTeam.includes(pickedMember)) {
 			pickedTeam.push(pickedMember);
 			cost += pickedMember.price;
 			pickedMember.picked = true;
@@ -107,8 +107,8 @@ class Members extends Component {
 							<MDBBtn disabled={member.picked} onClick={() => this.pickMe(i)} color="primary" size="md">
 								Pick me
 							</MDBBtn>
-						</MDBCardBody>
-					</MDBCard>
+					</MDBCardBody>
+				</MDBCard>
 			);
 		});
 		const pickedMembers = pickedTeam.map((pick, i) => {
@@ -127,7 +127,7 @@ class Members extends Component {
 				{pickedMembers}
 				<p>Total cost: ${cost} per/h</p>
 				<Link to={{ pathname: '/hire', state: { cost } }}>
-					<MDBBtn color="deep-orange">Submit</MDBBtn>
+					<MDBBtn color="secondary">Submit</MDBBtn>
 				</Link>
 			</MDBCol>
 		);
@@ -137,12 +137,12 @@ class Members extends Component {
 				<h2 className="h2-responsive font-weight-bold my-5">
 					Pick a member
 				</h2>
-					<MDBRow>
-						<MDBCol md={pickedTeam.length < 1 ? "12" : "9"}>
-							{members}
-						</MDBCol>
-						{pickedTeam.length > 0 && sidebar}
-					</MDBRow>
+				<MDBRow>
+					<MDBCol md={pickedTeam.length < 1 ? "12" : "9"}>
+						{members}
+					</MDBCol>
+					{pickedTeam.length > 0 && sidebar}
+				</MDBRow>
 			</MDBContainer>
 		);
 	}
