@@ -15,6 +15,11 @@ const reducer = (state, action) => {
         ...state,
         token: ''
       }
+    case 'SET_USERNAME':
+      return {
+        ...state,
+        username: state.username + action.payload
+      }
     default:
       return state;
   }
@@ -24,6 +29,7 @@ const reducer = (state, action) => {
 export class Provider extends Component {
   state = {
     token: '',
+    username: '',
     dispatch: action => {
       this.setState(state => reducer(state, action));
     }
