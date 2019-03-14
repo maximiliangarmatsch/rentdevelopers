@@ -34,9 +34,14 @@
 
 @media only screen and (min-width: 768px){
 
+  .head-link-3{
+    position: absolute;
+    right:    10rem;
+  }
+
   .head-link-4{
     position: absolute;
-    right:    7rem;
+    right:    5rem;
   }
 
   /*.head-link-4:hover{
