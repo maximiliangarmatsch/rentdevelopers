@@ -4,6 +4,7 @@
 .picked h1{
   font-family: "Roboto", serif;
   font-weight: bold;
+  padding-bottom: 2rem;
 }
 .pickedTeam {
   margin-bottom: 1em;
@@ -12,6 +13,7 @@
 .pickedTeam h3 {
   display: inline;
   margin-left: 1%;
+  font-size: 18px;
 }
 
 .pickedTeam h4 {
@@ -80,6 +82,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .memberImage {
     width: 120px;
     height: 120px;
@@ -87,5 +90,15 @@
   .withoutSidebar, .withSidebar {
     width: 80%;
     margin: 10%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .picked {
+    border-left: 1px solid grey;
+    position: fixed;
+    right: 0;
+    top: 5rem;
+    overflow: scroll;
+    height: 70%;
   }
 }

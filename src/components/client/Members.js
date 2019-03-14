@@ -118,6 +118,7 @@ class Members extends Component {
 					<button className="deleteBtn" onClick={() => this.deletePickedMember(i)}>
 						X
 					</button>
+					<hr />
 				</div>
 			);
 		});
