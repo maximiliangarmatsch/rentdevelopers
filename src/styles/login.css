@@ -1,18 +1,10 @@
 html,
 body,
-.backgroundImage {
-  height: 100vh;
+.backgroundImageLogin {
+  min-height: 100vh;
 }
 
-@media (max-width: 740px) {
-  html,
-  body,
-  .backgroundImage {
-    height: 100vh;
-  }
-}
-
-.backgroundImage {
+.backgroundImageLogin {
   background-image: url('https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?cs=srgb&dl=conifer-fence-grass-534164.jpg&fm=jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,7 +12,10 @@ body,
 
 }
 
-
 .login{
-  margin: 12% auto auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
