@@ -23,7 +23,7 @@ const OrderReceived = () => {
 			<MDBRow>
 				<MDBCol md="4" smd="4"/>
 				<MDBCol md="4" smd="4" className="text-center">
-            <a href="/members">Go back to developers</a>
+            <a href="/">Go back to developers</a>
 				</MDBCol>
 				<MDBCol md="4" smd="4"/>
 			</MDBRow>
