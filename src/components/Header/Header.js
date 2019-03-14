@@ -41,13 +41,13 @@ class Header extends Component {
 		} else {
 			clientHeader = <MDBNavbarNav right >
 				<MDBNavItem>
-					<MDBNavLink  to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-3"  to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem>
-					<MDBNavLink  to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-4" to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem >
-					<MDBNavLink to={this.props.route1}>{this.props.text1}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-5" to={this.props.route1}>{this.props.text1}</MDBNavLink>
 				</MDBNavItem>
 			</MDBNavbarNav>
 		}
