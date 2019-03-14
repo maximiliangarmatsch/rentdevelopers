@@ -1,5 +1,8 @@
 .picked {
   border-left: 1px solid grey;
+  position: fixed;
+  right: 0;
+  top: 10rem;
 }
 .picked h1{
   font-family: "Roboto", serif;
