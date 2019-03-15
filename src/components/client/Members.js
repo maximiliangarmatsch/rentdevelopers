@@ -87,14 +87,16 @@ class Members extends Component {
 
 	render() {
 		const {employees, pickedTeam, cost} = this.state;
-		const colors = ["#011627", "#FF3366", "#2EC4B6", "#6ED2CC"];
+		// every card will change color till the end of array, then start again
+		const colors = ["#6ED2CC"];
 		let colorsIndex = -1;
 		const members = employees.map((member, i) => {
-			colorsIndex = colorsIndex >= 3 ? -1 : colorsIndex;
+			colorsIndex = colorsIndex >= colors.length - 1 ? -1 : colorsIndex;
 			colorsIndex += 1;
+			console.log(colorsIndex);
 			return (
 					<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
-						<div className="memberUp" style={{background: `linear-gradient(${colors[3]} 50%, transparent 50%) no-repeat`}}>
+						<div className="memberUp" style={{background: `linear-gradient(${colors[colorsIndex]} 50%, transparent 50%) no-repeat`}}>
 							<MDBCardImage className="memberImage" src={member.img} />
 						</div>
 
