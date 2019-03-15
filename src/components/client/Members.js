@@ -100,14 +100,17 @@ class Members extends Component {
 						</div>
 
 						<MDBCardBody className="memberCardBody">
-							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
+							<h4 className="member-name dark-grey-text font-weight-bold mb-4">{member.name}</h4>
 							<hr />
+							<div className="empty"/>
+							<div className="price-pick">
 							<h3 className="price mt-4 price-color" >
 								{member.price}$/h
 							</h3>
 							<MDBBtn disabled={member.picked} onClick={() => this.pickMe(i)} className="button-color" size="md">
 								Pick me
 							</MDBBtn>
+							</div>
 					</MDBCardBody>
 				</MDBCard>
 			);
@@ -140,7 +143,7 @@ class Members extends Component {
 					Pick a member
 				</h2>
 				<MDBRow>
-					<MDBCol md={pickedTeam.length < 1 ? "12" : "9"}>
+					<MDBCol className="cardContainer" md={pickedTeam.length < 1 ? "12" : "9"}>
 						{members}
 					</MDBCol>
 					{pickedTeam.length > 0 && sidebar}
