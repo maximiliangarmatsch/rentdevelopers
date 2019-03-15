@@ -6,7 +6,7 @@ import "../../styles/footer.css";
 class Footer extends Component{
 	render(){
 		return (
-			<MDBFooter color="blue" className="footer font-small pt-4 mt-4">
+			<MDBFooter className="footer font-small pt-4 mt-4">
 				<MDBContainer fluid className="text-center text-md-left">
 					<MDBRow>
 						<MDBCol md="1" smd="1"/>

@@ -94,7 +94,7 @@ class Register extends Component {
     let {error,isLoaded} = this.state;
     if (error) {
       err = <MDBAlert color="danger" >
-        <div dangerouslySetInnerHTML={{ __html: this.state.errMessage }}></div>
+        <div dangerouslySetInnerHTML={{__html: this.state.errMessage}}/>
       </MDBAlert>
     }
 
@@ -156,7 +156,7 @@ class Register extends Component {
 										</div>
 										{err}
 										<div className="text-center">
-											<MDBBtn color="primary" onClick={this.getUserData.bind(this)}>Register</MDBBtn>
+											<MDBBtn className="button-color" onClick={this.getUserData.bind(this)}>Register</MDBBtn>
 										</div>
 									</form>
 									<hr />

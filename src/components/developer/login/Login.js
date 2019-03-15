@@ -61,7 +61,7 @@ class Login extends Component {
     let err = null;
     if (this.state.error) {
       err = <MDBAlert color="danger" >
-        <div dangerouslySetInnerHTML={{ __html: this.state.errMessage }}></div>
+        <div dangerouslySetInnerHTML={{__html: this.state.errMessage}}/>
       </MDBAlert>
     }
 
@@ -107,7 +107,7 @@ class Login extends Component {
 											{err}
 											<div className="text-center py-4 mt-3">
 
-												<MDBBtn color='primary' onClick={this.onSubmit.bind(this)}>
+												<MDBBtn className="button-color" onClick={this.onSubmit.bind(this)}>
 													Login
 													</MDBBtn>
 											</div>

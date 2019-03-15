@@ -1,5 +1,9 @@
+
+
 .nav-bar{
-  position: fixed;
+    background: #15192C;
+
+    position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;

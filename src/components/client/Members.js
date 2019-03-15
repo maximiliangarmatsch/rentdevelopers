@@ -87,7 +87,7 @@ class Members extends Component {
 
 	render() {
 		const {employees, pickedTeam, cost} = this.state;
-		const colors = ["#011627", "#FF3366", "#2EC4B6", "#20A4F3"];
+		const colors = ["#011627", "#FF3366", "#2EC4B6", "#6ED2CC"];
 		let colorsIndex = -1;
 		const members = employees.map((member, i) => {
 			colorsIndex = colorsIndex >= 3 ? -1 : colorsIndex;
@@ -101,10 +101,10 @@ class Members extends Component {
 						<MDBCardBody className="memberCardBody">
 							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
 							<hr />
-							<h3 className="price mt-4">
+							<h3 className="price mt-4 price-color" >
 								{member.price}$/h
 							</h3>
-							<MDBBtn disabled={member.picked} onClick={() => this.pickMe(i)} color="primary" size="md">
+							<MDBBtn disabled={member.picked} onClick={() => this.pickMe(i)} className="button-color" size="md">
 								Pick me
 							</MDBBtn>
 					</MDBCardBody>
@@ -128,7 +128,7 @@ class Members extends Component {
 				{pickedMembers}
 				<p>Total cost: ${cost} per/h</p>
 				<Link to={{ pathname: '/hire', state: { cost } }}>
-					<MDBBtn color="secondary">Submit</MDBBtn>
+					<MDBBtn className="button-color">Submit</MDBBtn>
 				</Link>
 			</MDBCol>
 		);
