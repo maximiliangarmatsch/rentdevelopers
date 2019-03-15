@@ -3,6 +3,11 @@
   left: 50%;
   top: 50%;
 }
+
+.member-container {
+  margin-top: 2rem;
+}
+
 .member-details-container{
   margin-top: 5rem;
 }

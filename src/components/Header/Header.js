@@ -3,7 +3,7 @@ import {
 	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 import "../../styles/header.css";
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Header extends Component {
 	state = {
@@ -57,7 +57,7 @@ class Header extends Component {
 				<div className="nav-display">
 					<MDBNavbarToggler className="nav-toggler" onClick={this.toggleCollapse} />
 					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}
-						<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
+						<MDBNavbarBrand><Link to="/"><h3 className="nav-heading">CCAPP</h3></Link></MDBNavbarBrand>
 					</MDBNavbarNav>
 				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

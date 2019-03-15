@@ -70,7 +70,7 @@ class Member extends Component {
           route4="/developer/login"
           text3="Details"
           route5="/developer/register" />
-        <MDBContainer>
+        <MDBContainer className="member-container">
           <MDBRow>
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='9'>
