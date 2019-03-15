@@ -93,9 +93,10 @@ class Members extends Component {
 		const members = employees.map((member, i) => {
 			colorsIndex = colorsIndex >= colors.length - 1 ? -1 : colorsIndex;
 			colorsIndex += 1;
+			console.log(colorsIndex);
 			return (
 					<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
-						<div className="memberUp" style={{background: `linear-gradient(${colors[i]} 50%, transparent 50%) no-repeat`}}>
+						<div className="memberUp" style={{background: `linear-gradient(${colors[colorsIndex]} 50%, transparent 50%) no-repeat`}}>
 							<MDBCardImage className="memberImage" src={member.img} />
 						</div>
 
