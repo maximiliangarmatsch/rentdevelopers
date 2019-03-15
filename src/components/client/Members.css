@@ -80,7 +80,21 @@
   font-weight: bold;
   float: right
 }
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.empty{
+  height: 4rem;
+}
+.price-pick{
+  bottom: 1rem ;
+  width: 100%;
+  left: 0;
+  position: absolute;
 
+}
 @media only screen and (max-width: 768px) {
 
   .memberImage {
