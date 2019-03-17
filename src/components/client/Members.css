@@ -1,0 +1,133 @@
+.picked {
+  border-left: 1px solid grey;
+}
+.picked h1{
+  font-family: "Roboto", serif;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+.pickedTeam {
+  margin-bottom: 1em;
+}
+
+.pickedTeam h3 {
+  display: inline;
+  margin-left: 1%;
+  font-size: 18px;
+}
+
+.pickedTeam h4 {
+  margin-left: 5%;
+  display:inline;
+  background-color: red;
+}
+
+.withoutSidebar {
+  width: 20%;
+  margin: 2.5%;
+  display: inline-block;
+  border-radius: 3%;
+}
+
+.withSidebar {
+  width: 25%;
+  margin: 4%;
+  display: inline-block;
+  border-radius: 3%;
+}
+
+.withoutSidebar:hover, .withSidebar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 20px rgb(0,0,0, .2);
+  transition: 0.5s;
+}
+
+.membersContainer{
+  margin-top: 5rem;
+}
+
+.membersContainer h2 {
+  text-align: center;
+}
+
+.memberUp {
+  border-radius: 3%;
+}
+
+.memberImage {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display:block;
+  margin: 10% auto;
+  border: 3px solid white;
+}
+
+.memberCardBody {
+  text-align: center;
+}
+
+.price {
+  color: #79B5E4;
+}
+
+.deleteBtn {
+  background: #CF4746;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  float: right
+}
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.empty{
+  height: 5rem;
+}
+.price-pick{
+  bottom: 1rem ;
+  width: 100%;
+  left: 0;
+  position: absolute;
+
+}
+@media only screen and (max-width: 768px) {
+
+  .memberImage {
+    width: 120px;
+    height: 120px;
+  }
+  .withoutSidebar, .withSidebar {
+    width: 80%;
+    margin: 10%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .picked {
+    border-left: 1px solid grey;
+    position: fixed;
+    right: 0;
+    top: 5rem;
+    overflow-y: scroll;
+    height: 50%;
+  }
+}
+
+.button-color {
+  background: #0B7AAC !important;
+}
+
+.price-color {
+  color: #ECB355;
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+  .membersContainer{
+    padding-bottom: 13rem;
+  }
+}
+
