@@ -21,10 +21,12 @@ class Login extends Component {
       return;
     }
 
-    // localStorage.setItem('token', 'test')
-    // localStorage.setItem('username', 'user351');
+    let credentials = {
+      username,
+      password
+    }
 
-    axios.post(`https://rentdeveloper.000webhostapp.com/wp-json/jwt-auth/v1/token?username=${username}&password=${password}`)
+    axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
       .then(response => {
         console.log('### Login ', response.data);
         localStorage.setItem('token', response.data.token)
@@ -61,48 +63,49 @@ class Login extends Component {
       // return this.props.history.push(`/developer/member/${this.props.match.params.user_nicename}`)
     }
     return (
-        <div className="backgroundImage">
-      <MDBContainer>
-        <MDBRow>
-          <MDBCol md="6" className="login">
-            <MDBCard>
-              <MDBCardBody>
-                <form>
-                  <p className="h4 text-center py-4">Login</p>
-                  <div className="grey-text">
-                    <MDBInput
-                      id='username'
-                      label="Type your email"
-                      icon="user"
-                      group
-                      type="text"
-                      validate
-                      error="wrong"
-                      success="right"
-                    />
-                    <MDBInput
-                      id='password'
-                      label="Type your password"
-                      icon="lock"
-                      group
-                      type="password"
-                      validate
-                    />
-                  </div>
-                  {err}
-                  <div className="text-center py-4 mt-3">
+      <div className="backgroundImage">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="6" className="login">
+              <MDBCard>
+                <MDBCardBody>
+                  <form>
+                    <p className="h4 text-center py-4">Login</p>
+                    <div className="grey-text">
+                      <MDBInput
+                        id='username'
+                        label="Type your email"
+                        icon="user"
+                        group
+                        type="text"
+                        validate
+                        error="wrong"
+                        success="right"
 
-                    <MDBBtn color='primary' onClick={this.onSubmit.bind(this)}>
-                      Login
+                      />
+                      <MDBInput
+                        id='password'
+                        label="Type your password"
+                        icon="lock"
+                        group
+                        type="password"
+                        validate
+                      />
+                    </div>
+                    {err}
+                    <div className="text-center py-4 mt-3">
+
+                      <MDBBtn color='primary' onClick={this.onSubmit.bind(this)} >
+                        Login
                       </MDBBtn>
-                  </div>
-                </form>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-        </div>
+                    </div>
+                  </form>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
     )
 
   }

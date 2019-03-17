@@ -9,6 +9,7 @@ class Register extends Component {
   state = {
     nonce: '',
     user_id: '',
+    cookie: '',
     error: false,
     errMessage: ''
   }
@@ -57,17 +58,18 @@ class Register extends Component {
 
     e.preventDefault();
 
-    axios.post('http://rentdeveloper.000webhostapp.com/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
+    axios.post('http://ccapp.coder-consulting.com/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
       this.setState({
         nonce: res.data.nonce
       })
 
-      axios.post(`https://rentdeveloper.000webhostapp.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=test&user_pass=${password}&insecure=cool`)
+      axios.post(`http://ccapp.coder-consulting.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=${username}&user_pass=${password}&insecure=cool`)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           this.setState({
-            user_id: res.data.user_id
+            cookie: res.data.cookie
           })
+
           this.props.history.push('/developer/login')
         })
     })
@@ -93,67 +95,67 @@ class Register extends Component {
       return <Redirect to={`/developer/member/${localStorage.getItem('username')}`} />
     }
     return (
-        <div className="backgroundImage">
-      <MDBContainer className=''>
-        <MDBRow>
-          <MDBCol md="6" className='registerContainer'>
-            <MDBCard>
-              <MDBCardBody>
-                <form>
-                  <p className="h5 text-center mb-4">Sign up</p>
-                  <div className="grey-text">
-                    <MDBInput
-                      id='username'
-                      label="Your name"
-                      icon="user"
-                      group
-                      type="text"
-                      validate
-                      error="wrong"
-                      success="right"
-                    />
-                    <MDBInput
-                      id='email'
-                      label="Your email"
-                      icon="envelope"
-                      group
-                      type="email"
-                      validate
-                      error="wrong"
-                      success="right"
-                    />
-                    <MDBInput
-                      id='password'
-                      label="Your password"
-                      icon="lock"
-                      group
-                      type="password"
-                      validate
-                    />
-                    <MDBInput
-                      id='confirmPassword'
-                      label="Confirm your password"
-                      icon="exclamation-triangle"
-                      group
-                      type="password"
-                      validate
+      <div className="backgroundImage">
+        <MDBContainer className=''>
+          <MDBRow>
+            <MDBCol md="6" className='registerContainer'>
+              <MDBCard>
+                <MDBCardBody>
+                  <form>
+                    <p className="h5 text-center mb-4">Sign up</p>
+                    <div className="grey-text">
+                      <MDBInput
+                        id='username'
+                        label="Your username"
+                        icon="user"
+                        group
+                        type="text"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+                      <MDBInput
+                        id='email'
+                        label="Your email"
+                        icon="envelope"
+                        group
+                        type="email"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+                      <MDBInput
+                        id='password'
+                        label="Your password"
+                        icon="lock"
+                        group
+                        type="password"
+                        validate
+                      />
+                      <MDBInput
+                        id='confirmPassword'
+                        label="Confirm your password"
+                        icon="exclamation-triangle"
+                        group
+                        type="password"
+                        validate
 
-                    />
+                      />
 
-                  </div>
-                  {err}
-                  <div className="text-center">
-                    <MDBBtn color="primary" onClick={this.getUserData.bind(this)}>Register</MDBBtn>
-                  </div>
-                </form>
-                <hr />
-                <p style={{ textAlign: 'center' }}>Already have an account? <Link to='/developer/login'>Log in</Link></p>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-        </div>
+                    </div>
+                    {err}
+                    <div className="text-center">
+                      <MDBBtn color="primary" onClick={this.getUserData.bind(this)}>Register</MDBBtn>
+                    </div>
+                  </form>
+                  <hr />
+                  <p style={{ textAlign: 'center' }}>Already have an account? <Link to='/developer/login'>Log in</Link></p>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
     )
 
 
