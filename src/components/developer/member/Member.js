@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../../Header/Header';
+import Footer from '../../footer/Footer';
 import axios from 'axios';
 import Gravatar from 'react-gravatar';
 import '../../../styles/member.css';
@@ -147,6 +148,7 @@ class Member extends Component {
             </MDBCol>
             <MDBCol></MDBCol>
           </MDBRow>
+          <Footer />
         </MDBContainer>
       </React.Fragment>
     )
