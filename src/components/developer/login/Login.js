@@ -29,10 +29,12 @@ class Login extends Component {
       return;
     }
 
-    // localStorage.setItem('token', 'test')
-    // localStorage.setItem('username', 'user351');
+    let credentials = {
+      username,
+      password
+    }
 
-    axios.post(`https://rentdeveloper.000webhostapp.com/wp-json/jwt-auth/v1/token?username=${username}&password=${password}`)
+    axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
       .then(response => {
         console.log('### Login ', response.data);
         localStorage.setItem('token', response.data.token)

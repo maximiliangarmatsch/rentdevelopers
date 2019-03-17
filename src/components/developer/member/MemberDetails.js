@@ -1,34 +1,189 @@
 import React, { Component } from 'react'
 import Header from '../../Header/Header';
-import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput } from 'mdbreact';
+import { Link } from 'react-router-dom';
+import Footer from '../../footer/Footer';
+import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput, MDBAlert, MDBFileInput } from 'mdbreact';
 import axios from 'axios';
 import '../../../styles/member.css';
 
 class MemberDetails extends Component {
+  state = {
+    fullname: '',
+    nickname: '',
+    title: '',
+    communication_skills: '',
+    language: '',
+    tech_skills: '',
+    personal_skills: '',
+    other_skills: '',
+    price: '',
+    position_in_cc: '',
+    previous_projects: '',
+    location: '',
+    education: '',
+    note: '',
+    fullnameExist: false,
+    successMess: false,
+    id: '',
+    error: ''
+  }
+
+  componentDidMount() {
+    axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
+      .then(res => {
+        const userData = res.data.filter(data => {
+          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
+        })
+
+        console.log(userData)
+        if (userData.length > 0) {
+          this.setState({
+            fullnameExist: true,
+            id: userData[0].id,
+            fullname: userData[0].acf.fullname,
+            nickname: userData[0].acf.nickname,
+            title: userData[0].acf.title,
+            communication_skills: userData[0].acf.communication_skills,
+            language: userData[0].acf.language,
+            tech_skills: userData[0].acf.tech_skills,
+            personal_skills: userData[0].acf.personal_skills,
+            other_skills: userData[0].acf.other_skills,
+            price: userData[0].acf.price,
+            position_in_cc: userData[0].acf.position_in_cc,
+            previous_projects: userData[0].acf.previous_projects,
+            location: userData[0].acf.location,
+            education: userData[0].acf.education,
+            note: userData[0].acf.note
+          });
+        }
+      })
+  }
 
   onSubmit = (e) => {
-    const data = {
-      title: 'title'
+
+
+
+    const fullname = document.getElementById('fullname').value;
+    const nickname = document.getElementById('nickname').value;
+    const title = document.getElementById('title').value;
+    const communication_skills = document.getElementById('communication_skills').value;
+    const language = document.getElementById('language').value;
+    const tech_skills = document.getElementById('tech_skills').value;
+    const personal_skills = document.getElementById('personal_skills').value;
+    const other_skills = document.getElementById('other_skills').value;
+    const price = document.getElementById('price').value;
+    const position_in_cc = document.getElementById('position_in_cc').value;
+    const previous_projects = document.getElementById('previous_projects').value;
+    const location = document.getElementById('location').value;
+    const education = document.getElementById('education').value;
+    const note = document.getElementById('note').value;
+
+    if (fullname === '') {
+      this.setState({ error: 'Fullname must be filled' });
+      return;
     }
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
+
+    if (this.state.fullnameExist) {
+      axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts/${this.state.id}`, {
+        fields: {
+          fullname,
+          title,
+          nickname,
+          communication_skills,
+          language,
+          tech_skills,
+          personal_skills,
+          other_skills,
+          price,
+          position_in_cc,
+          previous_projects,
+          location,
+          education,
+          note
+        }
+      }, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        })
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err.response))
+    } else {
+      axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?title=${fullname}&status=publish`, {
+        fields: {
+          fullname,
+          title,
+          nickname,
+          communication_skills,
+          language,
+          tech_skills,
+          personal_skills,
+          other_skills,
+          price,
+          position_in_cc,
+          previous_projects,
+          location,
+          education,
+          note
+        }
+      }, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        })
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err.response))
     }
-    const user_id = localStorage.getItem('user_id')
-    axios.post(`https://rentdeveloper.000webhostapp.com/wp-json/acf/v3/users/${user_id}`, data, config)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+
+    this.setState({ successMess: true })
 
     e.preventDefault();
   }
 
-  onAvatarClick = () => {
-    console.log('aaaaaaaaaaaaa')
+  onFieldChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+
   }
 
   render() {
+    const {
+      fullname,
+      title,
+      nickname,
+      communication_skills,
+      language,
+      tech_skills,
+      personal_skills,
+      other_skills,
+      price,
+      position_in_cc,
+      previous_projects,
+      location,
+      education,
+      note,
+      error,
+      successMess } = this.state;
+
+    let err = null;
+    if (error !== '') {
+      err = <MDBAlert color="danger" >
+        <div dangerouslySetInnerHTML={{ __html: error }}></div>
+      </MDBAlert>
+    }
+
+    let message = null;
+    if (successMess) {
+      message = <MDBAlert className='mdb-color white-text'>
+        <div dangerouslySetInnerHTML={{ __html: 'Thank you! Go back to User Overview to see changes!' }}></div>
+      </MDBAlert>
+    }
+
+
+    console.log(this.state)
     return (
       <React.Fragment>
         <Header
@@ -44,26 +199,46 @@ class MemberDetails extends Component {
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='8'>
 
-              <MDBInput label='Nickname' size='md' id='nickname' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Title' size='md' id='title' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Communication skills' size='md' id='communication_skills' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Language' size='md' id='language' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Tech skills' size='md' id='tech_skills' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Personal skills' size='md' id='personal_skills' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Other skills' size='md' id='other_skills' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Price' size='md' id='price' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Position in CC' size='md' id='position_in_cc' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Previous projects' size='md' id='previous_projects' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Education' size='md' id='education' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Location' size='md' id='location' style={{ marginBottom, width: '100%' }} />
-              <MDBInput label='Note' size='md' id='note' style={{ marginBottom, width: '100%' }} />
+              {this.state.fullnameExist ? <MDBInput label='Fullname' value={fullname} size='md' id='fullname' style={{ marginBottom, width: '100%' }} disabled />
+                : <MDBInput label='Fullname' value={fullname} name='fullname' onChange={this.onFieldChange} size='md' id='fullname' style={{ marginBottom, width: '100%' }} />
+              }
+              {err}
 
+              <MDBInput label='Nickname' value={nickname} name='nickname' onChange={this.onFieldChange} size='md' id='nickname' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Title' value={title} name='title' onChange={this.onFieldChange} size='md' id='title' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Communication skills' value={communication_skills} name='communication_skills' onChange={this.onFieldChange} size='md' id='communication_skills' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Language' value={language} name='language' onChange={this.onFieldChange} size='md' id='language' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Tech skills' value={tech_skills} name='tech_skills' onChange={this.onFieldChange} size='md' id='tech_skills' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Personal skills' value={personal_skills} name='personal_skills' onChange={this.onFieldChange} size='md' id='personal_skills' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Other skills' value={other_skills} name='other_skills' onChange={this.onFieldChange} size='md' id='other_skills' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Price' value={price} name='price' onChange={this.onFieldChange} size='md' id='price' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Position in CC' value={position_in_cc} name='position_in_cc' onChange={this.onFieldChange} size='md' id='position_in_cc' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Previous projects' value={previous_projects} name='previous_projects' onChange={this.onFieldChange} size='md' id='previous_projects' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Education' value={education} name='education' onChange={this.onFieldChange} size='md' id='education' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Location' value={location} name='location' onChange={this.onFieldChange} size='md' id='location' style={{ marginBottom, width: '100%' }} />
+
+              <MDBInput label='Note' value={note} name='note' onChange={this.onFieldChange} size='md' id='note' style={{ marginBottom, width: '100%' }} />
+
+              {message}
               <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
+
+
             </MDBCol>
             <MDBCol></MDBCol>
           </MDBRow>
         </MDBContainer>
-
+        <Footer />
       </React.Fragment>
     )
   }

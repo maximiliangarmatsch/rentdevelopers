@@ -10,6 +10,7 @@ class Register extends Component {
   state = {
     nonce: '',
     user_id: '',
+    cookie: '',
     error: false,
     errMessage: '',
 		isLoaded: false
@@ -65,17 +66,18 @@ class Register extends Component {
 
     e.preventDefault();
 
-    axios.post('http://http://192.168.99.100:8000/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
+    axios.post('http://ccapp.coder-consulting.com/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
       this.setState({
         nonce: res.data.nonce
       })
 
-      axios.post(`https://192.168.99.100:8000/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=${username}&user_pass=${password}&insecure=cool`)
+      axios.post(`http://ccapp.coder-consulting.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=${username}&user_pass=${password}&insecure=cool`)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           this.setState({
-            user_id: res.data.user_id
+            cookie: res.data.cookie
           })
+
           this.props.history.push('/developer/login')
         })
     })

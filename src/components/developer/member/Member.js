@@ -3,6 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../../Header/Header';
 import Spinner from "../../client/Spinner/Spinner";
+import Footer from '../../footer/Footer';
 import axios from 'axios';
 import Gravatar from 'react-gravatar';
 import '../../../styles/member.css';
@@ -22,30 +23,48 @@ class Member extends Component {
     price: "",
     tech_skills: "",
     title: "",
+    avatar: "",
     isLoaded: false
   }
 
   componentDidMount() {
 
-    axios.get(`https://rentdeveloper.000webhostapp.com/wp-json/acf/v3/users/${localStorage.getItem('user_id')}`)
+    axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?title=${localStorage.getItem('username')}&status=publish`)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err))
+
+    axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
       .then(res => {
-        console.log(res.data.acf)
-        this.setState({
-          communication_skills: res.data.acf.communication_skills,
-          education: res.data.acf.education,
-          language: res.data.acf.language,
-          location: res.data.acf.location,
-          nickname: res.data.acf.nickname,
-          note: res.data.acf.note,
-          other_skills: res.data.acf.other_skills,
-          personal_skills: res.data.acf.personal_skills,
-          position_in_cc: res.data.acf.position_in_cc,
-          previous_projects: res.data.acf.previous_projects,
-          price: res.data.acf.price,
-          tech_skills: res.data.acf.tech_skills,
-          title: res.data.acf.title,
-          isLoaded: true
+
+        console.log(res.data)
+
+
+        const userData = res.data.filter(data => {
+          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
         })
+
+        if (userData.length < 1) {
+          this.setState({ isLoaded: true });
+        } else {
+
+          this.setState({
+            communication_skills: userData[0].acf.communication_skills,
+            education: userData[0].acf.education,
+            language: userData[0].acf.language,
+            location: userData[0].acf.location,
+            nickname: userData[0].acf.nickname,
+            note: userData[0].acf.note,
+            other_skills: userData[0].acf.other_skills,
+            personal_skills: userData[0].acf.personal_skills,
+            position_in_cc: userData[0].acf.position_in_cc,
+            previous_projects: userData[0].acf.previous_projects,
+            price: userData[0].acf.price,
+            tech_skills: userData[0].acf.tech_skills,
+            title: userData[0].acf.title,
+            avatar: userData[0].acf.avatar_image,
+            isLoaded: true
+          })
+        }
       })
       .catch(err => console.log(err))
   }
@@ -75,7 +94,10 @@ class Member extends Component {
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='9'>
               <MDBCard className='face font mt-5'>
-                <Gravatar email="blahblah@blah.com" size={150} default='monsterid' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" />
+                {/* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> */}
+                <div className="avatar mx-auto white" style={{ width: '200px', height: '250px', overflow: 'hidden' }}>
+                  <img src={this.state.avatar} className="img-fluid mx-auto d-block mt-3" alt="llllllll" style={{ width: '200px', height: 'auto' }} />
+                </div>
                 <MDBCardBody>
                   <MDBCardTitle className='mdb-color white-text text-left'>{this.state.position_in_cc}</MDBCardTitle>
 
@@ -126,6 +148,7 @@ class Member extends Component {
             <MDBCol></MDBCol>
           </MDBRow>
         </MDBContainer>
+        <Footer />
       </React.Fragment>
     )
 
