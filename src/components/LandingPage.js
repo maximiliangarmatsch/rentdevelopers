@@ -3,6 +3,7 @@ import Footer from "./footer/Footer";
 import Header from "./Header/Header";
 
 import "./Land.css";
+import Members from "./client/Members";
 
 class LandingPage extends Component {
 	render() {
@@ -18,6 +19,7 @@ class LandingPage extends Component {
 					text3='Details'
 					route5="/developer/register"
 				/>
+				<Members />
 				<Footer />
 			</div>
 		)

@@ -10,37 +10,44 @@ class Members extends Component {
 			{
 				name: "Zarko Popara",
 				img: "https://pbs.twimg.com/profile_images/2599891129/775423_400x400.jpg",
-				price: 20
+				price: 20,
+				picked: false
 			},
 			{
 				name: "Scepan Scekic",
 				img: "https://ddl.rs/wp-content/uploads/2018/06/danilo05-305x208.jpg",
-				price: 15
+				price: 15,
+				picked: false
 			},
 			{
 				name: "Ozren Soldatovic",
 				img: "https://i.ytimg.com/vi/2RxeiiruGYc/hqdefault.jpg",
-				price: 30
+				price: 30,
+				picked: false
 			},
 			{
 				name: "Sima",
 				img: "https://m.media-amazon.com/images/M/MV5BZWFkYjZlYWYtMTVlNi00MDUzLTgzMjMtNTVhZjc5Y2QxN2FkXkEyXkFqcGdeQXVyNjcyOTkzNTI@._V1_.jpg",
-				price: 50
+				price: 50,
+				picked: false
 			},
 			{
 				name: "Zivko",
 				img: "https://m.media-amazon.com/images/M/MV5BZWFkYjZlYWYtMTVlNi00MDUzLTgzMjMtNTVhZjc5Y2QxN2FkXkEyXkFqcGdeQXVyNjcyOTkzNTI@._V1_.jpg",
-				price: 50
+				price: 50,
+				picked: false
 			},
 			{
 				name: "Rambo",
 				img: "http://www.tarzanija.com/wp-content/uploads/2014/08/rambo.jpg",
-				price: 5
+				price: 5,
+				picked: false
 			},
 			{
 				name: "Glavna medicinska sestra Antonija",
 				img: "https://i.ytimg.com/vi/pMsMopOr1xU/hqdefault.jpg",
-				price: 80
+				price: 80,
+				picked: false
 			}
 		],
 		pickedTeam: [],
@@ -63,7 +70,8 @@ class Members extends Component {
 		if (!pickedTeam.includes(pickedMember)) {
 			pickedTeam.push(pickedMember);
 			cost += pickedMember.price;
-			this.setState({ pickedTeam, cost });
+			pickedMember.picked = true;
+			this.setState({pickedTeam, cost, pickedMember});
 		}
 	}
 
@@ -73,23 +81,31 @@ class Members extends Component {
 		let cost = this.state.cost;
 		pickedTeam.splice(index, 1);
 		cost -= pickedMember.price;
-		this.setState({ pickedTeam, cost });
+		pickedMember.picked = false;
+		this.setState({pickedTeam, cost, pickedMember});
 	}
 
 	render() {
-		const { employees, pickedTeam, cost } = this.state;
+		const {employees, pickedTeam, cost} = this.state;
+		const colors = ["#FD9716", "#4FA952", "#E94440", "#18BACF"];
+		let colorsIndex = -1;
 		const members = employees.map((member, i) => {
+			colorsIndex = colorsIndex >= 3 ? -1 : colorsIndex;
+			colorsIndex += 1;
 			return (
-				<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
-					<MDBCardImage className="memberImage" src={member.img} />
-					<MDBCardBody className="memberCardBody">
-						<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
-						<hr />
-						<p className="dark-grey-text mt-4">
-							Rate per/hour {member.price}$
-							</p>
-						<MDBBtn onClick={() => this.pickMe(i)} color="primary" size="md">
-							Pick me
+					<MDBCard className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"} key={i}>
+						<div className="memberUp" style={{background: `linear-gradient(${colors[colorsIndex]} 50%, transparent 50%) no-repeat`}}>
+							<MDBCardImage className="memberImage" src={member.img} />
+						</div>
+
+						<MDBCardBody className="memberCardBody">
+							<h4 className="dark-grey-text font-weight-bold mb-4">{member.name}</h4>
+							<hr />
+							<h3 className="price mt-4">
+								{member.price}$/h
+							</h3>
+							<MDBBtn disabled={member.picked} onClick={() => this.pickMe(i)} color="primary" size="md">
+								Pick me
 							</MDBBtn>
 					</MDBCardBody>
 				</MDBCard>

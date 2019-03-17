@@ -1,4 +1,9 @@
-
+.nav-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
 .nav-display{
   display: flex;
   margin: auto;
@@ -11,15 +16,33 @@
   margin: auto;
 }
 
-.HeadLink {
+.head-link-base {
+  top: 0;
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 10px;
   letter-spacing: 1px;
 }
 
-.HeadLink:hover{
-  font-size: 1.7em;
-}
+@media only screen and (min-width: 768px){
 
+  .head-link-4{
+    position: absolute;
+    right:    7rem;
+  }
+
+  .head-link-4:hover{
+    font-size: 1.25em;
+  }
+
+  .head-link-5{
+    position: absolute;
+    right:    1rem;
+  }
+
+  .head-link-5:hover{
+    font-size: 1.25em;
+  }
+
+}
