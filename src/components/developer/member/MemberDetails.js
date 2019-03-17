@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../../Header/Header';
 import { Link } from 'react-router-dom';
+import Footer from '../../footer/Footer';
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput, MDBAlert, MDBFileInput } from 'mdbreact';
 import axios from 'axios';
 import '../../../styles/member.css';
@@ -237,7 +238,7 @@ class MemberDetails extends Component {
             <MDBCol></MDBCol>
           </MDBRow>
         </MDBContainer>
-
+        <Footer />
       </React.Fragment>
     )
   }

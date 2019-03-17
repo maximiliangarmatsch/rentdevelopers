@@ -148,8 +148,8 @@ class Member extends Component {
             </MDBCol>
             <MDBCol></MDBCol>
           </MDBRow>
-          <Footer />
         </MDBContainer>
+        <Footer />
       </React.Fragment>
     )
 
