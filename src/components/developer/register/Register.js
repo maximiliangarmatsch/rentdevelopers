@@ -24,67 +24,67 @@ class Register extends Component {
 
 	getUserData(e) {
 
-    let username = document.getElementById('username').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let confirmPassword = document.getElementById('confirmPassword').value;
+		let username = document.getElementById('username').value;
+		let email = document.getElementById('email').value;
+		let password = document.getElementById('password').value;
+		let confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Validate username and password
-    if (username === '' || password === '') {
-      this.setState({ error: true, errMessage: 'Please fill all fields properly' })
-      this.getOffError();
-      return;
-    }
+		// Validate username and password
+		if ( username === '' || password === '' ) {
+			this.setState({ error: true, errMessage: 'Please fill all fields properly' })
+			this.getOffError();
+			return;
+		}
 
-    // Validate username
-    if (username.length < 4) {
-      this.setState({ error: true, errMessage: 'Username must have at least 4 caracters!' })
-      this.getOffError();
-      return;
-    }
+		// Validate username
+		if ( username.length < 4 ) {
+			this.setState({ error: true, errMessage: 'Username must have at least 4 caracters!' })
+			this.getOffError();
+			return;
+		}
 
-    //Validate password
-    if (password.length < 4) {
-      this.setState({ error: true, errMessage: 'Password must have at least 4 caracters!' })
-      this.getOffError();
-      return;
-    }
+		//Validate password
+		if ( password.length < 4 ) {
+			this.setState({ error: true, errMessage: 'Password must have at least 4 caracters!' })
+			this.getOffError();
+			return;
+		}
 
-    // Validate password
-    if (confirmPassword !== password) {
-      this.setState({ error: true, errMessage: 'Password and confirm password must be identical' });
-      this.getOffError();
-      return;
-    }
+		// Validate password
+		if ( confirmPassword !== password ) {
+			this.setState({ error: true, errMessage: 'Password and confirm password must be identical' });
+			this.getOffError();
+			return;
+		}
 
-    // Validate email
-    if (email.indexOf('@') === -1) {
-      this.setState({ error: true, errMessage: 'Please enter valid email' });
-      this.getOffError();
-      return;
-    }
+		// Validate email
+		if ( email.indexOf('@') === -1 ) {
+			this.setState({ error: true, errMessage: 'Please enter valid email' });
+			this.getOffError();
+			return;
+		}
 
-    e.preventDefault();
+		e.preventDefault();
+		if ( (username !== '' || password !== '') || e.key === 'Enter' ) {
+			axios.post('http://ccapp.coder-consulting.com/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
+				this.setState({
+					nonce: res.data.nonce
+				})
 
-    axios.post('http://ccapp.coder-consulting.com/rentdevapi/get_nonce/?controller=user&method=register').then(res => {
-      this.setState({
-        nonce: res.data.nonce
-      })
+				axios.post(`http://ccapp.coder-consulting.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=${username}&user_pass=${password}&insecure=cool`)
+					.then(res => {
+						// console.log(res.data)
+						this.setState({
+							cookie: res.data.cookie
+						})
 
-      axios.post(`http://ccapp.coder-consulting.com/rentdevapi/user/register/?username=${username}&email=${email}&nonce=${this.state.nonce}&display_name=${username}&user_pass=${password}&insecure=cool`)
-        .then(res => {
-          // console.log(res.data)
-          this.setState({
-            cookie: res.data.cookie
-          })
+						this.props.history.push('/developer/login')
+					})
+			})
+				.catch(err => console.log(err.response))
 
-          this.props.history.push('/developer/login')
-        })
-    })
-      .catch(err => console.log(err.response))
-
-  }
-
+		}
+	}
   getOffError = () => {
     setTimeout(() => {
       this.setState({ error: false, errMessage: '' })
@@ -128,6 +128,11 @@ class Register extends Component {
 												validate
 												error="wrong"
 												success="right"
+												onKeyPress={event => {
+													if (event.key === 'Enter') {
+														this.getUserData(event)
+													}
+												}}
 											/>
 											<MDBInput
 												id='email'
@@ -138,6 +143,11 @@ class Register extends Component {
 												validate
 												error="wrong"
 												success="right"
+												onKeyPress={event => {
+													if (event.key === 'Enter') {
+														this.getUserData(event)
+													}
+												}}
 											/>
 											<MDBInput
 												id='password'
@@ -146,6 +156,11 @@ class Register extends Component {
 												group
 												type="password"
 												validate
+												onKeyPress={event => {
+													if (event.key === 'Enter') {
+														this.getUserData(event)
+													}
+												}}
 											/>
 											<MDBInput
 												id='confirmPassword'
@@ -154,6 +169,11 @@ class Register extends Component {
 												group
 												type="password"
 												validate
+												onKeyPress={event => {
+													if (event.key === 'Enter') {
+														this.getUserData(event)
+													}
+												}}
 											/>
 										</div>
 										{err}

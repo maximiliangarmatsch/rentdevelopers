@@ -20,36 +20,37 @@ class Login extends Component {
 	}
 
   onSubmit(e) {
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
+		let username = document.getElementById('username').value;
+		let password = document.getElementById('password').value;
 
-    if (username === '' || password === '') {
-      this.setState({ error: true, errMessage: 'Please fill all fields properly' })
-      this.getOffError();
-      return;
-    }
+		if ( username === '' || password === '' ) {
+			this.setState({ error: true, errMessage: 'Please fill all fields properly' })
+			this.getOffError();
+			return;
+		}
 
-    let credentials = {
-      username,
-      password
-    }
+		let credentials = {
+			username,
+			password
+		}
+		if ( (username !== '' || password !== '') || e.key === 'Enter' ) {
+			axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
+				.then(response => {
+					console.log('### Login ', response.data);
+					localStorage.setItem('token', response.data.token)
+					localStorage.setItem('username', response.data.user_nicename);
+					localStorage.setItem('user_id', response.data.user_id);
+					this.props.history.push(`/developer/member/${response.data.user_nicename}`);
 
-    axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
-      .then(response => {
-        console.log('### Login ', response.data);
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('username', response.data.user_nicename);
-        localStorage.setItem('user_id', response.data.user_id);
-        this.props.history.push(`/developer/member/${response.data.user_nicename}`);
+				}).catch(error => {
+				console.log('### Login ', error.response);
+				this.setState({ error: true, errMessage: error.response.data.message })
+				this.getOffError()
+			});
+			e.preventDefault();
 
-      }).catch(error => {
-        console.log('### Login ', error.response);
-        this.setState({ error: true, errMessage: error.response.data.message })
-        this.getOffError()
-      });
-    e.preventDefault();
-
-  }
+		}
+	}
 
   getOffError = () => {
     setTimeout(() => {
@@ -96,6 +97,11 @@ class Login extends Component {
 													validate
 													error="wrong"
 													success="right"
+													onKeyPress={event => {
+														if (event.key === 'Enter') {
+															this.onSubmit(event)
+														}
+													}}
 												/>
 												<MDBInput
 													id='password'
@@ -104,6 +110,11 @@ class Login extends Component {
 													group
 													type="password"
 													validate
+													onKeyPress={event => {
+														if (event.key === 'Enter') {
+															this.onSubmit(event)
+														}
+													}}
 												/>
 											</div>
 											{err}
