@@ -87,7 +87,7 @@ class Login extends Component {
 											<div className="grey-text">
 												<MDBInput
 													id='username'
-													label="Type your email"
+													label="Type your username or email"
 													icon="user"
 													group
 													type="text"
