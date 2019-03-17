@@ -8,11 +8,32 @@
 
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+@media only screen and (min-device-width: 769px) {
+
+  html{ height:100%; }
+  body{ min-height:100%; padding:0; margin:0; position:relative; }
+
+  body {
+    position: relative;
+  }
+
+  body::after {
+    content: '';
+    display: block;
+    height: 10rem; /* Set same as footer's height */
+  }
 
   .footer {
+    background: #15192C;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 10rem;
-    margin-top: -10rem;
   }
+  .footer-follow{
+    font-weight: bolder;
+  }
+
+
 }
 
