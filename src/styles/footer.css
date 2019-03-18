@@ -61,7 +61,7 @@
     height: 13.4rem; /* Set same as footer's height */
   }
 }
-@media only screen and (min-width: 891px) and (max-width: 1029px){
+@media only screen and (min-width: 890px) and (max-width: 1029px){
   .footer {
     height: 11.1rem;
   }
