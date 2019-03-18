@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
 import 'rc-calendar/assets/index.css';
 import "../../../styles/HireForm.css";
+import Header from "../../Header/Header";
+import Footer from "../../footer/Footer";
 
 const formatStr = 'YYYY-MM-DD';
 function format(v) {
@@ -50,7 +52,7 @@ class HireForm extends Component {
 
 	render() {
 		const {dailyInput, weeklyInput, dayDifference} = this.state;
-		console.log(dayDifference,dailyInput, weeklyInput);
+		console.log(dayDifference, dailyInput, weeklyInput);
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
 		const moreThanSevenDays = ((Math.floor(dayDifference / 7))  + (dayDifference % weeklyInput)) * weeklyInput;
 		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
@@ -58,7 +60,18 @@ class HireForm extends Component {
 		const totalCost = totalHours ? totalHours * cost : 0;
 		const labelString = dayDifference ? `Max ${dayDifference > 7 ? "7" : dayDifference} days` : "Fill the calendar";
 		return (
-			<MDBContainer fluid className="hireForm">
+			<div>
+				<Header
+					text1='User'
+					route1={`/developer/member/${localStorage.getItem('username')}`}
+					text4="Login"
+					text2='Logout'
+					route4="/developer/login"
+					text5="Register"
+					text3='Details'
+					route5="/developer/register"
+				/>
+				<MDBContainer fluid className="hireForm">
 						<MDBCard className="hireFormCard">
 							<h1>Hire Form</h1>
 							<MDBCardBody>
@@ -81,7 +94,9 @@ class HireForm extends Component {
 								</MDBRow>
 							</MDBCardBody>
 						</MDBCard>
-			</MDBContainer>
+				</MDBContainer>
+				<Footer/>
+			</div>
 		)
 	}
 }

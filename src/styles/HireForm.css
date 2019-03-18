@@ -1,10 +1,13 @@
+.hireForm{
+  margin-top: 5rem;
+}
 .hireFormCard .in{
   background: rgba(255,255,235,0.8) !important;
   border: 1px solid green !important;
 }
 .hireFormCard {
   width: 100%;
-  font-family: Roboto serif;
+  font-family: "Roboto", serif;
   background: rgba(63, 81, 181, 0.15);
 }
 
@@ -58,5 +61,11 @@
 
   .rc-calendar-range-part {
     width: 50%;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+  .hireForm{
+    padding-bottom: 16.3rem;
   }
 }

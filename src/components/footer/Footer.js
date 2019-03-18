@@ -6,13 +6,13 @@ import "../../styles/footer.css";
 class Footer extends Component{
 	render(){
 		return (
-			<MDBFooter color="blue" className="footer font-small pt-4 mt-4">
+			<MDBFooter className="footer font-small pt-4 mt-4">
 				<MDBContainer fluid className="text-center text-md-left">
 					<MDBRow>
 						<MDBCol md="1" smd="1"/>
 
 						<MDBCol md="3" smd="3">
-								<p className="footer-text text-justify">
+								<p className="footer-text text-center">
 							Our core development team is located all across europe which let us attract talent from a wider pool.
 							</p>
 						</MDBCol>
@@ -20,7 +20,7 @@ class Footer extends Component{
 						<MDBCol md="1" smd="1"/>
 
 						<MDBCol md="3" smd="3">
-						<p className="footer-text text-justify">
+						<p className="footer-text text-center">
 							Through our international network of freelancers, we can call in short-term assistance when needed.</p>
 						</MDBCol>
 

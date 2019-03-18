@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../../Header/Header';
+import Spinner from "../../client/Spinner/Spinner";
 import Footer from '../../footer/Footer';
 import axios from 'axios';
 import Gravatar from 'react-gravatar';
@@ -75,9 +76,7 @@ class Member extends Component {
 
     if (!this.state.isLoaded) {
       return (
-        <div className="spinner-border text-danger d-flex align-items-center middle" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
+        <Spinner />
       )
     }
 
@@ -94,7 +93,7 @@ class Member extends Component {
           route4="/developer/login"
           text3="Details"
           route5="/developer/register" />
-        <MDBContainer>
+        <MDBContainer className="member-container">
           <MDBRow>
             <MDBCol></MDBCol>
             <MDBCol sm='12' md='9'>

@@ -223,7 +223,7 @@ class MemberDetails extends Component {
           route4="/developer/login"
           text3="Details"
           route5="/developer/register" />
-        <MDBContainer>
+        <MDBContainer className="member-details-container">
           <h1 className="h1-responsive" style={{ textAlign: 'center', marginTop: '30px' }}>Enter Your Details</h1>
           <MDBRow>
             <MDBCol></MDBCol>

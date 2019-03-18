@@ -3,7 +3,8 @@ import {
 	MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 import "../../styles/header.css";
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import logo1 from '../Library/logo1.png';
 
 class Header extends Component {
 	state = {
@@ -32,10 +33,10 @@ class Header extends Component {
 		if (localStorage.getItem('username') === '') {
 			clientHeader = <MDBNavbarNav right >
 				<MDBNavItem>
-					<MDBNavLink to={this.props.route4}>{this.props.text4}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-4" to={this.props.route4}>{this.props.text4}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem>
-					<MDBNavLink to={this.props.route5}>{this.props.text5}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-5" to={this.props.route5}>{this.props.text5}</MDBNavLink>
 				</MDBNavItem>
 			</MDBNavbarNav>
 		} else {
@@ -44,7 +45,7 @@ class Header extends Component {
 					<MDBNavLink to={this.props.route1}>{this.props.text1}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem>
-					<MDBNavLink to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-4" to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem >
 					<MDBNavLink to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
@@ -53,11 +54,11 @@ class Header extends Component {
 		}
 
 		return (
-			<MDBNavbar color="blue-gradient" style={{ lineHeight: "2em" }} dark expand="md">
+			<MDBNavbar className="nav-bar" style={{ lineHeight: "2em" }} dark expand="md">
 				<div className="nav-display">
-					<MDBNavbarToggler onClick={this.toggleCollapse} />
+					<MDBNavbarToggler className="nav-toggler" onClick={this.toggleCollapse} />
 					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}
-						<MDBNavbarBrand><h3 className="nav-heading">CCAPP</h3></MDBNavbarBrand>
+						<MDBNavbarBrand><Link to="/"><h3>CCAPP</h3></Link></MDBNavbarBrand>
 					</MDBNavbarNav>
 				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
