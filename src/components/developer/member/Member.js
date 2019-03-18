@@ -6,9 +6,11 @@ import Footer from '../../footer/Footer';
 import axios from 'axios';
 import Gravatar from 'react-gravatar';
 import '../../../styles/member.css';
+import FillData from './FillData';
 
 class Member extends Component {
   state = {
+    fullname: '',
     communication_skills: "",
     education: "",
     language: "",
@@ -28,10 +30,6 @@ class Member extends Component {
 
   componentDidMount() {
 
-    axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?title=${localStorage.getItem('username')}&status=publish`)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
-
     axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
       .then(res => {
 
@@ -47,6 +45,7 @@ class Member extends Component {
         } else {
 
           this.setState({
+            fullname: userData[0].acf.fullname,
             communication_skills: userData[0].acf.communication_skills,
             education: userData[0].acf.education,
             language: userData[0].acf.language,
@@ -60,7 +59,7 @@ class Member extends Component {
             price: userData[0].acf.price,
             tech_skills: userData[0].acf.tech_skills,
             title: userData[0].acf.title,
-            avatar: userData[0].acf.avatar_image,
+            avatar: userData[0].acf.avatar_image.url,
             isLoaded: true
           })
         }
@@ -81,6 +80,11 @@ class Member extends Component {
         </div>
       )
     }
+
+    if (this.state.fullname === '') {
+      return <FillData />
+    }
+
     return (
       <React.Fragment>
         <Header

@@ -9,7 +9,7 @@ import '../../../styles/member.css';
 class MemberDetails extends Component {
   state = {
     fullname: '',
-    nickname: '',
+    nickname: localStorage.getItem('username'),
     title: '',
     communication_skills: '',
     language: '',
@@ -31,6 +31,7 @@ class MemberDetails extends Component {
   componentDidMount() {
     axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
       .then(res => {
+        console.log(res.data)
         const userData = res.data.filter(data => {
           return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
         })
@@ -41,7 +42,6 @@ class MemberDetails extends Component {
             fullnameExist: true,
             id: userData[0].id,
             fullname: userData[0].acf.fullname,
-            nickname: userData[0].acf.nickname,
             title: userData[0].acf.title,
             communication_skills: userData[0].acf.communication_skills,
             language: userData[0].acf.language,
@@ -64,7 +64,6 @@ class MemberDetails extends Component {
 
 
     const fullname = document.getElementById('fullname').value;
-    const nickname = document.getElementById('nickname').value;
     const title = document.getElementById('title').value;
     const communication_skills = document.getElementById('communication_skills').value;
     const language = document.getElementById('language').value;
@@ -83,12 +82,14 @@ class MemberDetails extends Component {
       return;
     }
 
+    const nickname = this.state.nickname;
+
     if (this.state.fullnameExist) {
       axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts/${this.state.id}`, {
         fields: {
           fullname,
-          title,
           nickname,
+          title,
           communication_skills,
           language,
           tech_skills,
@@ -149,11 +150,40 @@ class MemberDetails extends Component {
 
   }
 
+  onChooseFile = (e) => {
+    let filechooser = document.getElementById('filechooser').files[0];
+    let formData = new FormData();
+    formData.append('avatar_image', filechooser, filechooser.name);
+
+    console.log(formData);
+
+    const data = {
+      fields: {
+        avatar_image: formData
+      }
+    }
+
+    axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts/${this.state.id}`, data
+      , {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      }, {
+        onUploadProgress: progressEvent => {
+          console.log('Upload Progress ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
+        }
+      }
+
+    )
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response))
+  }
+
   render() {
     const {
       fullname,
       title,
-      nickname,
       communication_skills,
       language,
       tech_skills,
@@ -204,7 +234,7 @@ class MemberDetails extends Component {
               }
               {err}
 
-              <MDBInput label='Nickname' value={nickname} name='nickname' onChange={this.onFieldChange} size='md' id='nickname' style={{ marginBottom, width: '100%' }} />
+              <input type="file" id="filechooser" />
 
               <MDBInput label='Title' value={title} name='title' onChange={this.onFieldChange} size='md' id='title' style={{ marginBottom, width: '100%' }} />
 
@@ -232,6 +262,7 @@ class MemberDetails extends Component {
 
               {message}
               <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
+              <button onClick={this.onChooseFile}>button</button>
 
 
             </MDBCol>
