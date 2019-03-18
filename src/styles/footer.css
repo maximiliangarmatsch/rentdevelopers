@@ -53,13 +53,20 @@
     height: 13.5rem; /* Set same as footer's height */
   }
 }
-
-@media only screen and (min-width: 873px) and (max-width: 1009px){
+@media only screen and (min-width: 873px) and (max-width: 890px){
   .footer {
-    height: 11rem;
+    height: 13.4rem;
   }
   .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 11rem; /* Set same as footer's height */
+    height: 13.4rem; /* Set same as footer's height */
+  }
+}
+@media only screen and (min-width: 891px) and (max-width: 1029px){
+  .footer {
+    height: 11.1rem;
+  }
+  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
+    height: 11.1rem; /* Set same as footer's height */
   }
 }
 
