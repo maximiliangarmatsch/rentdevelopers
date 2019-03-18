@@ -13,11 +13,11 @@
   html{ height:100%; }
   body{ min-height:100%; padding:0; margin:0; position:relative; }
 
-  body {
+  .membersContainer, .hireForm, .member-container, .member-details-container {
     position: relative;
   }
 
-  body::after {
+  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
     content: '';
     display: block;
     height: 10rem; /* Set same as footer's height */
@@ -26,8 +26,6 @@
   .footer {
     background: #15192C;
     position: absolute;
-    bottom: 0;
-    width: 100%;
     height: 10rem;
   }
   .footer-follow{
