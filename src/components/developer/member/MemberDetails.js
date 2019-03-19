@@ -153,7 +153,9 @@ class MemberDetails extends Component {
   fileUploadHandler = event => {
     const filechooser = document.getElementById('filechooser').files[0];
     const fd = new FormData();
-    fd.append('file', filechooser, `${(Math.random() * 9999).toString()}.jpeg`);
+		let imgName = filechooser.name.split('.');
+		let fileType = imgName[imgName.length - 1];
+    fd.append('file', filechooser, `${new Date().getTime()}.${fileType}`);
     axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/media`, fd, {
       headers: {
         'Content-Type': 'application/json',
@@ -260,7 +262,7 @@ class MemberDetails extends Component {
 
               {message}
               <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
-                  
+
 
             </MDBCol>
             <MDBCol></MDBCol>
