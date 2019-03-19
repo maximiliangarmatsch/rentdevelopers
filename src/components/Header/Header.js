@@ -4,6 +4,7 @@ import {
 } from "mdbreact";
 import "../../styles/header.css";
 import { Link, withRouter } from 'react-router-dom';
+import logo from '../Library/logo.png';
 
 class Header extends Component {
 	state = {
@@ -57,7 +58,7 @@ class Header extends Component {
 				<div className="nav-display">
 					<MDBNavbarToggler className="nav-toggler" onClick={this.toggleCollapse} />
 					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}
-						<MDBNavbarBrand><Link to="/"><h3>CCAPP</h3></Link></MDBNavbarBrand>
+						<MDBNavbarBrand><Link to="/"><img className="logo" src={logo} /></Link></MDBNavbarBrand>
 					</MDBNavbarNav>
 				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
