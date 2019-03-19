@@ -4,6 +4,7 @@ import Footer from '../../footer/Footer';
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput, MDBAlert } from 'mdbreact';
 import axios from 'axios';
 import '../../../styles/member.css';
+import '../../../styles/upload.css';
 
 class MemberDetails extends Component {
   state = {
@@ -256,7 +257,7 @@ class MemberDetails extends Component {
                 </div>
                 <div className="custom-file">
                   <input type="file" className="custom-file-input" id='filechooser' />
-                  <label className="custom-file-label" for="inputGroupFile01">Choose Your Image</label>
+                  <label className="custom-file-label" for="inputGroupFile01">Choose your image!</label>
                 </div>
               </div>
 
