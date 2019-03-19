@@ -2,7 +2,6 @@
 
 .nav-bar{
     background: #15192C;
-
     position: fixed;
   top: 0;
   width: 100%;
@@ -11,9 +10,8 @@
 .nav-display{
   display: flex;
   margin: auto;
-  width: 100%;
+  width: unset;
 }
-
 .nav-heading{
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
@@ -38,7 +36,9 @@
 }
 
 @media only screen and (min-width: 768px){
-
+  .nav-display{
+    margin-left: 1rem;
+  }
   .head-link-3{
     position: absolute;
     right:    13rem;

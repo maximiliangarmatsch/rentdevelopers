@@ -4,6 +4,7 @@ import Footer from '../../footer/Footer';
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput, MDBAlert } from 'mdbreact';
 import axios from 'axios';
 import '../../../styles/member.css';
+import '../../../styles/upload.css';
 
 class MemberDetails extends Component {
   state = {
@@ -153,7 +154,9 @@ class MemberDetails extends Component {
   fileUploadHandler = event => {
     const filechooser = document.getElementById('filechooser').files[0];
     const fd = new FormData();
-    fd.append('file', filechooser, `${(Math.random() * 9999).toString()}.jpeg`);
+		let imgName = filechooser.name.split('.');
+		let fileType = imgName[imgName.length - 1];
+    fd.append('file', filechooser, `${new Date().getTime()}.${fileType}`);
     axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/media`, fd, {
       headers: {
         'Content-Type': 'application/json',
@@ -254,15 +257,12 @@ class MemberDetails extends Component {
                 </div>
                 <div className="custom-file">
                   <input type="file" className="custom-file-input" id='filechooser' />
-                  <label className="custom-file-label" for="inputGroupFile01">Choose Your Image</label>
+                  <label className="custom-file-label" for="inputGroupFile01">Choose your image!</label>
                 </div>
               </div>
 
               {message}
-              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
-
-
-              <button onClick={this.fileUploadHandler}>button</button>
+              <MDBBtn className="submit-button" color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
 
 
             </MDBCol>
