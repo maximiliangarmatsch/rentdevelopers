@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { MDBAnimation as Animation, MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import '../../../styles/login.css'
 import Spinner from "../register/Register";
@@ -16,7 +16,7 @@ class Login extends Component {
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({ isLoaded: true })
-		}, 1000);
+		}, 1500);
 	}
 
 	onSubmit(e) {
@@ -68,10 +68,6 @@ class Login extends Component {
 			</MDBAlert>
 		}
 
-		if (localStorage.getItem('token') !== '') {
-			return <Redirect to={`/developer/member/${localStorage.getItem('username')}`} />
-			// return this.props.history.push(`/developer/member/${this.props.match.params.user_nicename}`)
-		}
 		if (!isLoaded) {
 			return (
 				<Spinner />
