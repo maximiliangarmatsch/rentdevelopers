@@ -30,13 +30,11 @@ class Member extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media')
+    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1')
       .then(res => {
-
+        console.log(res.data)
         let userImgData = res.data.filter(data => {
-          if (data.author === Number(localStorage.getItem('user_id'))) {
-            return data;
-          }
+          return data.author === Number(localStorage.getItem('user_id'));
         })
 
         if (userImgData.length === 0) {
@@ -116,7 +114,7 @@ class Member extends Component {
               <MDBCard className='face font mt-5'>
                 {/* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> */}
                 <div className="avatar mx-auto white" style={{ width: '200px', height: '250px', overflow: 'hidden' }}>
-                  <img src={avatar} className="img-fluid mx-auto d-block mt-3" alt="Avatar Image" style={{ width: '200px', height: 'auto' }} />
+                  <img src={avatar} className="img-fluid mx-auto d-block mt-3" alt="Avatar" style={{ width: '200px', height: 'auto' }} />
                 </div>
                 <MDBCardBody>
                   <MDBCardTitle className='mdb-color white-text text-left'>{this.state.position_in_cc}</MDBCardTitle>

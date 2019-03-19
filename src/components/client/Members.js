@@ -16,12 +16,18 @@ import "./Members.css";
 class Members extends Component {
   state = {
     employees: [],
+    media: [],
     pickedTeam: [],
     cost: 0,
     defaultProfile: ""
   };
 
   componentDidMount() {
+    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1')
+      .then(res => {
+        this.setState({ media: res.data })
+      })
+      .catch(err => console.log(err))
     axios
       .get("http://ccapp.coder-consulting.com/wp-json/wp/v2/posts")
       .then(res => {
@@ -65,6 +71,17 @@ class Members extends Component {
     const members = employees.map((member, i) => {
       colorsIndex = colorsIndex >= colors.length - 1 ? -1 : colorsIndex;
       colorsIndex += 1;
+
+      /////// Get Image ///////
+      let membersImg = this.state.media.filter(img => {
+        return img.author === member.author
+      })
+      if (membersImg.length === 0) {
+        membersImg = this.state.media.filter(img => {
+          return img.id === 234;
+        })
+      }
+      //////////////////////////
       return (
         <MDBCard
           className={pickedTeam.length < 1 ? "withoutSidebar" : "withSidebar"}
@@ -78,12 +95,12 @@ class Members extends Component {
                 } 50%, transparent 50%) no-repeat`
             }}
           >
+
             <MDBCardImage
               className="memberImage"
-              src={
-                member.acf.avatar_image
-                  ? member.acf.avatar_image.url
-                  : defaultProfile
+              src={membersImg[0] ?
+                membersImg[0].guid.rendered :
+                defaultProfile
               }
             />
           </div>
