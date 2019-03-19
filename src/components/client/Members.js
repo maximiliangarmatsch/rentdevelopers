@@ -75,14 +75,14 @@ class Members extends Component {
             style={{
               background: `linear-gradient(${
                 colors[colorsIndex]
-              } 50%, transparent 50%) no-repeat`
+                } 50%, transparent 50%) no-repeat`
             }}
           >
             <MDBCardImage
               className="memberImage"
               src={
                 member.acf.avatar_image
-                  ? member.acf.avatar_image
+                  ? member.acf.avatar_image.url
                   : defaultProfile
               }
             />

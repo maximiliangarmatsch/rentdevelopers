@@ -4,7 +4,6 @@ import {
 } from "mdbreact";
 import "../../styles/header.css";
 import { Link, withRouter } from 'react-router-dom';
-import logo1 from '../Library/logo1.png';
 
 class Header extends Component {
 	state = {
@@ -42,7 +41,7 @@ class Header extends Component {
 		} else {
 			clientHeader = <MDBNavbarNav right >
 				<MDBNavItem>
-					<MDBNavLink className="head-link-base head-link-3"  to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
+					<MDBNavLink className="head-link-base head-link-3" to="#" onClick={this.onLogout}>{this.props.text2}</MDBNavLink>
 				</MDBNavItem>
 				<MDBNavItem>
 					<MDBNavLink className="head-link-base head-link-4" to="#" onClick={this.onUserDetails}>{this.props.text3}</MDBNavLink>

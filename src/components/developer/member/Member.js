@@ -5,11 +5,13 @@ import Header from '../../Header/Header';
 import Spinner from "../../client/Spinner/Spinner";
 import Footer from '../../footer/Footer';
 import axios from 'axios';
-import Gravatar from 'react-gravatar';
+import faker from "faker";
 import '../../../styles/member.css';
+import FillData from './FillData';
 
 class Member extends Component {
   state = {
+    fullname: '',
     communication_skills: "",
     education: "",
     language: "",
@@ -28,16 +30,26 @@ class Member extends Component {
   }
 
   componentDidMount() {
+    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media')
+      .then(res => {
 
-    axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?title=${localStorage.getItem('username')}&status=publish`)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+        let userImgData = res.data.filter(data => {
+          if (data.author === Number(localStorage.getItem('user_id'))) {
+            return data;
+          }
+        })
+
+        if (userImgData.length === 0) {
+          userImgData = res.data.filter(data => {
+            return data.id === 234;
+          })
+        }
+
+        this.setState({ avatar: userImgData[0].guid.rendered });
+      })
 
     axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
       .then(res => {
-
-        console.log(res.data)
-
 
         const userData = res.data.filter(data => {
           return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
@@ -48,6 +60,7 @@ class Member extends Component {
         } else {
 
           this.setState({
+            fullname: userData[0].acf.fullname,
             communication_skills: userData[0].acf.communication_skills,
             education: userData[0].acf.education,
             language: userData[0].acf.language,
@@ -61,7 +74,6 @@ class Member extends Component {
             price: userData[0].acf.price,
             tech_skills: userData[0].acf.tech_skills,
             title: userData[0].acf.title,
-            avatar: userData[0].acf.avatar_image,
             isLoaded: true
           })
         }
@@ -70,7 +82,6 @@ class Member extends Component {
   }
 
   render() {
-    console.log(this.state)
     if (localStorage.getItem('username') === '') {
       return <Redirect to='/' />
     }
@@ -80,6 +91,15 @@ class Member extends Component {
         <Spinner />
       )
     }
+
+    if (this.state.fullname === '') {
+      return <FillData />
+    }
+
+    let avatar = null;
+    console.log(this.state.avatar)
+    this.state.avatar ? avatar = this.state.avatar : avatar = faker.image.avatar();
+
     return (
       <React.Fragment>
         <Header
@@ -96,7 +116,7 @@ class Member extends Component {
               <MDBCard className='face font mt-5'>
                 {/* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> */}
                 <div className="avatar mx-auto white" style={{ width: '200px', height: '250px', overflow: 'hidden' }}>
-                  <img src={this.state.avatar} className="img-fluid mx-auto d-block mt-3" alt="llllllll" style={{ width: '200px', height: 'auto' }} />
+                  <img src={avatar} className="img-fluid mx-auto d-block mt-3" alt="Avatar Image" style={{ width: '200px', height: 'auto' }} />
                 </div>
                 <MDBCardBody>
                   <MDBCardTitle className='mdb-color white-text text-left'>{this.state.position_in_cc}</MDBCardTitle>
