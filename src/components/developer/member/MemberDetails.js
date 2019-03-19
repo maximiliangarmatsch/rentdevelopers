@@ -260,10 +260,7 @@ class MemberDetails extends Component {
 
               {message}
               <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
-
-
-              <button onClick={this.fileUploadHandler}>button</button>
-
+                  
 
             </MDBCol>
             <MDBCol></MDBCol>
