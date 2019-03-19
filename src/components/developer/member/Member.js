@@ -52,8 +52,9 @@ class Member extends Component {
       .then(res => {
 
         const userData = res.data.filter(data => {
-          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
+          return data.slug.toLowerCase() === localStorage.getItem('username').toLowerCase()
         })
+        console.log(userData);
 
         if (userData.length < 1) {
           this.setState({ isLoaded: true });

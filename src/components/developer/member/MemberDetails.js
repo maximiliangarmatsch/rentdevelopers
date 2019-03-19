@@ -32,7 +32,7 @@ class MemberDetails extends Component {
       .then(res => {
         console.log(res.data)
         const userData = res.data.filter(data => {
-          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
+          return data.slug.toLowerCase() === localStorage.getItem('username').toLowerCase()
         })
 
         console.log(userData)
@@ -139,7 +139,7 @@ class MemberDetails extends Component {
 
     this.setState({ successMess: true })
 
-    e.preventDefault();
+    // e.preventDefault();
   }
 
   onFieldChange = (e) => {
@@ -153,8 +153,8 @@ class MemberDetails extends Component {
   fileUploadHandler = event => {
     const filechooser = document.getElementById('filechooser').files[0];
     const fd = new FormData();
-		let imgName = filechooser.name.split('.');
-		let fileType = imgName[imgName.length - 1];
+    let imgName = filechooser.name.split('.');
+    let fileType = imgName[imgName.length - 1];
     fd.append('file', filechooser, `${new Date().getTime()}.${fileType}`);
     axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/media`, fd, {
       headers: {
@@ -261,7 +261,7 @@ class MemberDetails extends Component {
               </div>
 
               {message}
-              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
+              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={(e) => {this.onSubmit(); this.fileUploadHandler(e);}} >Submit</MDBBtn>
 
 
             </MDBCol>
