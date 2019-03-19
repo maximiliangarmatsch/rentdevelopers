@@ -261,7 +261,7 @@ class MemberDetails extends Component {
               </div>
 
               {message}
-              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={(e) => {this.onSubmit(); this.fileUploadHandler(e);}} >Submit</MDBBtn>
+              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={(e) => { this.onSubmit(); this.fileUploadHandler(e); }} >Submit</MDBBtn>
 
 
             </MDBCol>
