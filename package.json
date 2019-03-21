@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
+    "emailjs-com": "^2.3.2",
     "faker": "^4.1.0",
     "mdbreact": "^4.11.0",
     "rc-calendar": "^9.10.10",
