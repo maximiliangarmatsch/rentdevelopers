@@ -3,6 +3,7 @@ import Header from '../../Header/Header';
 import Footer from '../../footer/Footer';
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput, MDBAlert } from 'mdbreact';
 import axios from 'axios';
+// import Spinner from "../../client/Spinner/Spinner";
 import '../../../styles/member.css';
 import '../../../styles/upload.css';
 
@@ -24,8 +25,10 @@ class MemberDetails extends Component {
     note: '',
     fullnameExist: false,
     successMess: false,
+    imageUploaded: false,
     id: '',
-    error: ''
+    error: '',
+    selectedImage: null
   }
 
   componentDidMount() {
@@ -140,33 +143,39 @@ class MemberDetails extends Component {
 
     this.setState({ successMess: true })
 
-    e.preventDefault();
+    // e.preventDefault();
   }
 
   onFieldChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
 
+  fileSelectedHandler = (event) => {
+    this.setState({ selectedImage: event.target.files[0] })
   }
 
   /////////////////////////////////////////////////////////////////
   fileUploadHandler = event => {
-    const filechooser = document.getElementById('filechooser').files[0];
-    const fd = new FormData();
-		let imgName = filechooser.name.split('.');
-		let fileType = imgName[imgName.length - 1];
-    fd.append('file', filechooser, `${new Date().getTime()}.${fileType}`);
-    axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/media`, fd, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-      .then(res => {
-        console.log(res);
+    if (this.state.selectedImage) {
+      const filechooser = document.getElementById('filechooser').files[0];
+      const fd = new FormData();
+      let imgName = filechooser.name.split('.');
+      let fileType = imgName[imgName.length - 1];
+      fd.append('file', filechooser, `${new Date().getTime()}.${fileType}`);
+      axios.post(`http://ccapp.coder-consulting.com/wp-json/wp/v2/media`, fd, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
       })
-      .catch(err => console.log(err.response))
+        .then(res => {
+          console.log(res);
+          res.status === 201 && this.setState({ imageUploaded: true })
+        })
+        .catch(err => console.log(err.response))
+    }
   };
   //////////////////////////////////////////////////////////////////////
 
@@ -189,6 +198,8 @@ class MemberDetails extends Component {
       education,
       note,
       error,
+      selectedImage,
+      imageUploaded,
       successMess } = this.state;
 
     let err = null;
@@ -199,12 +210,16 @@ class MemberDetails extends Component {
     }
 
     let message = null;
-    if (successMess) {
+    if (successMess && !imageUploaded && selectedImage) {
       message = <MDBAlert className='mdb-color white-text'>
-        <div dangerouslySetInnerHTML={{ __html: 'Thank you! Go back to User Overview to see changes!' }}></div>
+        <div dangerouslySetInnerHTML={{ __html: 'Uploading image...' }}></div>
+      </MDBAlert>
+    } else if ((successMess && !selectedImage) || (successMess && imageUploaded)) {
+      message = <MDBAlert className='mdb-color white-text'>
+        Thank you, you info is updated! Go back to User Overview to see changes!
+        <div dangerouslySetInnerHTML={{ __html: '' }}></div>
       </MDBAlert>
     }
-
 
     console.log(this.state)
     return (
@@ -252,17 +267,14 @@ class MemberDetails extends Component {
               <MDBInput label='Note' value={note} name='note' onChange={this.onFieldChange} size='md' id='note' style={{ marginBottom, width: '100%' }} />
 
               <div className="input-group">
-                <div className="input-group-prepend">
-                  <button className="input-group-text" id="inputGroupFileAddon01" onClick={this.fileUploadHandler}>Upload Image</button>
-                </div>
                 <div className="custom-file">
-                  <input type="file" className="custom-file-input" id='filechooser' />
-                  <label className="custom-file-label" for="inputGroupFile01">Choose your image!</label>
+                  <input type="file" onChange={this.fileSelectedHandler} className="custom-file-input" id='filechooser' />
+                  <label className="custom-file-label">{this.state.selectedImage ? this.state.selectedImage.name : "Choose your image!"}</label>
                 </div>
               </div>
 
               {message}
-              <MDBBtn className="submit-button" color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={this.onSubmit} >Submit</MDBBtn>
+              <MDBBtn color="primary" style={{ width: '100%', marginLeft: '-1px' }} onClick={(e) => { this.onSubmit(); this.fileUploadHandler(e); }} >Submit</MDBBtn>
 
 
             </MDBCol>

@@ -180,6 +180,9 @@ class Register extends Component {
 										</form>
 										<hr />
 										<p style={{ textAlign: 'center' }}>Already have an account? <Link to='/developer/login'>Log in</Link></p>
+										<div className="text-center py-4 mt-3">
+											<Link to="/">Go back to homepage</Link>
+										</div>
 									</MDBCardBody>
 								</MDBCard>
 							</Animation>

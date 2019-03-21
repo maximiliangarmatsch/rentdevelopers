@@ -25,7 +25,7 @@
 }
 
 .head-link-base {
-  top: 0.3rem;
+  top: 0;
   font-family: "Roboto", serif;
   /*
   font-style: italic;
@@ -41,12 +41,12 @@
   }
   .head-link-3{
     position: absolute;
-    right:    13rem;
+    right:    6rem;
   }
 
   .head-link-4{
     position: absolute;
-    right:    6rem;
+    right:    3rem;
   }
 
   /*.head-link-4:hover{
