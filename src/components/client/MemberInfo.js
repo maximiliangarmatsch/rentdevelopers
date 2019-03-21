@@ -92,7 +92,8 @@ class MemberInfo extends Component {
 
     let avatar = null;
     console.log(this.state.avatar)
-    this.state.avatar ? avatar = this.state.avatar : avatar = faker.image.avatar();
+    // this.state.avatar ? avatar = this.state.avatar : avatar = faker.image.avatar();
+    avatar = this.state.avatar;
 
     return (
       <React.Fragment>
