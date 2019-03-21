@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { MDBAnimation as Animation, MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import '../../../styles/login.css'
 import Spinner from "../register/Register";
+import {Link} from 'react-router-dom'
 
 
 class Login extends Component {
@@ -120,6 +121,11 @@ class Login extends Component {
 													Login
 													</MDBBtn>
 											</div>
+
+											<div className="text-center py-4 mt-3">
+												<Link to="/">Go back to homepage</Link>
+											</div>
+
 										</form>
 									</MDBCardBody>
 								</MDBCard>
