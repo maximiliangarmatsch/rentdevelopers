@@ -30,7 +30,7 @@ class Header extends Component {
 	/*DEV COMMENTARY AFTER IMPLEMENTING DELETE MenuItem1... texts AND QUOTES IN to ATTRIBUTE*/
 	render() {
 		let clientHeader = null;
-		if (localStorage.getItem('username') === '') {
+		if (!localStorage.getItem('username')) {
 			clientHeader = <MDBNavbarNav right >
 				<MDBNavItem>
 					<MDBNavLink className="head-link-base head-link-4" to={this.props.route4}>{this.props.text4}</MDBNavLink>
@@ -58,7 +58,7 @@ class Header extends Component {
 				<div className="nav-display">
 					<MDBNavbarToggler className="nav-toggler" onClick={this.toggleCollapse} />
 					<MDBNavbarNav style={{ flexDirection: "row" }}>{/*active*/}
-						<MDBNavbarBrand><Link to="/"><img className="logo" src={logo} /></Link></MDBNavbarBrand>
+						<MDBNavbarBrand><Link to="/"><img className="logo" src={logo} alt='Logo' /></Link></MDBNavbarBrand>
 					</MDBNavbarNav>
 				</div>
 				<MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

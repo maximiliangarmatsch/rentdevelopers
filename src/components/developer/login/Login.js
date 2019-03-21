@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { MDBAnimation as Animation, MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import '../../../styles/login.css'
 import Spinner from "../register/Register";
 
 
 class Login extends Component {
-  state = {
-    error: false,
-    errMessage: '',
+	state = {
+		error: false,
+		errMessage: '',
 		isLoaded: false
-  }
+	}
 
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({ isLoaded: true })
-		}, 1000);
+		}, 1500);
 	}
 
-  onSubmit(e) {
+	onSubmit(e) {
 		let username = document.getElementById('username').value;
 		let password = document.getElementById('password').value;
 
-		if ( username === '' || password === '' ) {
+		if (username === '' || password === '') {
 			this.setState({ error: true, errMessage: 'Please fill all fields properly' })
 			this.getOffError();
 			return;
@@ -33,7 +33,7 @@ class Login extends Component {
 			username,
 			password
 		}
-		if ( (username !== '' || password !== '') || e.key === 'Enter' ) {
+		if ((username !== '' || password !== '') || e.key === 'Enter') {
 			axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
 				.then(response => {
 					console.log('### Login ', response.data);
@@ -43,42 +43,38 @@ class Login extends Component {
 					this.props.history.push(`/developer/member/${response.data.user_nicename}`);
 
 				}).catch(error => {
-				console.log('### Login ', error.response);
-				this.setState({ error: true, errMessage: error.response.data.message })
-				this.getOffError()
-			});
+					console.log('### Login ', error.response);
+					this.setState({ error: true, errMessage: error.response.data.message })
+					this.getOffError()
+				});
 			e.preventDefault();
 
 		}
 	}
 
-  getOffError = () => {
-    setTimeout(() => {
-      this.setState({ error: false, errMessage: '' })
-    }, 3000)
-  }
+	getOffError = () => {
+		setTimeout(() => {
+			this.setState({ error: false, errMessage: '' })
+		}, 3000)
+	}
 
 
-  render() {
-  	const {error, isLoaded} = this.state;
-    let err = null;
-    if (this.state.error) {
-      err = <MDBAlert color="danger" >
-        <div dangerouslySetInnerHTML={{__html: this.state.errMessage}}/>
-      </MDBAlert>
-    }
+	render() {
+		const { isLoaded } = this.state;
+		let err = null;
+		if (this.state.error) {
+			err = <MDBAlert color="danger" >
+				<div dangerouslySetInnerHTML={{ __html: this.state.errMessage }} />
+			</MDBAlert>
+		}
 
-    if (localStorage.getItem('token') !== '') {
-      return <Redirect to={`/developer/member/${localStorage.getItem('username')}`} />
-      // return this.props.history.push(`/developer/member/${this.props.match.params.user_nicename}`)
-    }
 		if (!isLoaded) {
 			return (
 				<Spinner />
 			)
 		}
-    return (
-    	<div className="backgroundImageLogin">
+		return (
+			<div className="backgroundImageLogin">
 				<MDBContainer>
 					<MDBRow>
 						<MDBCol md="6" className="login">
@@ -131,10 +127,10 @@ class Login extends Component {
 						</MDBCol>
 					</MDBRow>
 				</MDBContainer>
-    	</div>
-    )
+			</div>
+		)
 
-  }
+	}
 
 }
 
