@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Register from './components/developer/register/Register';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Login from './components/developer/login/Login';
 import LandingPage from './components/LandingPage';
 import Members from './components/client/Members';
