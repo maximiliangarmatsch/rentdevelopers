@@ -50,7 +50,7 @@ class Member extends Component {
       .then(res => {
 
         const userData = res.data.filter(data => {
-          return data.slug.toLowerCase() === localStorage.getItem('username').toLowerCase()
+          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
         })
         console.log(userData);
 
