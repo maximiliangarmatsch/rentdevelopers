@@ -29,6 +29,8 @@ class HireForm extends Component {
 		to: 0,
 		dailyInput: 0,
 		weeklyInput: 0,
+		name: "",
+		email: "",
 		dayDifference: 0
 	}
 
@@ -55,8 +57,16 @@ class HireForm extends Component {
 		this.setState({ weeklyInput: value })
 	}
 
+	onChangeName = (e) => {
+		this.setState({ name: e.target.value });
+	}
+
+	onChangeEmail = (e) => {
+		this.setState({ email: e.target.value });
+	}
+
 	sendMail = () => {
-		const { dailyInput, weeklyInput, dayDifference, from, to } = this.state;
+		const { dailyInput, weeklyInput, dayDifference, from, to, email, name } = this.state;
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
 		const moreThanSevenDays = ((Math.floor(dayDifference / 7)) + (dayDifference % weeklyInput)) * weeklyInput;
 		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
@@ -67,7 +77,8 @@ class HireForm extends Component {
 				`${i + 1}. ${member.acf.fullname}`
 			)
 		});
-		const message = `New Order is ready!<br>
+		console.log(name);
+		const message = `${name} made new order!<br>
 										 Picked developers:${listMembers}<br>
 										 From: ${from}<br>
 										 To: ${to}<br>
@@ -76,9 +87,9 @@ class HireForm extends Component {
 										 Total cost: ${totalCost}`;
 		const userId = "user_2z0rlg3ux2PHHOv8N27Hy";
 		const templateParams = {
-			reply_to: "reply_to_value",
-			from_name: "kreja95ue@gmail.com",
-			to_name: "kreja95ue@gmail.com",
+			reply_to: email,
+			from_name: email,
+			to_name: "coderconsulting@yandex.ru",
 			message_html: message
 		}
 		const service_id = "default_service";
@@ -93,7 +104,7 @@ class HireForm extends Component {
 	}
 
 	render() {
-		const { dailyInput, weeklyInput, dayDifference } = this.state;
+		const { dailyInput, weeklyInput, dayDifference, name, email } = this.state;
 		const listMembers = this.props.location.state.pickedTeam.map((member, i) => {
 			return (
 				`${i + 1}. ${member.acf.fullname}`
@@ -128,12 +139,19 @@ class HireForm extends Component {
 									<h2>Choose date</h2>
 									<RangeCalendar onChange={this.onChange} />
 									<MDBInput className="in" value={dailyInput ? String(dailyInput) : ""} max="24" onChange={this.onChangeDaily} label="Daily work hours" outline />
+
 									<MDBInput className="in" value={weeklyInput ? String(weeklyInput) : ""} max={dayDifference > 7 ? "7" : String(dayDifference)} onChange={this.onChangeWeekly} label={`Working days through week(${labelString})`} outline />
+
+
+									<MDBInput className="in" value={name} onChange={this.onChangeName} label="Your name" outline />
+
+									<MDBInput type="email" className="in" value={email} onChange={this.onChangeEmail} label="Your email" outline />
+
 									<h4>Total hours: {totalHours}h</h4>
 									<hr />
 									<h1>Total Cost: ${totalCost}</h1>
 									<div onClick={this.sendMail} className="hireFormSubmit">
-										{totalCost ? <Link to="/order">
+										{(totalCost && email && name) ? <Link to="/order">
 											<MDBBtn color="primary">Make an order</MDBBtn>
 										</Link> : <MDBBtn color="#d84315 deep-orange darken-3">Please fill the calendar and inputs</MDBBtn>}
 

@@ -126,7 +126,6 @@ class Members extends Component {
                 Pick me
               </MDBBtn>
               <MDBBtn
-                disabled={member.picked}
                 onClick={() => this.onAboutMe(member.acf.fullname)}
                 className="button-color"
                 size="md"
