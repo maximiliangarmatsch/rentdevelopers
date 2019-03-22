@@ -3,7 +3,7 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { MDBAnimation as Animation, MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import '../../../styles/login.css'
-import Spinner from "../register/Register";
+import Spinner from "../../client/Spinner/Spinner";
 import {Link} from 'react-router-dom'
 
 
