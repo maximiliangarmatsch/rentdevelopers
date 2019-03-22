@@ -25,6 +25,8 @@ function format(v) {
 
 class HireForm extends Component {
 	state = {
+		from: 0,
+		to: 0,
 		dailyInput: 0,
 		weeklyInput: 0,
 		dayDifference: 0
@@ -32,11 +34,13 @@ class HireForm extends Component {
 
 	onChange = (value) => {
 		console.log('onChange', value);
-		const date2 = new Date(format(value[0]));
-		const date1 = new Date(format(value[1]));
-		const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+		const date1 = new Date(format(value[0]));
+		const date2 = new Date(format(value[1]));
+		const timeDiff = Math.abs(date1.getTime() - date2.getTime());
 		const dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
-		this.setState({ dayDifference });
+		const from = date1.getDate() + "/" + (date1.getMonth() + 1) + "/" + date1.getFullYear();
+		const to = date2.getDate() + "/" + (date2.getMonth() + 1) + "/" + date2.getFullYear();
+		this.setState({ dayDifference, from, to });
 	}
 
 	onChangeDaily = (e) => {
@@ -52,12 +56,30 @@ class HireForm extends Component {
 	}
 
 	sendMail = () => {
+		const { dailyInput, weeklyInput, dayDifference, from, to } = this.state;
+		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
+		const moreThanSevenDays = ((Math.floor(dayDifference / 7)) + (dayDifference % weeklyInput)) * weeklyInput;
+		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;
+		const totalHours = workingDays ? dailyInput * workingDays : 0;
+		const totalCost = totalHours ? totalHours * cost : 0;
+		const listMembers = this.props.location.state.pickedTeam.map((member, i) => {
+			return (
+				`${i + 1}. ${member.acf.fullname}`
+			)
+		});
+		const message = `New Order is ready!<br>
+										 Picked developers:${listMembers}<br>
+										 From: ${from}<br>
+										 To: ${to}<br>
+										 Working days: ${workingDays}<br>
+										 Total hours: ${totalHours}<br>
+										 Total cost: ${totalCost}`;
 		const userId = "user_2z0rlg3ux2PHHOv8N27Hy";
 		const templateParams = {
 			reply_to: "reply_to_value",
 			from_name: "kreja95ue@gmail.com",
 			to_name: "kreja95ue@gmail.com",
-			message_html: "Hello Mr.Bond"
+			message_html: message
 		}
 		const service_id = "default_service";
 		const template_id = "template_Q2WAHd6j";
@@ -72,7 +94,13 @@ class HireForm extends Component {
 
 	render() {
 		const { dailyInput, weeklyInput, dayDifference } = this.state;
-		console.log(dayDifference, dailyInput, weeklyInput);
+		const listMembers = this.props.location.state.pickedTeam.map((member, i) => {
+			return (
+				`${i + 1}. ${member.acf.fullname}`
+			)
+		});
+		console.log(listMembers);
+		console.log(dayDifference, dailyInput, weeklyInput, this.props.location.state);
 		const cost = this.props.location.state.cost ? this.props.location.state.cost : 0;
 		const moreThanSevenDays = ((Math.floor(dayDifference / 7)) + (dayDifference % weeklyInput)) * weeklyInput;
 		const workingDays = dayDifference > 7 ? moreThanSevenDays : weeklyInput;

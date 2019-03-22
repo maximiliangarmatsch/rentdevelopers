@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import { withRouter, Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
 import Header from '../Header/Header';
 import Spinner from "./Spinner/Spinner";
 import Footer from '../footer/Footer';
 import axios from 'axios';
-import faker from "faker";
 import '../../styles/member.css';
 
 class MemberInfo extends Component {

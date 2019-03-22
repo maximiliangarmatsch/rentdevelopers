@@ -157,7 +157,7 @@ class Members extends Component {
         <h1>Your team</h1>
         {pickedMembers}
         <p>Total cost: ${cost} per/h</p>
-        <Link to={{ pathname: "/hire", state: { cost } }}>
+        <Link to={{ pathname: "/hire", state: { cost, pickedTeam } }}>
           <MDBBtn className="button-color">Submit</MDBBtn>
         </Link>
       </MDBCol>
