@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardTitle, MDBCardBody } from 'mdbreact';
-import Header from '../../Header/Header';
-import Spinner from "../../client/Spinner/Spinner";
-import Footer from '../../footer/Footer';
+import Header from '../Header/Header';
+import Spinner from "./Spinner/Spinner";
+import Footer from '../footer/Footer';
 import axios from 'axios';
 import faker from "faker";
-import '../../../styles/member.css';
-import FillData from './FillData';
+import '../../styles/member.css';
 
-class Member extends Component {
+class MemberInfo extends Component {
   state = {
     fullname: '',
     communication_skills: "",
@@ -30,29 +29,32 @@ class Member extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1')
-      .then(res => {
-        console.log(res.data)
-        let userImgData = res.data.filter(data => {
-          return data.author === Number(localStorage.getItem('user_id'));
-        })
 
-        if (userImgData.length === 0) {
-          userImgData = res.data.filter(data => {
-            return data.id === 234;
-          })
-        }
-
-        this.setState({ avatar: userImgData[0].guid.rendered });
-      })
 
     axios.get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
       .then(res => {
 
         const userData = res.data.filter(data => {
-          return data.acf.nickname.toLowerCase() === localStorage.getItem('username').toLowerCase()
+          return data.acf.fullname.toLowerCase() === localStorage.getItem('memberName').toLowerCase()
         })
-        console.log(userData);
+        console.log(userData)
+        axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1')
+          .then(res => {
+            console.log(res.data)
+            let userImgData = res.data.filter(data => {
+              if (userData.length > 0) {
+                return data.author === userData[0].author;
+              }
+            })
+
+            if (userImgData.length === 0) {
+              userImgData = res.data.filter(data => {
+                return data.id === 234;
+              })
+            }
+
+            this.setState({ avatar: userImgData[0].guid.rendered });
+          })
 
         if (userData.length < 1) {
           this.setState({ isLoaded: true });
@@ -81,9 +83,6 @@ class Member extends Component {
   }
 
   render() {
-    if (localStorage.getItem('username') === '') {
-      return <Redirect to='/' />
-    }
 
     if (!this.state.isLoaded) {
       return (
@@ -91,23 +90,23 @@ class Member extends Component {
       )
     }
 
-    if (this.state.fullname === '') {
-      return <FillData />
-    }
-
     let avatar = null;
     console.log(this.state.avatar)
-    this.state.avatar ? avatar = this.state.avatar : avatar = faker.image.avatar();
+    // this.state.avatar ? avatar = this.state.avatar : avatar = faker.image.avatar();
+    avatar = this.state.avatar;
 
     return (
       <React.Fragment>
         <Header
           text1='User'
           route1={`/developer/member/${localStorage.getItem('username')}`}
-          text2="Logout"
+          text4="Login"
+          text2='Logout'
           route4="/developer/login"
-          text3="Details"
-          route5="/developer/register" />
+          text5="Register"
+          text3='Details'
+          route5="/developer/register"
+        />
         <MDBContainer className="member-container">
           <MDBRow>
             <MDBCol></MDBCol>
@@ -170,9 +169,7 @@ class Member extends Component {
         <Footer />
       </React.Fragment>
     )
-
-
   }
 }
 
-export default withRouter(Member)
+export default MemberInfo;

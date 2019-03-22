@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import faker from "faker";
 import {
   MDBContainer,
@@ -63,6 +63,11 @@ class Members extends Component {
     this.setState({ pickedTeam, cost, pickedMember });
   };
 
+  onAboutMe = (fullname, e) => {
+    localStorage.setItem('memberName', fullname);
+    this.props.history.push(`/members/${fullname}`)
+  }
+
   render() {
     const { employees, pickedTeam, cost, defaultProfile } = this.state;
     // every card will change color till the end of array, then start again
@@ -71,7 +76,6 @@ class Members extends Component {
     const members = employees.map((member, i) => {
       colorsIndex = colorsIndex >= colors.length - 1 ? -1 : colorsIndex;
       colorsIndex += 1;
-
       /////// Get Image ///////
       let membersImg = this.state.media.filter(img => {
         return img.author === member.author
@@ -121,6 +125,14 @@ class Members extends Component {
               >
                 Pick me
               </MDBBtn>
+              <MDBBtn
+                disabled={member.picked}
+                onClick={() => this.onAboutMe(member.acf.fullname)}
+                className="button-color"
+                size="md"
+              >
+                About me
+              </MDBBtn>
             </div>
           </MDBCardBody>
         </MDBCard>
@@ -167,4 +179,4 @@ class Members extends Component {
     );
   }
 }
-export default Members;
+export default withRouter(Members);
