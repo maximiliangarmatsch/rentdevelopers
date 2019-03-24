@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Register from './components/developer/register/Register';
+import Register from './components/Developer/register/Register';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Login from './components/developer/login/Login';
+import Login from './components/Developer/login/Login';
 import LandingPage from './components/LandingPage';
 import Members from './components/client/Members';
-import Member from './components/developer/member/Member';
-import MemberDetails from './components/developer/member/MemberDetails';
+import Member from './components/Developer/member/Member';
+import MemberDetails from './components/Developer/member/MemberDetails';
 import HireForm from './components/client/HireForm/HireForm';
 import OrderReceived from './components/client/HireForm/OrderReceived';
 import MemberInfo from './components/client/MemberInfo';

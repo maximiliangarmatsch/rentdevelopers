@@ -6,7 +6,7 @@ import "./Land.css";
 import Members from "./client/Members";
 
 class LandingPage extends Component {
-	render() {
+	render(){
 		return (
 			<div>
 				<Header
@@ -19,8 +19,8 @@ class LandingPage extends Component {
 					text3='Details'
 					route5="/developer/register"
 				/>
-				<Members />
-				<Footer />
+				<Members/>
+				<Footer/>
 			</div>
 		)
 	}

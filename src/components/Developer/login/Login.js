@@ -1,30 +1,39 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import { MDBAnimation as Animation, MDBAlert, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import {
+	MDBAnimation as Animation,
+	MDBAlert,
+	MDBContainer,
+	MDBRow,
+	MDBCol,
+	MDBInput,
+	MDBBtn,
+	MDBCard,
+	MDBCardBody
+} from 'mdbreact';
 import '../../../styles/login.css'
 import Spinner from "../../client/Spinner/Spinner";
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
 	state = {
-		error: false,
+		error     : false,
 		errMessage: '',
-		isLoaded: false
+		isLoaded  : false
 	}
 
-	componentDidMount() {
-		setTimeout(() => {
+	componentDidMount(){
+		setTimeout(() =>{
 			this.setState({ isLoaded: true })
 		}, 1500);
 	}
 
-	onSubmit(e) {
+	onSubmit( e ){
 		let username = document.getElementById('username').value;
 		let password = document.getElementById('password').value;
 
-		if (username === '' || password === '') {
+		if( username === '' || password === '' ){
 			this.setState({ error: true, errMessage: 'Please fill all fields properly' })
 			this.getOffError();
 			return;
@@ -34,44 +43,43 @@ class Login extends Component {
 			username,
 			password
 		}
-		if ((username !== '' || password !== '') || e.key === 'Enter') {
+		if( ( username !== '' || password !== '' ) || e.key === 'Enter' ){
 			axios.post(`http://ccapp.coder-consulting.com/wp-json/jwt-auth/v1/token`, credentials)
-				.then(response => {
+				.then(response =>{
 					console.log('### Login ', response.data);
 					localStorage.setItem('token', response.data.token)
 					localStorage.setItem('username', response.data.user_nicename);
 					localStorage.setItem('user_id', response.data.user_id);
 					this.props.history.push(`/developer/member/${response.data.user_nicename}`);
 
-				}).catch(error => {
-					console.log('### Login ', error.response);
-					this.setState({ error: true, errMessage: error.response.data.message })
-					this.getOffError()
-				});
+				}).catch(error =>{
+				console.log('### Login ', error.response);
+				this.setState({ error: true, errMessage: error.response.data.message })
+				this.getOffError()
+			});
 			e.preventDefault();
 
 		}
 	}
 
-	getOffError = () => {
-		setTimeout(() => {
+	getOffError = () =>{
+		setTimeout(() =>{
 			this.setState({ error: false, errMessage: '' })
 		}, 3000)
 	}
 
-
-	render() {
+	render(){
 		const { isLoaded } = this.state;
 		let err = null;
-		if (this.state.error) {
-			err = <MDBAlert color="danger" >
-				<div dangerouslySetInnerHTML={{ __html: this.state.errMessage }} />
+		if( this.state.error ){
+			err = <MDBAlert color="danger">
+				<div dangerouslySetInnerHTML={{ __html: this.state.errMessage }}/>
 			</MDBAlert>
 		}
 
-		if (!isLoaded) {
+		if( !isLoaded ){
 			return (
-				<Spinner />
+				<Spinner/>
 			)
 		}
 		return (
@@ -94,8 +102,8 @@ class Login extends Component {
 													validate
 													error="wrong"
 													success="right"
-													onKeyPress={event => {
-														if (event.key === 'Enter') {
+													onKeyPress={event =>{
+														if( event.key === 'Enter' ){
 															this.onSubmit(event)
 														}
 													}}
@@ -107,8 +115,8 @@ class Login extends Component {
 													group
 													type="password"
 													validate
-													onKeyPress={event => {
-														if (event.key === 'Enter') {
+													onKeyPress={event =>{
+														if( event.key === 'Enter' ){
 															this.onSubmit(event)
 														}
 													}}
@@ -119,7 +127,7 @@ class Login extends Component {
 
 												<MDBBtn className="button-color" onClick={this.onSubmit.bind(this)}>
 													Login
-													</MDBBtn>
+												</MDBBtn>
 											</div>
 
 											<div className="text-center py-4 mt-3">
@@ -137,7 +145,6 @@ class Login extends Component {
 		)
 
 	}
-
 }
 
 export default withRouter(Login);

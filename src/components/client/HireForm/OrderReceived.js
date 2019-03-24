@@ -2,11 +2,11 @@ import React from 'react'
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import "../../../styles/OrderRecieved.css"
 
-const OrderReceived = () => {
+const OrderReceived = () =>{
 	return (
 
 		<MDBContainer>
-      <MDBRow >
+			<MDBRow>
 				<MDBCol md="4" smd="4"/>
 				<MDBCol md="4" smd="4">
 					<h1 className="text-center head1">Order Received</h1>
@@ -16,14 +16,14 @@ const OrderReceived = () => {
 			<MDBRow>
 				<MDBCol md="4" smd="4"/>
 				<MDBCol md="4" smd="4">
-						<p className="text-center par1">Thank you for your order, we will get back to you shortly!</p>
+					<p className="text-center par1">Thank you for your order, we will get back to you shortly!</p>
 				</MDBCol>
 				<MDBCol md="4" smd="4"/>
 			</MDBRow>
 			<MDBRow>
 				<MDBCol md="4" smd="4"/>
 				<MDBCol md="4" smd="4" className="text-center">
-            <a href="/">Go back to developers</a>
+					<a href="/">Go back to developers</a>
 				</MDBCol>
 				<MDBCol md="4" smd="4"/>
 			</MDBRow>
