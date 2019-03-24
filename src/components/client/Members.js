@@ -104,14 +104,19 @@ class Members extends Component {
                             } 50%, transparent 50%) no-repeat`
                         }}
                     >
-                        <MDBCardImage
-                            className="memberImage"
-                            src={
-                                membersImg[0]
-                                    ? membersImg[0].guid.rendered
-                                    : defaultProfile
-                            }
-                        />
+                        <div
+                            onClick={() => this.onAboutMe(member.acf.fullname)}
+                            className="space-around-image"
+                        >
+                            <MDBCardImage
+                                className="memberImage"
+                                src={
+                                    membersImg[0]
+                                        ? membersImg[0].guid.rendered
+                                        : defaultProfile
+                                }
+                            />
+                        </div>
                     </div>
 
                     <MDBCardBody className="memberCardBody">

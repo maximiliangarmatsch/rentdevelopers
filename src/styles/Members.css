@@ -128,3 +128,8 @@
 .price-color {
     color: #ecb355;
 }
+
+.space-around-image:hover {
+    cursor: pointer;
+    background: forestgreen;
+}
