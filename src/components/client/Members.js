@@ -23,11 +23,14 @@ class Members extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1')
+    axios
+      .get(
+        "http://ccapp.coder-consulting.com/wp-json/wp/v2/media/?per_page=100&page=1"
+      )
       .then(res => {
-        this.setState({ media: res.data })
+        this.setState({ media: res.data });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
     axios
       .get("http://ccapp.coder-consulting.com/wp-json/wp/v2/posts")
       .then(res => {
@@ -64,9 +67,9 @@ class Members extends Component {
   };
 
   onAboutMe = (fullname, e) => {
-    localStorage.setItem('memberName', fullname);
-    this.props.history.push(`/members/${fullname}`)
-  }
+    localStorage.setItem("memberName", fullname);
+    this.props.history.push(`/members/${fullname}`);
+  };
 
   render() {
     const { employees, pickedTeam, cost, defaultProfile } = this.state;
@@ -78,12 +81,12 @@ class Members extends Component {
       colorsIndex += 1;
       /////// Get Image ///////
       let membersImg = this.state.media.filter(img => {
-        return img.author === member.author
-      })
+        return img.author === member.author;
+      });
       if (membersImg.length === 0) {
         membersImg = this.state.media.filter(img => {
           return img.id === 234;
-        })
+        });
       }
       //////////////////////////
       return (
@@ -96,16 +99,12 @@ class Members extends Component {
             style={{
               background: `linear-gradient(${
                 colors[colorsIndex]
-                } 50%, transparent 50%) no-repeat`
+              } 50%, transparent 50%) no-repeat`
             }}
           >
-
             <MDBCardImage
               className="memberImage"
-              src={membersImg[0] ?
-                membersImg[0].guid.rendered :
-                defaultProfile
-              }
+              src={membersImg[0] ? membersImg[0].guid.rendered : defaultProfile}
             />
           </div>
 
