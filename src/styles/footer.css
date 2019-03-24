@@ -1,96 +1,131 @@
 .footer {
-    background: #15192C;
-  bottom: 0;
-  width: 100%;
+    background: #15192c;
+    bottom: 0;
+    width: 100%;
 }
-.footer-follow{
-  font-weight: bolder;
-
+.footer-follow {
+    font-weight: bolder;
 }
 
 @media only screen and (min-device-width: 769px) {
+    html {
+        height: 100%;
+    }
+    body {
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
 
-  html{ height:100%; }
-  body{ min-height:100%; padding:0; margin:0; position:relative; }
+    .membersContainer,
+    .hireForm,
+    .member-container,
+    .member-details-container {
+        position: relative;
+    }
 
-  .membersContainer, .hireForm, .member-container, .member-details-container {
-    position: relative;
-  }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        content: '';
+        display: block;
+        height: 10rem; /* Set same as footer's height */
+    }
 
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    content: '';
-    display: block;
-    height: 10rem; /* Set same as footer's height */
-  }
-
-  .footer {
-    position: absolute;
-    height: 10rem;
-  }
+    .footer {
+        position: absolute;
+        height: 10rem;
+    }
 }
-@media only screen and (min-device-width: 769px) and (max-device-width: 872px){
-  .footer {
-    height: 13.5rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 13.5rem; /* Set same as footer's height */
-  }
-}
-
-@media only screen and (min-device-width: 873px) and (max-device-width: 1009px){
-  .footer {
-    height: 11rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 11rem; /* Set same as footer's height */
-  }
-}
-@media only screen and (min-width: 769px) and (max-width: 872px){
-  .footer {
-    height: 13.5rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 13.5rem; /* Set same as footer's height */
-  }
-}
-@media only screen and (min-width: 873px) and (max-width: 890px){
-  .footer {
-    height: 13.4rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 13.4rem; /* Set same as footer's height */
-  }
-}
-@media only screen and (min-width: 890px) and (max-width: 1029px){
-  .footer {
-    height: 11.1rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 11.1rem; /* Set same as footer's height */
-  }
+@media only screen and (min-device-width: 769px) and (max-device-width: 872px) {
+    .footer {
+        height: 13.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 13.5rem; /* Set same as footer's height */
+    }
 }
 
-@media only screen and (max-width: 767px){
-  .footer {
-    height: 17rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 17rem; /* Set same as footer's height */
-  }
+@media only screen and (min-device-width: 873px) and (max-device-width: 1009px) {
+    .footer {
+        height: 11rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 11rem; /* Set same as footer's height */
+    }
 }
-@media only screen and (max-device-width: 767px){
-  .footer {
-    height: 17.5rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 17.5rem; /* Set same as footer's height */
-  }
+@media only screen and (min-width: 769px) and (max-width: 872px) {
+    .footer {
+        height: 13.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 13.5rem; /* Set same as footer's height */
+    }
 }
-@media only screen and (max-device-width: 360px){
-  .footer {
-    height: 20rem;
-  }
-  .membersContainer::after , .hireForm::after, .member-container::after, .member-details-container::after{
-    height: 20rem; /* Set same as footer's height */
-  }
+@media only screen and (min-width: 873px) and (max-width: 890px) {
+    .footer {
+        height: 13.4rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 13.4rem; /* Set same as footer's height */
+    }
+}
+@media only screen and (min-width: 890px) and (max-width: 1029px) {
+    .footer {
+        height: 11.1rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 11.1rem; /* Set same as footer's height */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer {
+        height: 17rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 17rem; /* Set same as footer's height */
+    }
+}
+@media only screen and (max-device-width: 767px) {
+    .footer {
+        height: 17.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 17.5rem; /* Set same as footer's height */
+    }
+}
+@media only screen and (max-device-width: 360px) {
+    .footer {
+        height: 20rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 20rem; /* Set same as footer's height */
+    }
 }

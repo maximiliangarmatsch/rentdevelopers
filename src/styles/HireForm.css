@@ -1,43 +1,45 @@
-.hireForm{
-  margin-top: 5rem;
+.hireForm {
+    margin-top: 5rem;
 }
-.hireFormCard .in{
-  background: rgba(255,255,235,0.8) !important;
-  border: 1px solid green !important;
+.hireFormCard .in {
+    background: rgba(255, 255, 235, 0.8) !important;
+    border: 1px solid green !important;
 }
 .hireFormCard {
-  width: 100%;
-  font-family: "Roboto", serif;
-  background: rgba(63, 81, 181, 0.15);
+    width: 100%;
+    font-family: 'Roboto', serif;
+    background: rgba(63, 81, 181, 0.15);
 }
 
 .rc-calendar-range {
-  width: 100%;
+    width: 100%;
 }
 
 .rc-calendar-range-part {
-  width: 100%
+    width: 100%;
 }
 
-.hireFormCard h1, h2, h4 {
-  text-align: center;
+.hireFormCard h1,
+h2,
+h4 {
+    text-align: center;
 }
 
 .hireFormCard h4 {
-  margin: 3%;
+    margin: 3%;
 }
 
 .hireFormCard input {
-  margin: auto;
-  display: block;
+    margin: auto;
+    display: block;
 }
 
 .hireFormSubmit {
-  text-align: center;
+    text-align: center;
 }
 
 .rc-calendar {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .rc-calendar-input {
@@ -45,27 +47,27 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .hireFormCard {
-    width: 60%;
-    margin: 5% auto;
-  }
+    .hireFormCard {
+        width: 60%;
+        margin: 5% auto;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-  .rc-calendar-range-part {
-    width: 50%
-  }
+    .rc-calendar-range-part {
+        width: 50%;
+    }
     .form-control {
         width: 300px;
     }
 
-  .rc-calendar-range-part {
-    width: 50%;
-  }
+    .rc-calendar-range-part {
+        width: 50%;
+    }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
-  .hireForm{
-    padding-bottom: 16.3rem;
-  }
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .hireForm {
+        padding-bottom: 16.3rem;
+    }
 }

@@ -1,15 +1,15 @@
-.middle{
-  position: absolute;
-  left: 50%;
-  top: 50%;
+.middle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
 
 .member-container {
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.member-details-container{
-  margin-top: 5rem;
-  padding-bottom: 2rem;
+.member-details-container {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
 }
