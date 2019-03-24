@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4dae36f-1766-4b5e-91b4-08e996e59048" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/client/Members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/developer/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/developer/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/developer/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/developer/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/HireForm/HireForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/HireForm/OrderReceived.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/HireForm/OrderReceived.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/MemberInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/Members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/Members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/client/Spinner/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/Spinner/Spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/developer/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/developer/member/FillData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Member/FillData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/developer/member/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Member/Member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/developer/member/MemberDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Member/MemberDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/developer/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/member.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Member.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Upload.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,22 +34,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/developer/Register.js">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+            <state>
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/developer/Login.js">
+        <entry file="file://$PROJECT_DIR$/src/components/LandingPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -42,10 +57,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/developer/RegisterStyle.css">
+        <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="357">
+              <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/LandingPage.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/client/style/MembersStyle.css" />
         <option value="$PROJECT_DIR$/src/components/client/Members.js" />
@@ -67,6 +84,7 @@
         <option value="$PROJECT_DIR$/src/components/developer/Login.js" />
         <option value="$PROJECT_DIR$/src/components/developer/Register.js" />
         <option value="$PROJECT_DIR$/src/components/developer/RegisterStyle.css" />
+        <option value="$PROJECT_DIR$/src/components/LandingPage.js" />
       </list>
     </option>
   </component>
@@ -106,7 +124,51 @@
               <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="developer" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="HireForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Developer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Developer" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Developer" type="462c0819:PsiDirectoryNode" />
+              <item name="Member" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -116,6 +178,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -124,6 +187,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -153,15 +217,15 @@
       <workItem from="1551686769958" duration="3251000" />
       <workItem from="1551690220949" duration="2522000" />
       <workItem from="1551692863375" duration="8483000" />
+      <workItem from="1553442360908" duration="1281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26339000" />
+    <option name="totallyTimeSpent" value="27620000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11942099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -187,18 +251,8 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/LandingPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/client/style/MembersStyle.css" />
-    <entry file="file://$PROJECT_DIR$/src/components/client/Members.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Client/Members.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
@@ -215,13 +269,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/client/Members.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/client/Members.css" />
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -232,30 +280,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/developer/Register.js">
+    <entry file="file://$PROJECT_DIR$/src/components/developer/Register.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/developer/Login.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/developer/RegisterStyle.css" />
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/developer/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/developer/RegisterStyle.css">
+    <entry file="file://$PROJECT_DIR$/src/components/LandingPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
