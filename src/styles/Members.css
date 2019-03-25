@@ -129,7 +129,11 @@
     color: #ecb355;
 }
 
-.space-around-image:hover {
-    cursor: pointer;
-    background: forestgreen;
+.memberUp:hover {
+    cursor: pointer !important;
+    /* box-shadow: inset 0 -100px 0 0 #6ed2cc !important; */
+    /* transition: 0.5s ease-in-out !important; */
+    /* background: linear-gradient(to bottom, #6ed2cc 100%, transparent 100%)
+        no-repeat !important; */
+    /* background: #6ed2cc !important; */
 }
