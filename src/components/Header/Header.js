@@ -10,7 +10,7 @@ import {
 } from 'mdbreact';
 import '../../styles/Header.css';
 import { Link, withRouter } from 'react-router-dom';
-import logo from '../Library/logo.png';
+import logo from '../../assets/logo.png';
 
 class Header extends Component {
     state = {
