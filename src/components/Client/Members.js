@@ -8,7 +8,8 @@ import {
     MDBCard,
     MDBCardImage,
     MDBCardBody,
-    MDBBtn
+    MDBBtn,
+    MDBIcon
 } from 'mdbreact';
 import axios from 'axios';
 import '../../styles/Members.css';
@@ -137,7 +138,8 @@ class Members extends Component {
                                 className="button-color"
                                 size="md"
                             >
-                                Pick me
+                                <MDBIcon icon="shopping-cart"/>
+                                &nbsp;Rent a developer
                             </MDBBtn>
                             <MDBBtn
                                 onClick={() =>
@@ -146,7 +148,8 @@ class Members extends Component {
                                 className="button-color"
                                 size="md"
                             >
-                                About me
+                                <MDBIcon icon="user" />
+                                &nbsp;About me
                             </MDBBtn>
                         </div>
                     </MDBCardBody>
@@ -168,7 +171,7 @@ class Members extends Component {
             );
         });
         const sidebar = (
-            <MDBCol className="picked" md="3">
+            <MDBCol className="picked white-text" md="3">
                 <h1>Your team</h1>
                 {pickedMembers}
                 <p>Total cost: ${cost} per/h</p>
@@ -180,8 +183,8 @@ class Members extends Component {
 
         return (
             <MDBContainer fluid className="membersContainer">
-                <h2 className="h2-responsive font-weight-bold my-5">
-                    Pick a member
+                <h2 className="h2-responsive font-weight-bold my-5 white-text">
+                    Rent developer(s) for your project
                 </h2>
                 <MDBRow>
                     <MDBCol
