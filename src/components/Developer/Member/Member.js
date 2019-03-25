@@ -59,7 +59,9 @@ class Member extends Component {
             });
 
         axios
-            .get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts`)
+            .get(
+                `http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?per_page=100&page=1`
+            )
             .then(res => {
                 const userData = res.data.filter(data => {
                     return (
