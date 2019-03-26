@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4dae36f-1766-4b5e-91b4-08e996e59048" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client/Members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/Members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Developer/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Developer/Member/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Member/Member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/HireForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/HireForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Member.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Member.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Members.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Members.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Developer/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Developer/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Register.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +16,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+            <state relative-caret-position="1110">
+              <caret line="222" column="66" selection-start-line="222" selection-start-column="66" selection-end-line="222" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/Login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="30" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/Register.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Developer/Register/Register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="160" column="63" lean-forward="true" selection-start-line="160" selection-start-column="63" selection-end-line="160" selection-end-column="63" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -105,6 +126,8 @@
         <option value="$PROJECT_DIR$/src/components/Client/Members.js" />
         <option value="$PROJECT_DIR$/src/styles/HireForm.css" />
         <option value="$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js" />
+        <option value="$PROJECT_DIR$/src/styles/Register.css" />
+        <option value="$PROJECT_DIR$/src/components/Developer/Register/Register.js" />
       </list>
     </option>
   </component>
@@ -172,6 +195,14 @@
               <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
               <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Developer" type="462c0819:PsiDirectoryNode" />
+              <item name="Register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rentdevelopers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rentdevelopers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -234,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49480000" />
+    <option name="totallyTimeSpent" value="49572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -419,13 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/Members.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
@@ -486,8 +510,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/HireForm/HireForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+        <state relative-caret-position="1110">
+          <caret line="222" column="66" selection-start-line="222" selection-start-column="66" selection-end-line="222" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Developer/Register/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="160" column="63" lean-forward="true" selection-start-line="160" selection-start-column="63" selection-end-line="160" selection-end-column="63" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
