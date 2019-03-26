@@ -107,7 +107,7 @@ class Login extends Component {
                         <MDBCol md="6" className="login">
                             <Animation type="fadeInRight">
                                 <MDBCard>
-                                    <MDBCardBody>
+                                    <MDBCardBody className="login-container">
                                         <form>
                                             <p className="h4 text-center py-4">
                                                 Login

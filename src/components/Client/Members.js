@@ -166,7 +166,7 @@ class Members extends Component {
                     >
                         X
                     </button>
-                    <hr />
+                    <hr style={{border:0, borderBottom: "1px solid #767676"}}/>
                 </div>
             );
         });

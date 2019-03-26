@@ -186,8 +186,8 @@ class HireForm extends Component {
                                         }
                                         max="24"
                                         onChange={this.onChangeDaily}
-                                        label="Daily work hours"
-                                        outline
+                                        label={`\u00A0Daily work hours`}
+
                                     />
 
                                     <MDBInput
@@ -203,16 +203,16 @@ class HireForm extends Component {
                                                 : String(dayDifference)
                                         }
                                         onChange={this.onChangeWeekly}
-                                        label={`Working days through week(${labelString})`}
-                                        outline
+                                        label={`\u00A0Working days through week(${labelString})`}
+
                                     />
 
                                     <MDBInput
                                         className="in"
                                         value={name}
                                         onChange={this.onChangeName}
-                                        label="Your name"
-                                        outline
+                                        label={`\u00A0Your name`}
+
                                     />
 
                                     <MDBInput
@@ -220,8 +220,8 @@ class HireForm extends Component {
                                         className="in"
                                         value={email}
                                         onChange={this.onChangeEmail}
-                                        label="Your email"
-                                        outline
+                                        label={`\u00A0Your email`}
+
                                     />
 
                                     <h4>Total hours: {totalHours}h</h4>

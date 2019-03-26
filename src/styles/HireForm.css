@@ -1,5 +1,5 @@
 .hireForm {
-    margin-top: 5rem;
+    margin-top: 6.4rem;
 }
 .hireFormCard .in {
     background: rgba(255, 255, 235, 0.8) !important;
@@ -64,8 +64,15 @@ h4 {
     .rc-calendar-range-part {
         width: 50%;
     }
+    .hireFormCard .in {
+        width: 85%;
+    }
 }
-
+@media only screen and (min-width: 1500px) {
+    .hireFormCard .in {
+        width: 40%;
+    }
+}
 @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     .hireForm {
         padding-bottom: 16.3rem;

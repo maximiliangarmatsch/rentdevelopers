@@ -153,7 +153,7 @@ class Member extends Component {
                                     />
                                 </div>
                                 <MDBCardBody>
-                                    <MDBCardTitle className="mdb-color white-text text-left">
+                                    <MDBCardTitle className="developer-title mdb-color white-text text-left">
                                         {this.state.position_in_cc}
                                     </MDBCardTitle>
 
