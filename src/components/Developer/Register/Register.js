@@ -147,7 +147,7 @@ class Register extends Component {
                         <MDBCol md="6" className="register">
                             <Animation type="fadeInRight">
                                 <MDBCard>
-                                    <MDBCardBody>
+                                    <MDBCardBody className="register-container">
                                         <form>
                                             <p className="h5 text-center mb-4">
                                                 Sign up
