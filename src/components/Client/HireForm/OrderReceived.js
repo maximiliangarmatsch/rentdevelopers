@@ -8,14 +8,14 @@ const OrderReceived = () => {
             <MDBRow>
                 <MDBCol md="4" smd="4" />
                 <MDBCol md="4" smd="4">
-                    <h1 className="text-center head1 text-white">Order Received</h1>
+                    <h1 className="text-center head1">Order Received</h1>
                 </MDBCol>
                 <MDBCol md="4" smd="4" />
             </MDBRow>
             <MDBRow>
                 <MDBCol md="4" smd="4" />
                 <MDBCol md="4" smd="4">
-                    <p className="text-center par1 text-white">
+                    <p className="text-center par1">
                         Thank you for your order, we will get back to you
                         shortly!
                     </p>

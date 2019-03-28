@@ -64,7 +64,7 @@ class Header extends Component {
                 <MDBNavbarNav right>
                     <MDBNavItem>
                         <MDBNavLink
-                            className="head-link-base head-link-3"
+                            className="head-link-base head-link-3 black-text"
                             to="#"
                             onClick={this.onLogout}
                         >
@@ -73,7 +73,7 @@ class Header extends Component {
                     </MDBNavItem>
                     <MDBNavItem>
                         <MDBNavLink
-                            className="head-link-base head-link-4"
+                            className="head-link-base head-link-4 black-text"
                             to="#"
                             onClick={this.onUserDetails}
                         >
@@ -82,7 +82,7 @@ class Header extends Component {
                     </MDBNavItem>
                     <MDBNavItem>
                         <MDBNavLink
-                            className="head-link-base head-link-5"
+                            className="head-link-base head-link-5 black-text"
                             to={this.props.route1}
                         >
                             {this.props.text1}
@@ -96,7 +96,7 @@ class Header extends Component {
             <MDBNavbar
                 className="nav-bar"
                 style={{ lineHeight: '2em' }}
-                dark
+                light
                 expand="md"
             >
                 <div className="nav-display">

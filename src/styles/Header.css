@@ -1,5 +1,5 @@
 .nav-bar {
-    background: #15192c;
+    background: #F7F9F9;
     position: fixed;
     top: 0;
     width: 100%;
@@ -18,7 +18,7 @@
 }
 .nav-toggler {
     position: absolute;
-    top: 0.7rem;
+    top:  1rem;
     left: 0.7rem;
 }
 

@@ -289,7 +289,7 @@ class MemberDetails extends Component {
                     text3="Details"
                     route5="/developer/register"
                 />
-                <MDBContainer className="member-details-container text-white">
+                <MDBContainer className="member-details-container">
                     <h1
                         className="h1-responsive"
                         style={{ textAlign: 'center', marginTop: '30px' }}
@@ -301,7 +301,6 @@ class MemberDetails extends Component {
                         <MDBCol sm="12" md="8">
                             {this.state.fullnameExist ? (
                                 <MDBInput
-                                    className="text-white"
                                     label="Fullname"
                                     value={fullname}
                                     size="md"
@@ -311,7 +310,6 @@ class MemberDetails extends Component {
                                 />
                             ) : (
                                 <MDBInput
-                                    className="text-white"
                                     label="Fullname"
                                     value={fullname}
                                     name="fullname"
@@ -324,7 +322,6 @@ class MemberDetails extends Component {
                             {err}
 
                             <MDBInput
-                                className="text-white"
                                 label="Title"
                                 value={title}
                                 name="title"
@@ -335,7 +332,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Communication skills"
                                 value={communication_skills}
                                 name="communication_skills"
@@ -346,7 +342,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Language"
                                 value={language}
                                 name="language"
@@ -357,7 +352,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Tech skills"
                                 value={tech_skills}
                                 name="tech_skills"
@@ -368,7 +362,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Personal skills"
                                 value={personal_skills}
                                 name="personal_skills"
@@ -379,7 +372,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Other skills"
                                 value={other_skills}
                                 name="other_skills"
@@ -390,7 +382,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Price"
                                 value={price}
                                 name="price"
@@ -401,7 +392,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Position in CC"
                                 value={position_in_cc}
                                 name="position_in_cc"
@@ -412,7 +402,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Previous projects"
                                 value={previous_projects}
                                 name="previous_projects"
@@ -423,7 +412,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Education"
                                 value={education}
                                 name="education"
@@ -434,7 +422,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Location"
                                 value={location}
                                 name="location"
@@ -445,7 +432,6 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                className="text-white"
                                 label="Note"
                                 value={note}
                                 name="note"

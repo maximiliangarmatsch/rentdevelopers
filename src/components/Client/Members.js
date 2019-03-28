@@ -77,7 +77,7 @@ class Members extends Component {
     render() {
         const { employees, pickedTeam, cost, defaultProfile } = this.state;
         // every card will change color till the end of array, then start again
-        const colors = ['#6ED2CC'];
+        const colors = ['#1F83C6'];
         let colorsIndex = -1;
         const members = employees.map((member, i) => {
             colorsIndex = colorsIndex >= colors.length - 1 ? -1 : colorsIndex;
@@ -171,7 +171,7 @@ class Members extends Component {
             );
         });
         const sidebar = (
-            <MDBCol className="picked white-text" md="3">
+            <MDBCol className="picked" md="3">
                 <h1>Your team</h1>
                 {pickedMembers}
                 <p>Total cost: ${cost} per/h</p>
@@ -183,7 +183,7 @@ class Members extends Component {
 
         return (
             <MDBContainer fluid className="membersContainer">
-                <h2 className="h2-responsive font-weight-bold my-5 white-text">
+                <h2 className="h2-responsive font-weight-bold my-5">
                     Rent developer(s) for your project
                 </h2>
                 <MDBRow>
