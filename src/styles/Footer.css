@@ -94,13 +94,36 @@
 }
 @media only screen and (min-width: 890px) and (max-width: 1029px) {
     .footer {
-        height: 11.1rem;
+        height: 12.5rem;
     }
     .membersContainer::after,
     .hireForm::after,
     .member-container::after,
     .member-details-container::after {
-        height: 11.1rem; /* Set same as footer's height */
+        height: 12.5rem; /* Set same as footer's height */
+    }
+}
+
+@media only screen and (min-width: 1030px){
+    .footer {
+        height: 11.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 11.5rem; /* Set same as footer's height */
+    }
+}
+@media only screen and (min-width: 1423px){
+    .footer {
+        height: 10.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 10.5rem; /* Set same as footer's height */
     }
 }
 
@@ -117,23 +140,34 @@
 }
 @media only screen and (max-device-width: 767px) {
     .footer {
-        height: 17.5rem;
+        height: 18.5rem;
     }
     .membersContainer::after,
     .hireForm::after,
     .member-container::after,
     .member-details-container::after {
-        height: 17.5rem; /* Set same as footer's height */
+        height: 18.5rem; /* Set same as footer's height */
     }
 }
 @media only screen and (max-device-width: 360px) {
     .footer {
-        height: 20rem;
+        height: 19rem;
     }
     .membersContainer::after,
     .hireForm::after,
     .member-container::after,
     .member-details-container::after {
-        height: 20rem; /* Set same as footer's height */
+        height: 19rem; /* Set same as footer's height */
+    }
+}
+@media only screen and (max-device-width: 359px) {
+    .footer {
+        height: 21.5rem;
+    }
+    .membersContainer::after,
+    .hireForm::after,
+    .member-container::after,
+    .member-details-container::after {
+        height: 21.5rem; /* Set same as footer's height */
     }
 }
