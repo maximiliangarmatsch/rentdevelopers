@@ -186,7 +186,7 @@ class HireForm extends Component {
                                         }
                                         max="24"
                                         onChange={this.onChangeDaily}
-                                        label={`\u00A0Daily work hours`}
+                                        label={`\u00A0\u00A0\u00A0Daily work hours`}
 
                                     />
 
@@ -203,7 +203,7 @@ class HireForm extends Component {
                                                 : String(dayDifference)
                                         }
                                         onChange={this.onChangeWeekly}
-                                        label={`\u00A0Working days through week(${labelString})`}
+                                        label={`\u00A0\u00A0\u00A0Working days through week(${labelString})`}
 
                                     />
 
@@ -211,7 +211,7 @@ class HireForm extends Component {
                                         className="in"
                                         value={name}
                                         onChange={this.onChangeName}
-                                        label={`\u00A0Your name`}
+                                        label={`\u00A0\u00A0\u00A0Your name`}
 
                                     />
 
@@ -220,7 +220,7 @@ class HireForm extends Component {
                                         className="in"
                                         value={email}
                                         onChange={this.onChangeEmail}
-                                        label={`\u00A0Your email`}
+                                        label={`\u00A0\u00A0\u00A0Your email`}
 
                                     />
 
