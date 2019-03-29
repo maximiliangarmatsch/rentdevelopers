@@ -14,7 +14,7 @@ class Footer extends Component {
                         <MDBCol md="3" smd="3">
                             <p className="footer-text text-center">
                                 Our core development team is located all across
-                                europe which let us attract talent from a wider
+                                Europe which let us attract talent from a wider
                                 pool.
                             </p>
                         </MDBCol>
