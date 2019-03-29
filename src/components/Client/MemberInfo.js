@@ -193,10 +193,10 @@ class MemberInfo extends Component {
                                         <dd className="col-sm-9 mt-2">
                                             {this.state.personal_skills}
                                         </dd>
-
+                                            {/*
                                         <dt className="col-sm-3 mt-2">
                                             Price:
-                                        </dt>{/*
+                                        </dt>
                                         <dd className="col-sm-9 mt-2">
                                             {this.state.price} $
                                         </dd>
