@@ -5,6 +5,10 @@
     width: 100%;
     z-index: 2;
 }
+.logo {
+    height: 46px;
+    width: auto;
+}
 .nav-display {
     display: flex;
     margin: auto;

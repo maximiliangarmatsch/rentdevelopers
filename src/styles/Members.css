@@ -1,4 +1,5 @@
-.picked {
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+picked {
     border-left: 1px solid grey;
 }
 .picked h1 {
@@ -44,11 +45,14 @@
 }
 
 .membersContainer {
-    margin-top: 6.4rem;
+    margin-top: 8rem;
 }
 
 .membersContainer h2 {
     text-align: center;
+    font-family: 'Caveat', sans-serif;
+    font-size: 3rem;
+    color: #333; 
 }
 
 .memberUp {
