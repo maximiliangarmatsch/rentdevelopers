@@ -127,6 +127,7 @@ class Members extends Component {
                             {member.acf.fullname}
                         </h4>
                         <hr />
+                        <h5>Available: 9 - 18h (GMT+1)</h5>
                         <div className="empty" />
                         <div className="price-pick">
                             <h3 className="price mt-4 price-color">
