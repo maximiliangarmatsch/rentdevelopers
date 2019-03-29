@@ -380,7 +380,7 @@ class MemberDetails extends Component {
                                 id="other_skills"
                                 style={{ marginBottom, width: '100%' }}
                             />
-
+                                {/*
                             <MDBInput
                                 label="Price"
                                 value={price}
@@ -390,7 +390,7 @@ class MemberDetails extends Component {
                                 id="price"
                                 style={{ marginBottom, width: '100%' }}
                             />
-
+                                */}
                             <MDBInput
                                 label="Position in CC"
                                 value={position_in_cc}

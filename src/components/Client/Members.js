@@ -130,9 +130,11 @@ class Members extends Component {
                         <h5>Available: 9 - 18h (GMT+1)</h5>
                         <div className="empty" />
                         <div className="price-pick">
+                                {/*
                             <h3 className="price mt-4 price-color">
                                 {member.acf.price}$/h
                             </h3>
+                                */}
                             <MDBBtn
                                 disabled={member.picked}
                                 onClick={() => this.pickMe(i)}
@@ -175,7 +177,7 @@ class Members extends Component {
             <MDBCol className="picked" md="3">
                 <h1>Your team</h1>
                 {pickedMembers}
-                <p>Total cost: ${cost} per/h</p>
+               {/*} <p>Total cost: ${cost} per/h</p> */}
                 <Link to={{ pathname: '/hire', state: { cost, pickedTeam } }}>
                     <MDBBtn className="button-color">Submit</MDBBtn>
                 </Link>

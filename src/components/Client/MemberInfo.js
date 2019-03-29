@@ -196,11 +196,11 @@ class MemberInfo extends Component {
 
                                         <dt className="col-sm-3 mt-2">
                                             Price:
-                                        </dt>
+                                        </dt>{/*
                                         <dd className="col-sm-9 mt-2">
                                             {this.state.price} $
                                         </dd>
-
+                                        */}
                                         <dt className="col-sm-3 mt-2">
                                             Position In CC:
                                         </dt>

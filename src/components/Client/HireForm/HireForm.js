@@ -226,12 +226,12 @@ class HireForm extends Component {
 
                                     <h4>Total hours: {totalHours}h</h4>
                                     <hr />
-                                    <h1>Total Cost: ${totalCost}</h1>
+                                   {/* <h1>Total Cost: ${totalCost}</h1>  */}
                                     <div
                                         onClick={this.sendMail}
                                         className="hireFormSubmit"
                                     >
-                                        {totalCost && email && name ? (
+                                        {email && name ? (
                                             <Link to="/order">
                                                 <MDBBtn color="primary">
                                                     Make an order
