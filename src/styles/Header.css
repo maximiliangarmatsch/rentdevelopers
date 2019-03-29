@@ -25,6 +25,7 @@
 .head-link-base {
     top: 0;
     font-family: 'Roboto', serif;
+    font-weight: 400;
     /*
   font-style: italic;
   font-size: 1.2em;

@@ -43,7 +43,7 @@ class Header extends Component {
                 <MDBNavbarNav right>
                     <MDBNavItem>
                         <MDBNavLink
-                            className="head-link-base head-link-4"
+                            className="head-link-base head-link-4 black-text"
                             to={this.props.route4}
                         >
                             {this.props.text4}
@@ -51,7 +51,7 @@ class Header extends Component {
                     </MDBNavItem>
                     <MDBNavItem>
                         <MDBNavLink
-                            className="head-link-base head-link-5"
+                            className="head-link-base head-link-5 black-text"
                             to={this.props.route5}
                         >
                             {this.props.text5}
