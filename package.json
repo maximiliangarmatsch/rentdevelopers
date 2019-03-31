@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
+    "bizcharts": "^3.5.2",
     "emailjs-com": "^2.3.2",
     "faker": "^4.1.0",
     "mdbreact": "^4.11.0",

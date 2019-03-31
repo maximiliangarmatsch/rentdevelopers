@@ -13,6 +13,7 @@ import {
 } from 'mdbreact';
 import axios from 'axios';
 import '../../styles/Members.css';
+import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts';
 
 class Members extends Component {
     state = {
@@ -22,6 +23,19 @@ class Members extends Component {
         cost: 0,
         defaultProfile: ''
     };
+    
+    graphData = [
+        {skill: "Server", level: 0},
+        {skill: "Database", level: 2},
+        {skill: "Backend", level: 2},
+        {skill: "Frontend", level: 4},
+        {skill: "Styling", level: 7},
+        {skill: "Photoshop", level: 2}
+     ];
+
+     graphCols = {
+        level: { tickInterval:2 }
+      };
 
     componentDidMount() {
         axios
@@ -174,8 +188,16 @@ class Members extends Component {
             );
         });
         const sidebar = (
-            <MDBCol className="picked" md="3">
+            <MDBCol className="picked" md="8" lg="3">
                 <h1>Your team</h1>
+                <br/>
+                <Chart padding={50} height={250} width={300} data={this.graphData} scale={this.graphCols} forceFit>
+                    <Axis name="skill" />
+                    <Axis name="level" />
+                    <Tooltip />
+                    <Geom type="interval" position="skill*level" color="skill" />
+                </Chart>
+                <br/>
                 {pickedMembers}
                {/*} <p>Total cost: ${cost} per/h</p> */}
                 <Link to={{ pathname: '/hire', state: { cost, pickedTeam } }}>
@@ -192,7 +214,8 @@ class Members extends Component {
                 <MDBRow>
                     <MDBCol
                         className="cardContainer"
-                        md={pickedTeam.length < 1 ? '12' : '9'}
+                        md={pickedTeam.length < 1 ? '12' : '12'}
+                        lg={pickedTeam.length < 1 ? '12' : '9'}
                     >
                         {members}
                     </MDBCol>
