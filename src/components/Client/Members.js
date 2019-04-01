@@ -60,6 +60,14 @@ class Members extends Component {
             .catch(err => console.log(err));
     }
 
+    addAverage(average, samples, value)
+    {
+        if (samples < 1) {
+            return false;
+          }
+          return average + ((value - average) / samples);
+         
+    }   
     pickMe = index => {
         const pickedTeam = this.state.pickedTeam.slice();
         const pickedMember = this.state.employees[index];
@@ -71,26 +79,53 @@ class Members extends Component {
             cost += Number(pickedMember.acf.price);
             pickedMember.picked = true;
             this.setState(oldState => ({ 
+                
                 pickedTeam, 
                 cost, 
                 pickedMember,
                 graphData: [
-                        {skill: "Server", 
-                        knowledge: (parseInt(oldState.graphData[0].knowledge) 
-                        + parseInt(pickedMember.acf.server_skills))/pickedTeam.length},
-                        {skill: "Database", knowledge: (parseInt(oldState.graphData[1].knowledge) 
-                        + parseInt(pickedMember.acf.database_skills))/pickedTeam.length},
-                        {skill: "Backend", knowledge: (parseInt(oldState.graphData[2].knowledge) 
-                        + parseInt(pickedMember.acf.backend_skills))/pickedTeam.length},
-                        {skill: "Frontend", knowledge: (parseInt(oldState.graphData[3].knowledge) 
-                        + parseInt(pickedMember.acf.frontend_skills))/pickedTeam.length},
-                        {skill: "Styling", knowledge: (parseInt(oldState.graphData[4].knowledge) 
-                        + parseInt(pickedMember.acf.styling_skills))/pickedTeam.length},
-                        {skill: "Photoshop", knowledge: (parseInt(oldState.graphData[5].knowledge) 
-                        + parseInt(pickedMember.acf.photoshop_skills))/pickedTeam.length}
+                        {
+                            skill: "Server", 
+                            knowledge: this.addAverage
+                            (oldState.graphData[0].knowledge, pickedTeam.length, pickedMember.acf.server_skills)
+                        },
+                        {
+                            skill: "Database", 
+                            knowledge: this.addAverage
+                            (oldState.graphData[1].knowledge, pickedTeam.length, pickedMember.acf.database_skills)
+                        },
+                        {
+                            skill: "Backend",
+                            knowledge: this.addAverage
+                            (oldState.graphData[2].knowledge, pickedTeam.length, pickedMember.acf.backend_skills)
+                        },
+                        {
+                            skill: "Frontend", 
+                             knowledge: this.addAverage
+                            (oldState.graphData[3].knowledge, pickedTeam.length, pickedMember.acf.frontend_skills)
+                        },
+                        {
+                            skill: "Styling",
+                            knowledge: this.addAverage
+                            (oldState.graphData[4].knowledge, pickedTeam.length, pickedMember.acf.styling_skills)
+                         },
+                        {
+                            skill: "Photoshop", 
+                            knowledge: this.addAverage
+                            (oldState.graphData[5].knowledge, pickedTeam.length, pickedMember.acf.photoshop_skills)
+                        }
                 ] }));
         }
     };
+
+    substractAverage(average, samples, value)
+    {
+        if (samples < 1) {
+            return false;
+          }
+          return ((average * samples) - value) / (samples - 1);
+         
+    }    
 
     deletePickedMember = index => {
         const pickedTeam = this.state.pickedTeam.slice();
@@ -99,7 +134,43 @@ class Members extends Component {
         pickedTeam.splice(index, 1);
         cost -= Number(pickedMember.acf.price);
         pickedMember.picked = false;
-        this.setState({ pickedTeam, cost, pickedMember });
+        this.setState(oldState => ({ 
+                
+            pickedTeam, 
+            cost, 
+            pickedMember,
+            graphData: [
+                    {
+                        skill: "Server", 
+                        knowledge: this.substractAverage
+                        (oldState.graphData[0].knowledge, pickedTeam.length, pickedMember.acf.server_skills)
+                    },
+                    {
+                        skill: "Database", 
+                        knowledge: this.substractAverage
+                        (oldState.graphData[1].knowledge, pickedTeam.length, pickedMember.acf.database_skills)
+                    },
+                    {
+                        skill: "Backend",
+                        knowledge: this.substractAverage
+                        (oldState.graphData[2].knowledge, pickedTeam.length, pickedMember.acf.backend_skills)
+                    },
+                    {
+                        skill: "Frontend", 
+                         knowledge: this.substractAverage
+                        (oldState.graphData[3].knowledge, pickedTeam.length, pickedMember.acf.frontend_skills)
+                    },
+                    {
+                        skill: "Styling",
+                        knowledge: this.substractAverage
+                        (oldState.graphData[4].knowledge, pickedTeam.length, pickedMember.acf.styling_skills)
+                     },
+                    {
+                        skill: "Photoshop", 
+                        knowledge: this.substractAverage
+                        (oldState.graphData[5].knowledge, pickedTeam.length, pickedMember.acf.photoshop_skills)
+                    }
+            ] }));
     };
 
     render() {
