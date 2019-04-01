@@ -102,11 +102,6 @@ class Members extends Component {
         this.setState({ pickedTeam, cost, pickedMember });
     };
 
-    onAboutMe = (fullname, e) => {
-        localStorage.setItem('memberName', fullname);
-        this.props.history.push(`/members/${fullname}`);
-    };
-
     render() {
         const { employees, pickedTeam, cost, defaultProfile } = this.state;
         // every card will change color till the end of array, then start again
@@ -160,7 +155,7 @@ class Members extends Component {
                             {member.acf.fullname}
                         </h4>
                         <hr />
-                        <h5>Available: 9 - 18h (GMT+1)</h5>
+                        <h5>Experience: 2 years</h5>
                         <div className="empty" />
                         <div className="price-pick">
                                 {/*
@@ -175,18 +170,9 @@ class Members extends Component {
                                 size="md"
                             >
                                 <MDBIcon icon="shopping-cart"/>
-                                &nbsp;Rent a developer
+                                &nbsp;Hire
                             </MDBBtn>
-                            <MDBBtn
-                                onClick={() =>
-                                    this.onAboutMe(member.acf.fullname)
-                                }
-                                className="button-color"
-                                size="md"
-                            >
-                                <MDBIcon icon="user" />
-                                &nbsp;About me
-                            </MDBBtn>
+                            
                         </div>
                     </MDBCardBody>
                 </MDBCard>
