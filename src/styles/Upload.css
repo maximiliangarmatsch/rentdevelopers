@@ -1,0 +1,15 @@
+.input-group-text {
+    background-color: #4daf7c;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.submit-button {
+    margin-top: 20px;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.custom-file-label {
+    font-size: 18px;
+}

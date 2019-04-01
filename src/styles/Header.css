@@ -1,0 +1,68 @@
+.nav-bar {
+    background: #F7F9F9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.logo {
+    height: 46px;
+    width: auto;
+}
+.nav-display {
+    display: flex;
+    margin: auto;
+    width: unset;
+}
+.nav-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #fff;
+    margin: auto;
+}
+.nav-toggler {
+    position: absolute;
+    top:  1rem;
+    left: 0.7rem;
+}
+
+.head-link-base {
+    top: 0;
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    /*
+  font-style: italic;
+  font-size: 1.2em;
+  */
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-display {
+        margin-left: 1rem;
+    }
+    .head-link-3 {
+        position: absolute;
+        right: 6rem;
+    }
+
+    .head-link-4 {
+        position: absolute;
+        right: 3rem;
+    }
+
+    /*.head-link-4:hover{
+    font-size: 1.25em;
+  }*/
+
+    .head-link-5 {
+        position: absolute;
+        right: 1rem;
+    }
+    /*
+  .head-link-5:hover{
+    font-size: 1.25em;
+  }
+ */
+}

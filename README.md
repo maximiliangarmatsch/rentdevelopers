@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by [Coder Consulting Team](http://coderconsulting.de/).
 
-## Available Scripts
+# PROJECT OVERVIEW
 
-In the project directory, you can run:
+This project shows an example of developer renting platform for companies.<br> 
+It allows for developers to register and fill in their profiles. Upload a 
+profile picture, set price, etc.. <br>
+It uses **ReactJS for frontend** that connects to a **WordPress backend via WPRest api**.<br>
+Project is styled using **mdbootstrap** and page is responsive for mobile and tablets as well.
 
-### `npm start`
+## `Landing Page`
+Landing page shows all developers registered in the company. Developers are shown in cards with
+their names and profile pictures, price, etc.. **Clicking on or near developer picture (avatar) or
+on the button "About me"**, leads to detailed page about that developer information.<br>
+**Clicking on "Rent a developer" button** creates a menu on the right side 
+(or on the bottom right above the footer on mobile devices). The menu consists of developer name and 
+price and if multiple developers are picked it automatically calculates total cost per hour 
+based on sum of their individual price per hour. You can remove picked developer from the menu by
+**clicking red "X"**.<br>
+**Clicking on "Submit" button** will take client to the Hire Form.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Hire Form`
+Hire forms enables client to pick for how long client wants to rent developers.<br> 
+Client picks hire period by clicking on the calendar for starting date and then clicking again
+for end date below are input fields for entering daily work hours and Working days throughout 
+the week. Last 2 inputs are for client to enter his name and email.<br>
+**Based on that total work hours and total cost is calculated and button that says "PLEASE
+FILL THE CALENDAR AND INPUTS" rerenders as "MAKE AN ORDER".** <br/>
+And if clicked it sends email to a company mail with all relevant information and takes client to 
+Order Received page.
+ 
+## `Login and Register`
+Login and register pages are simple login and register form with input validation. They are used
+to register a new developer as user on WordPress backend. And every user who is registered gets a Post
+on WordPress associated with him.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## `User Page`
+When developers login they see detailed page about their developer information. But now developer has 
+an option to change his information by clicking **"Details"** on the navbar. <br>
+When a developer logs in for the first time, he will be prompted to fill in his details. 
 
-### `npm test`
+## `Details Page`
+On this page developer can enter his information, price, experience etc.. Also by clicking 
+**"Browse"** or **"Choose your image"** file dialog appears so the developer can choose an image for
+his or hers profile. Once finished with updating profile, changes can be submitted by clicking the
+**"SUBMIT"** button. Developer can logout from his profile by clicking  **"Logout"** on the navbar.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## `Navbar and footer`
+ Navbar and footer are present on almost all pages. Navbar consists of Logo and login and register
+ links if developer is not logged in, or logout details and user links if developer is logged in. 
+ On phone links go into a **toggler** to preserve responsiveness. 
+ Footer consists of **"Follow us:"** buttons for contact page and linked in. Short paragraphs about
+ us and copyrights. 

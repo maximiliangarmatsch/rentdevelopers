@@ -1,0 +1,31 @@
+html,
+body,
+.backgroundImageRegister {
+    min-height: 100vh;
+}
+
+.backgroundImageRegister {
+    background-image: url('https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?cs=srgb&dl=conifer-fence-grass-534164.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.register {
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.register-container {
+    padding: 2rem 4rem;
+}
+
+@media only screen and (min-width: 769px) {
+    .register-container {
+        padding: 3rem 8rem;
+    }
+
+}
