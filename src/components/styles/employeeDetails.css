@@ -1,0 +1,10 @@
+.heading{
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.img-fluid{
+  margin-top: 2rem;
+  width: 250px;
+  height: 250px;
+}
