@@ -196,7 +196,8 @@ class Members extends Component {
             <MDBCol className="picked" md="8" lg="3">
                 <h1>Your team</h1>
                 <br/>
-                <Chart padding={50} height={250} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
+                <Chart padding={75} height={320} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
+                    <Coord transpose />
                     <Axis name="skill" />
                     <Axis name="knowledge" />
                     <Tooltip />
