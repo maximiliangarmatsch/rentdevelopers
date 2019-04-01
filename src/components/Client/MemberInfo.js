@@ -116,129 +116,147 @@ class MemberInfo extends Component {
                     route5="/developer/register"
                 />
                 <MDBContainer className="member-container">
+										<MDBRow className="member-first-row">
+											<MDBCol lg='4'>
+												<img
+													src={avatar}
+													className="img-fluid member-image"
+													alt="Avatar"
+													style={{
+														width: '300px',
+														height: 'auto'
+													}}
+												/>
+											</MDBCol>
+											<MDBCol lg='6' fluid>
+												<h1>{this.state.fullname}</h1>
+											</MDBCol>
                     <MDBRow>
-                        <MDBCol />
-                        <MDBCol sm="12" md="9">
-                            <MDBCard className="face font mt-5">
-                                {/* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> */}
-                                <div
-                                    className="avatar mx-auto white"
-                                    style={{
-                                        width: '200px',
-                                        height: '250px',
-                                        overflow: 'hidden'
-                                    }}
-                                >
-                                    <img
-                                        src={avatar}
-                                        className="img-fluid mx-auto d-block mt-3"
-                                        alt="Avatar"
-                                        style={{
-                                            width: '200px',
-                                            height: 'auto'
-                                        }}
-                                    />
-                                </div>
-                                <MDBCardBody>
-                                    <MDBCardTitle className="developer-title mdb-color white-text text-left">
-                                        {this.state.position_in_cc}
-                                    </MDBCardTitle>
+                        {/*<MDBCol />*/}
+                        {/*<MDBCol sm="12" md="9">*/}
+                            {/*<MDBCard className="face font mt-5">*/}
+                                {/*/!* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> *!/*/}
+                                {/*<div*/}
+                                    {/*className="avatar mx-auto white"*/}
+                                    {/*style={{*/}
+                                        {/*width: '200px',*/}
+                                        {/*height: '250px',*/}
+                                        {/*overflow: 'hidden'*/}
+                                    {/*}}*/}
+                                {/*>*/}
+                                    {/*<img*/}
+                                        {/*src={avatar}*/}
+                                        {/*className="img-fluid mx-auto d-block mt-3"*/}
+                                        {/*alt="Avatar"*/}
+                                        {/*style={{*/}
+                                            {/*width: '200px',*/}
+                                            {/*height: 'auto'*/}
+                                        {/*}}*/}
+                                    {/*/>*/}
+                                {/*</div>*/}
+                                {/*<MDBCardBody>*/}
+                                    {/*<MDBCardTitle className="developer-title mdb-color white-text text-left">*/}
+                                        {/*{this.state.position_in_cc}*/}
+                                    {/*</MDBCardTitle>*/}
 
-                                    <dl className="row">
-                                        <dt className="col-sm-3 mt-2">
-                                            Nickname:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.nickname}
-                                        </dd>
+                                    {/*<dl className="row">*/}
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Nickname:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.nickname}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Title:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.title}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Title:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.title}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Comunication skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.communication_skills}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Comunication skills:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.communication_skills}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Language:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.language}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Language:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.language}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Tech Skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.tech_skills}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Tech Skills:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.tech_skills}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Other Skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.other_skills}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Other Skills:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.other_skills}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Personal Skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.personal_skills}
-                                        </dd>
-                                            {/*
-                                        <dt className="col-sm-3 mt-2">
-                                            Price:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.price} $
-                                        </dd>
-                                        */}
-                                        <dt className="col-sm-3 mt-2">
-                                            Position In CC:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.position_in_cc}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Personal Skills:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.personal_skills}*/}
+                                        {/*</dd>*/}
+                                            {/*/!**/}
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Price:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.price} $*/}
+                                        {/*</dd>*/}
+                                        {/**!/*/}
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Position In CC:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.position_in_cc}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Previous Projects:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.previous_projects}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Previous Projects:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.previous_projects}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Education:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.education}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Education:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.education}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Location:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.location}
-                                        </dd>
+                                        {/*<dt className="col-sm-3 mt-2">*/}
+                                            {/*Location:*/}
+                                        {/*</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.location}*/}
+                                        {/*</dd>*/}
 
-                                        <dt className="col-sm-3 mt-2">Note:</dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.note}
-                                        </dd>
-                                    </dl>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                        <MDBCol />
+                                        {/*<dt className="col-sm-3 mt-2">Note:</dt>*/}
+                                        {/*<dd className="col-sm-9 mt-2">*/}
+                                            {/*{this.state.note}*/}
+                                        {/*</dd>*/}
+                                    {/*</dl>*/}
+                                {/*</MDBCardBody>*/}
+                            {/*</MDBCard>*/}
+                        {/*</MDBCol>*/}
+                        {/*<MDBCol />*/}
                     </MDBRow>
+										</MDBRow>
+										<MDBRow className="member-second-row">
+										</MDBRow>
                 </MDBContainer>
                 <Footer />
             </React.Fragment>
