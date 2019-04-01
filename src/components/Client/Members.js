@@ -23,12 +23,12 @@ class Members extends Component {
         cost: 0,
         defaultProfile: '',
         graphData: [
-            {skill: "Server", level: 0},
-            {skill: "Database", level: 0},
-            {skill: "Backend", level: 0},
-            {skill: "Frontend", level: 0},
-            {skill: "Styling", level: 0},
-            {skill: "Photoshop", level: 0}
+            {skill: "Server", knowledge: 0},
+            {skill: "Database", knowledge: 0},
+            {skill: "Backend", knowledge: 0},
+            {skill: "Frontend", knowledge: 0},
+            {skill: "Styling", knowledge: 0},
+            {skill: "Photoshop", knowledge: 0}
          ]
     };
     
@@ -70,15 +70,25 @@ class Members extends Component {
             pickedTeam.push(pickedMember);
             cost += Number(pickedMember.acf.price);
             pickedMember.picked = true;
-            this.setState({ pickedTeam, cost, pickedMember,
+            this.setState(oldState => ({ 
+                pickedTeam, 
+                cost, 
+                pickedMember,
                 graphData: [
-                        {skill: "Server", level: pickedMember.acf.server_skills},
-                        {skill: "Database", level: pickedMember.acf.database_skills},
-                        {skill: "Backend", level: pickedMember.acf.backend_skills},
-                        {skill: "Frontend", level: pickedMember.acf.frontend_skills},
-                        {skill: "Styling", level: pickedMember.acf.styling_skills},
-                        {skill: "Photoshop", level: pickedMember.acf.photoshop_skills}
-                ] });
+                        {skill: "Server", 
+                        knowledge: (parseInt(oldState.graphData[0].knowledge) 
+                        + parseInt(pickedMember.acf.server_skills))/pickedTeam.length},
+                        {skill: "Database", knowledge: (parseInt(oldState.graphData[1].knowledge) 
+                        + parseInt(pickedMember.acf.database_skills))/pickedTeam.length},
+                        {skill: "Backend", knowledge: (parseInt(oldState.graphData[2].knowledge) 
+                        + parseInt(pickedMember.acf.backend_skills))/pickedTeam.length},
+                        {skill: "Frontend", knowledge: (parseInt(oldState.graphData[3].knowledge) 
+                        + parseInt(pickedMember.acf.frontend_skills))/pickedTeam.length},
+                        {skill: "Styling", knowledge: (parseInt(oldState.graphData[4].knowledge) 
+                        + parseInt(pickedMember.acf.styling_skills))/pickedTeam.length},
+                        {skill: "Photoshop", knowledge: (parseInt(oldState.graphData[5].knowledge) 
+                        + parseInt(pickedMember.acf.photoshop_skills))/pickedTeam.length}
+                ] }));
         }
     };
 
@@ -202,9 +212,9 @@ class Members extends Component {
                 <br/>
                 <Chart padding={50} height={250} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
                     <Axis name="skill" />
-                    <Axis name="level" />
+                    <Axis name="knowledge" />
                     <Tooltip />
-                    <Geom type="interval" position="skill*level" color="skill" />
+                    <Geom type="interval" position="skill*knowledge" color="skill" />
                 </Chart>
                 <br/>
                 {pickedMembers}
