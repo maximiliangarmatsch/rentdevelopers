@@ -21,17 +21,18 @@ class Members extends Component {
         media: [],
         pickedTeam: [],
         cost: 0,
-        defaultProfile: ''
+        defaultProfile: '',
+        graphData: [
+            {skill: "Server", level: 0},
+            {skill: "Database", level: 0},
+            {skill: "Backend", level: 0},
+            {skill: "Frontend", level: 0},
+            {skill: "Styling", level: 0},
+            {skill: "Photoshop", level: 0}
+         ]
     };
     
-    graphData = [
-        {skill: "Server", level: 0},
-        {skill: "Database", level: 2},
-        {skill: "Backend", level: 2},
-        {skill: "Frontend", level: 4},
-        {skill: "Styling", level: 7},
-        {skill: "Photoshop", level: 2}
-     ];
+    
 
      graphCols = {
         level: { tickInterval:2 }
@@ -69,7 +70,15 @@ class Members extends Component {
             pickedTeam.push(pickedMember);
             cost += Number(pickedMember.acf.price);
             pickedMember.picked = true;
-            this.setState({ pickedTeam, cost, pickedMember });
+            this.setState({ pickedTeam, cost, pickedMember,
+                graphData: [
+                        {skill: "Server", level: pickedMember.acf.server_skills},
+                        {skill: "Database", level: pickedMember.acf.database_skills},
+                        {skill: "Backend", level: pickedMember.acf.backend_skills},
+                        {skill: "Frontend", level: pickedMember.acf.frontend_skills},
+                        {skill: "Styling", level: pickedMember.acf.styling_skills},
+                        {skill: "Photoshop", level: pickedMember.acf.photoshop_skills}
+                ] });
         }
     };
 
@@ -191,7 +200,7 @@ class Members extends Component {
             <MDBCol className="picked" md="8" lg="3">
                 <h1>Your team</h1>
                 <br/>
-                <Chart padding={50} height={250} width={300} data={this.graphData} scale={this.graphCols} forceFit>
+                <Chart padding={50} height={250} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
                     <Axis name="skill" />
                     <Axis name="level" />
                     <Tooltip />
