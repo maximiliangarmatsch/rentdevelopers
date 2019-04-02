@@ -63,7 +63,7 @@ class Members extends Component {
     addAverage(average, samples, value)
     {
         if (samples < 1) {
-            return false;
+            return "Out of bounds";
           }
           return average + ((value - average) / samples);
          
@@ -86,33 +86,33 @@ class Members extends Component {
                 graphData: [
                         {
                             skill: "Server", 
-                            knowledge: this.addAverage
-                            (oldState.graphData[0].knowledge, pickedTeam.length, pickedMember.acf.server_skills)
+                            knowledge: this.addAverage( 
+                                oldState.graphData[0].knowledge, pickedTeam.length, pickedMember.acf.server_skills)
                         },
                         {
                             skill: "Database", 
-                            knowledge: this.addAverage
-                            (oldState.graphData[1].knowledge, pickedTeam.length, pickedMember.acf.database_skills)
+                            knowledge: this.addAverage(
+                                oldState.graphData[1].knowledge, pickedTeam.length, pickedMember.acf.database_skills)
                         },
                         {
                             skill: "Backend",
-                            knowledge: this.addAverage
-                            (oldState.graphData[2].knowledge, pickedTeam.length, pickedMember.acf.backend_skills)
+                            knowledge: this.addAverage(
+                                oldState.graphData[2].knowledge, pickedTeam.length, pickedMember.acf.backend_skills)
                         },
                         {
                             skill: "Frontend", 
-                             knowledge: this.addAverage
-                            (oldState.graphData[3].knowledge, pickedTeam.length, pickedMember.acf.frontend_skills)
+                             knowledge: this.addAverage(
+                                 oldState.graphData[3].knowledge, pickedTeam.length, pickedMember.acf.frontend_skills)
                         },
                         {
                             skill: "Styling",
-                            knowledge: this.addAverage
-                            (oldState.graphData[4].knowledge, pickedTeam.length, pickedMember.acf.styling_skills)
+                            knowledge: this.addAverage(
+                                oldState.graphData[4].knowledge, pickedTeam.length, pickedMember.acf.styling_skills)
                          },
                         {
                             skill: "Photoshop", 
-                            knowledge: this.addAverage
-                            (oldState.graphData[5].knowledge, pickedTeam.length, pickedMember.acf.photoshop_skills)
+                            knowledge: this.addAverage(
+                                oldState.graphData[5].knowledge, pickedTeam.length, pickedMember.acf.photoshop_skills)
                         }
                 ] }));
         }
@@ -137,46 +137,48 @@ class Members extends Component {
                 {skill: "Styling", knowledge: 0},
                 {skill: "Photoshop", knowledge: 0}
              ]});
-
-        pickedTeam.map(developer => {
-            console.log(developer);
+             
+            for (let i = 0; i < pickedTeam.length;i++ ){
             this.setState(oldState => ({ 
                 graphData: [
                     {
                         skill: "Server", 
-                        knowledge: this.addAverage
-                        (oldState.graphData[0].knowledge, pickedTeam.length, developer.acf.server_skills)
+                        knowledge: this.addAverage(
+                            oldState.graphData[0].knowledge, i+1 , pickedTeam[i].acf.server_skills)
                     },
                     {
                         skill: "Database", 
-                        knowledge: this.addAverage
-                        (oldState.graphData[1].knowledge, pickedTeam.length, developer.acf.database_skills)
+                        knowledge: this.addAverage(
+                            oldState.graphData[1].knowledge, i+1 , pickedTeam[i].acf.database_skills)
                     },
                     {
                         skill: "Backend",
-                        knowledge: this.addAverage
-                        (oldState.graphData[2].knowledge, pickedTeam.length, developer.acf.backend_skills)
+                        knowledge: this.addAverage(
+                            oldState.graphData[2].knowledge, i+1 , pickedTeam[i].acf.backend_skills)
                     },
                     {
                         skill: "Frontend", 
-                         knowledge: this.addAverage
-                        (oldState.graphData[3].knowledge, pickedTeam.length, developer.acf.frontend_skills)
+                         knowledge: this.addAverage(
+                             oldState.graphData[3].knowledge, i+1 , pickedTeam[i].acf.frontend_skills)
                     },
                     {
                         skill: "Styling",
-                        knowledge: this.addAverage
-                        (oldState.graphData[4].knowledge, pickedTeam.length, developer.acf.styling_skills)
+                        knowledge: this.addAverage(
+                            oldState.graphData[4].knowledge, i+1 , pickedTeam[i].acf.styling_skills)
                      },
                     {
                         skill: "Photoshop", 
-                        knowledge: this.addAverage
-                        (oldState.graphData[5].knowledge, pickedTeam.length, developer.acf.photoshop_skills)
-                    }
-            ] }));
-        })
+                        knowledge: this.addAverage(
+                            oldState.graphData[5].knowledge, i+1 , pickedTeam[i].acf.photoshop_skills)
+                    },
+            ] 
+        }))
+        
+            }
+        
     };
 
-       
+
         
 
     render() {
