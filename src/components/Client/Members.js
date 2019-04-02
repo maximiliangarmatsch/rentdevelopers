@@ -118,15 +118,6 @@ class Members extends Component {
         }
     };
 
-    substractAverage(average, samples, value)
-    {
-        if (samples < 1) {
-            return false;
-          }
-          return ((average * samples) - value) / (samples - 1);
-         
-    }    
-
     deletePickedMember = index => {
         const pickedTeam = this.state.pickedTeam.slice();
         const pickedMember = pickedTeam[index];
@@ -134,44 +125,59 @@ class Members extends Component {
         pickedTeam.splice(index, 1);
         cost -= Number(pickedMember.acf.price);
         pickedMember.picked = false;
-        this.setState(oldState => ({ 
-                
+        this.setState({   
             pickedTeam, 
             cost, 
             pickedMember,
             graphData: [
+                {skill: "Server", knowledge: 0},
+                {skill: "Database", knowledge: 0},
+                {skill: "Backend", knowledge: 0},
+                {skill: "Frontend", knowledge: 0},
+                {skill: "Styling", knowledge: 0},
+                {skill: "Photoshop", knowledge: 0}
+             ]});
+
+        pickedTeam.map(developer => {
+            console.log(developer);
+            this.setState(oldState => ({ 
+                graphData: [
                     {
                         skill: "Server", 
-                        knowledge: this.substractAverage
-                        (oldState.graphData[0].knowledge, pickedTeam.length, pickedMember.acf.server_skills)
+                        knowledge: this.addAverage
+                        (oldState.graphData[0].knowledge, pickedTeam.length, developer.acf.server_skills)
                     },
                     {
                         skill: "Database", 
-                        knowledge: this.substractAverage
-                        (oldState.graphData[1].knowledge, pickedTeam.length, pickedMember.acf.database_skills)
+                        knowledge: this.addAverage
+                        (oldState.graphData[1].knowledge, pickedTeam.length, developer.acf.database_skills)
                     },
                     {
                         skill: "Backend",
-                        knowledge: this.substractAverage
-                        (oldState.graphData[2].knowledge, pickedTeam.length, pickedMember.acf.backend_skills)
+                        knowledge: this.addAverage
+                        (oldState.graphData[2].knowledge, pickedTeam.length, developer.acf.backend_skills)
                     },
                     {
                         skill: "Frontend", 
-                         knowledge: this.substractAverage
-                        (oldState.graphData[3].knowledge, pickedTeam.length, pickedMember.acf.frontend_skills)
+                         knowledge: this.addAverage
+                        (oldState.graphData[3].knowledge, pickedTeam.length, developer.acf.frontend_skills)
                     },
                     {
                         skill: "Styling",
-                        knowledge: this.substractAverage
-                        (oldState.graphData[4].knowledge, pickedTeam.length, pickedMember.acf.styling_skills)
+                        knowledge: this.addAverage
+                        (oldState.graphData[4].knowledge, pickedTeam.length, developer.acf.styling_skills)
                      },
                     {
                         skill: "Photoshop", 
-                        knowledge: this.substractAverage
-                        (oldState.graphData[5].knowledge, pickedTeam.length, pickedMember.acf.photoshop_skills)
+                        knowledge: this.addAverage
+                        (oldState.graphData[5].knowledge, pickedTeam.length, developer.acf.photoshop_skills)
                     }
             ] }));
+        })
     };
+
+       
+        
 
     render() {
         const { employees, pickedTeam, cost, defaultProfile } = this.state;
