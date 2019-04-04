@@ -178,7 +178,10 @@ class Members extends Component {
         
     };
 
-
+    onAboutMe = (fullname, e) => {
+        localStorage.setItem('memberName', fullname);
+        this.props.history.push(`/members/${fullname}`);
+    };
         
 
     render() {
