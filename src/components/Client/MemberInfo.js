@@ -363,42 +363,42 @@ class MemberInfo extends Component {
                                                     <dt className="col-sm-3 mt-2">
 														Nickname:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.nickname}
 														</dd>
 
 														<dt className="col-sm-3 mt-2">
 														Title:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.title}
 														</dd>
 
-														<dt className="col-sm-3 mt-2">
+														<dt className="dev-info-data col-sm-3 mt-2">
 														Comunication skills:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.communication_skills}
 														</dd>
 
-														<dt className="col-sm-3 mt-2">
+														<dt className="dev-info-data col-sm-3 mt-2">
 														Language:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.language}
 														</dd>
 
-														<dt className="col-sm-3 mt-2">
+														<dt className="dev-info-data col-sm-3 mt-2">
 															Education:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 															{this.state.education}
 														</dd>
 
-														<dt className="col-sm-3 mt-2">
+														<dt className="dev-info-data col-sm-3 mt-2">
 															Location:
 														</dt>
-														<dd className="col-sm-9 mt-2">
+														<dd className="dev-info-data col-sm-9 mt-2">
 															{this.state.location}
 														</dd>
                                                         {/*
