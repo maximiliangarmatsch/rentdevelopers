@@ -316,6 +316,51 @@ class MemberInfo extends Component {
 												<MDBCol sm='6'>
 													<dl className="row">
 														<dt className="col-sm-3 mt-2">
+														Tech Skills:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+														{this.state.tech_skills}
+														</dd>
+
+														<dt className="col-sm-3 mt-2">
+														Other Skills:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+														{this.state.other_skills}
+														</dd>
+
+                                                        <dt className="col-sm-3 mt-2">
+														Personal Skills:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+															{this.state.personal_skills}
+														</dd>
+														{/*
+														<dt className="col-sm-3 mt-2">
+														Price:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+														{this.state.price} $
+														</dd>
+														*/}
+														<dt className="col-sm-3 mt-2">
+														Position In CC:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+															{this.state.position_in_cc}
+														</dd>
+
+														<dt className="col-sm-3 mt-2">
+														Previous Projects:
+														</dt>
+														<dd className="col-sm-9 mt-2">
+															{this.state.previous_projects}
+														</dd>
+                                                    </dl>
+												</MDBCol>
+												<MDBCol sm='6'>
+													<dl className='row'>
+                                                    <dt className="col-sm-3 mt-2">
 														Nickname:
 														</dt>
 														<dd className="col-sm-9 mt-2">
@@ -344,51 +389,6 @@ class MemberInfo extends Component {
 														</dd>
 
 														<dt className="col-sm-3 mt-2">
-														Tech Skills:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-														{this.state.tech_skills}
-														</dd>
-
-														<dt className="col-sm-3 mt-2">
-														Other Skills:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-														{this.state.other_skills}
-														</dd>
-														</dl>
-												</MDBCol>
-												<MDBCol sm='6'>
-													<dl className='row'>
-														<dt className="col-sm-3 mt-2">
-															Personal Skills:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-															{this.state.personal_skills}
-														</dd>
-														{/*
-														<dt className="col-sm-3 mt-2">
-														Price:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-														{this.state.price} $
-														</dd>
-														*/}
-														<dt className="col-sm-3 mt-2">
-															Position In CC:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-															{this.state.position_in_cc}
-														</dd>
-
-														<dt className="col-sm-3 mt-2">
-															Previous Projects:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-															{this.state.previous_projects}
-														</dd>
-
-														<dt className="col-sm-3 mt-2">
 															Education:
 														</dt>
 														<dd className="col-sm-9 mt-2">
@@ -401,11 +401,12 @@ class MemberInfo extends Component {
 														<dd className="col-sm-9 mt-2">
 															{this.state.location}
 														</dd>
-
+                                                        {/*
 														<dt className="col-sm-3 mt-2">Note:</dt>
 														<dd className="col-sm-9 mt-2">
 															{this.state.note}
-														</dd>
+                                                        </dd>
+                                                    {*/}
 													</dl>
 												</MDBCol>
 											</MDBCol>
