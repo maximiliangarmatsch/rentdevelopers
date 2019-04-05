@@ -12,6 +12,7 @@ import Spinner from './Spinner/Spinner';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
 import '../../styles/Member.css';
+import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts';
 
 class MemberInfo extends Component {
     state = {
@@ -30,9 +31,19 @@ class MemberInfo extends Component {
         tech_skills: '',
         title: '',
         avatar: '',
-        isLoaded: false
+        isLoaded: false,
+        graphData: [
+            {skill: "Server", knowledge: 0},
+            {skill: "Database", knowledge: 0},
+            {skill: "Backend", knowledge: 0},
+            {skill: "Frontend", knowledge: 0},
+            {skill: "Styling", knowledge: 0},
+            {skill: "Photoshop", knowledge: 0}
+         ],
     };
-
+    graphCols = {
+        level: { tickInterval:2 }
+      };
     componentDidMount() {
         axios
             .get(`http://ccapp.coder-consulting.com/wp-json/wp/v2/posts?per_page=100&page=1`)
@@ -68,7 +79,7 @@ class MemberInfo extends Component {
                 if (userData.length < 1) {
                     this.setState({ isLoaded: true });
                 } else {
-                    this.setState({
+                    this.setState(oldState =>({
                         fullname: userData[0].acf.fullname,
                         communication_skills:
                             userData[0].acf.communication_skills,
@@ -84,8 +95,34 @@ class MemberInfo extends Component {
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
                         title: userData[0].acf.title,
-                        isLoaded: true
-                    });
+                        isLoaded: true,
+                        graphData: [
+                            {
+                                skill: "Server", 
+                                knowledge: parseInt(userData[0].acf.server_skills)
+                            },
+                            {
+                                skill: "Database", 
+                                knowledge: parseInt(userData[0].acf.database_skills)
+                            },
+                            {
+                                skill: "Backend",
+                                knowledge: parseInt(userData[0].acf.backend_skills)
+                            },
+                            {
+                                skill: "Frontend", 
+                                 knowledge: parseInt(userData[0].acf.frontend_skills)
+                            },
+                            {
+                                skill: "Styling",
+                                knowledge: parseInt(userData[0].acf.styling_skills)
+                             },
+                            {
+                                skill: "Photoshop", 
+                                knowledge: parseInt(userData[0].acf.photoshop_skills)
+                            }
+                    ]
+                    }));
                 }
             })
             .catch(err => console.log(err));
@@ -127,6 +164,13 @@ class MemberInfo extends Component {
 											<MDBCol sm='8' fluid>
 												<h1>{this.state.fullname}</h1>
 												<h3>{this.state.position_in_cc}</h3>
+                                                <hr style={{borderBottom:"1px solid white"}}/>
+                                                <p style={{paddingTop:"2rem", textAlign:"center"}}>Lorem ipsum dolor sit amet,
+                                                    consectetur adipiscing elit. Quisque at bibendum quam. Nullam eu mi aliquet,
+                                                    aliquet felis nec, imperdiet metus. Fusce nec porta lorem. Maecenas cursus posuere
+                                                    condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                    fames ac turpis egestas.Suspendisse potenti. Sed turpis lacus, ultrices tempor
+                                                    massa in, efficitur sodales tortor.</p>
 											</MDBCol>
                     <MDBRow>
                         {/*<MDBCol />*/}
@@ -252,11 +296,22 @@ class MemberInfo extends Component {
                         {/*<MDBCol />*/}
                     </MDBRow>
 										</MDBRow>
-										<MDBRow className="member-second-row">
-											<MDBCol lg='12'>
+                                        <MDBRow className="member-second-row">
+                                        <MDBCol lg='12'>
 												<h3>About <span className="developer-about-span">Developer</span></h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at bibendum quam. Nullam eu mi aliquet, aliquet felis nec, imperdiet metus. Fusce nec porta lorem. Maecenas cursus posuere condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Sed turpis lacus, ultrices tempor massa in, efficitur sodales tortor. </p>
-											</MDBCol>
+										</MDBCol>
+                                        <MDBCol>
+                                        <Chart padding={75} height={320} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
+                                                    <Coord transpose />
+                                                    <Axis name="skill" />
+                                                    <Axis name="knowledge" />
+                                                    <Tooltip />
+                                                    <Geom type="interval" position="skill*knowledge" color="skill" />
+                                                </Chart>
+                                            </MDBCol>
+                                        </MDBRow>
+										<MDBRow className="member-second-row">
+											
 											<MDBCol className="row">
 												<MDBCol sm='6'>
 													<dl className="row">
