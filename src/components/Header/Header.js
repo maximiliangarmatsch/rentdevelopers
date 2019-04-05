@@ -110,6 +110,11 @@ class Header extends Component {
                             <Link to="/">
                                 <img className="logo" src={logo} alt="Logo" />
                             </Link>
+                            <div className="nav-quote">
+                                <h1>/* We are team of developers</h1>
+                                <p>_____</p>
+                                <h3>Our moto is: Don't drink a soup with a fork */</h3>
+                            </div>
                         </MDBNavbarBrand>
                     </MDBNavbarNav>
                 </div>

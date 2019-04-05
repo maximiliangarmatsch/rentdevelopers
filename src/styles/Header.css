@@ -37,10 +37,110 @@
     padding: 10px;
     letter-spacing: 1px;
 }
-
+.nav-quote{
+    display: none;
+}
 @media only screen and (min-width: 768px) {
+    .nav-bar {
+        background: url("https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1782&q=80");
+        background-size: cover;
+        position: relative;
+        top: -5rem;
+        width: 100%;
+        height: 30rem;
+        z-index: 2;
+        transform: skewY(-4deg);
+    }
+    .nav-quote{
+        display: block;
+        color: white;
+        transform: skewY(4deg);
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        text-align: center;
+    }
+    .nav-quote h1{
+        font-size: 1.5rem;
+    }
+    .nav-quote h3{
+        font-size: 1rem;
+    }
+
+    .logo {
+        height: 100px;
+        width: auto;
+        margin-top:-10rem;
+        transform: skewY(4deg);
+    }
+    
     .nav-display {
         margin-left: 1rem;
+    }
+    .head-link-base {
+        top:10rem;
+        transform: skewY(4deg);
+        font-family: 'Roboto', serif;
+        font-weight: 400;
+        color:white !important;
+        /*
+      font-style: italic;
+      font-size: 1.2em;
+      */
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+    .head-link-3 {
+        position: absolute;
+        right: 6rem;
+    }
+
+    .head-link-4 {
+        position: absolute;
+        right: 3rem;
+    }
+
+    /*.head-link-4:hover{
+    font-size: 1.25em;
+  }*/
+
+    .head-link-5 {
+        position: absolute;
+        right: 1rem;
+    }
+    /*
+  .head-link-5:hover{
+    font-size: 1.25em;
+  }
+ */
+}
+
+@media only screen and (min-width: 1130px) {
+    .nav-quote{
+        transform: skewY(-15deg);
+        top: 30%;
+        left: 50%;
+    }
+
+    .logo {
+        height: 100px;
+        width: auto;
+        margin-top:-10rem;
+        transform: skewY(4deg);
+    }
+    
+    .head-link-base {
+        top:10rem;
+        transform: skewY(4deg);
+        font-family: 'Roboto', serif;
+        font-weight: 400;
+        color:white !important;
+        /*
+      font-style: italic;
+      font-size: 1.2em;
+      */
+        padding: 10px;
+        letter-spacing: 1px;
     }
     .head-link-3 {
         position: absolute;
