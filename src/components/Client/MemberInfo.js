@@ -31,6 +31,7 @@ class MemberInfo extends Component {
         tech_skills: '',
         title: '',
         avatar: '',
+        about: '',
         isLoaded: false,
         graphData: [
             {skill: "Server", knowledge: 0},
@@ -95,6 +96,7 @@ class MemberInfo extends Component {
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
                         title: userData[0].acf.title,
+                        about: userData[0].acf.about,
                         isLoaded: true,
                         graphData: [
                             {
@@ -165,12 +167,7 @@ class MemberInfo extends Component {
 												<h1>{this.state.fullname}</h1>
 												<h3>{this.state.position_in_cc}</h3>
                                                 <hr style={{borderBottom:"1px solid white"}}/>
-                                                <p style={{paddingTop:"2rem", textAlign:"center"}}>Lorem ipsum dolor sit amet,
-                                                    consectetur adipiscing elit. Quisque at bibendum quam. Nullam eu mi aliquet,
-                                                    aliquet felis nec, imperdiet metus. Fusce nec porta lorem. Maecenas cursus posuere
-                                                    condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                                    fames ac turpis egestas.Suspendisse potenti. Sed turpis lacus, ultrices tempor
-                                                    massa in, efficitur sodales tortor.</p>
+                                                <p style={{paddingTop:"2rem", textAlign:"center"}}>{this.state.about}</p>
 											</MDBCol>
                     <MDBRow>
                         {/*<MDBCol />*/}
