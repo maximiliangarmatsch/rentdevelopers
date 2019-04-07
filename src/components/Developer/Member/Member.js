@@ -23,9 +23,8 @@ class Member extends Component {
         language: '',
         location: '',
         nickname: '',
-        note: '',
+        about: '',
         other_skills: '',
-        personal_skills: '',
         previous_projects: '',
         price: '',
         tech_skills: '',
@@ -78,9 +77,8 @@ class Member extends Component {
                         language: userData[0].acf.language,
                         location: userData[0].acf.location,
                         nickname: userData[0].acf.nickname,
-                        note: userData[0].acf.note,
+                        about: userData[0].acf.about,
                         other_skills: userData[0].acf.other_skills,
-                        personal_skills: userData[0].acf.personal_skills,
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
@@ -181,12 +179,6 @@ class Member extends Component {
                                             {this.state.other_skills}
                                         </dd>
 
-                                        <dt className="col-sm-3 mt-2">
-                                            Personal Skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.personal_skills}
-                                        </dd>
                                             {/*
                                         <dt className="col-sm-3 mt-2">
                                             Price:
@@ -223,9 +215,9 @@ class Member extends Component {
                                             {this.state.location}
                                         </dd>
 
-                                        <dt className="col-sm-3 mt-2">Note:</dt>
+                                        <dt className="col-sm-3 mt-2">About:</dt>
                                         <dd className="col-sm-9 mt-2">
-                                            {this.state.note}
+                                            {this.state.about}
                                         </dd>
                                     </dl>
                                 </MDBCardBody>

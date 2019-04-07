@@ -23,7 +23,6 @@ class MemberInfo extends Component {
         nickname: '',
         note: '',
         other_skills: '',
-        personal_skills: '',
         previous_projects: '',
         price: '',
         tech_skills: '',
@@ -86,7 +85,6 @@ class MemberInfo extends Component {
                         nickname: userData[0].acf.nickname,
                         note: userData[0].acf.note,
                         other_skills: userData[0].acf.other_skills,
-                        personal_skills: userData[0].acf.personal_skills,
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
@@ -320,14 +318,7 @@ class MemberInfo extends Component {
 														<dd className="col-sm-9 mt-2">
 														{this.state.other_skills}
 														</dd>
-
-                                                        <dt className="col-sm-3 mt-2">
-														Personal Skills:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-															{this.state.personal_skills}
-														</dd>
-
+                                                        
 														<dt className="col-sm-3 mt-2">
 														Previous Projects:
 														</dt>
