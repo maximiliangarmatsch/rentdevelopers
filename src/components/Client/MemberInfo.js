@@ -290,7 +290,7 @@ class MemberInfo extends Component {
                                         <MDBCol lg='12'>
 												<h3>About <span className="developer-about-span">Developer</span></h3>
 										</MDBCol>
-                                        <MDBCol>
+                                        <MDBCol size="12" xs="12" sm="8" lg="6">
                                         <Chart padding={75} height={320} width={300} data={this.state.graphData} scale={this.graphCols} forceFit>
                                                     <Coord transpose />
                                                     <Axis name="skill" />
