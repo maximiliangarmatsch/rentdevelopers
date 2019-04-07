@@ -237,7 +237,8 @@ class Members extends Component {
                             {member.acf.fullname}
                         </h4>
                         <hr />
-                        <h5>Experience: 2 years</h5>
+                        <h5>{member.acf.stack} Developer</h5>
+                        <h5>{member.acf.specialty}</h5>
                         <div className="empty" />
                         <div className="price-pick">
                                 {/*
