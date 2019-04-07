@@ -17,7 +17,6 @@ import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts';
 class MemberInfo extends Component {
     state = {
         fullname: '',
-        education: '',
         language: '',
         location: '',
         nickname: '',
@@ -79,7 +78,6 @@ class MemberInfo extends Component {
                 } else {
                     this.setState(oldState =>({
                         fullname: userData[0].acf.fullname,
-                        education: userData[0].acf.education,
                         language: userData[0].acf.language,
                         location: userData[0].acf.location,
                         nickname: userData[0].acf.nickname,
@@ -335,13 +333,6 @@ class MemberInfo extends Component {
 														</dt>
 														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.language}
-														</dd>
-
-														<dt className="dev-info-data col-sm-3 mt-2">
-															Education:
-														</dt>
-														<dd className="dev-info-data col-sm-9 mt-2">
-															{this.state.education}
 														</dd>
 
 														<dt className="dev-info-data col-sm-3 mt-2">
