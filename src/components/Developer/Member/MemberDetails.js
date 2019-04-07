@@ -25,7 +25,6 @@ class MemberDetails extends Component {
         stack: '',
         previous_projects: '',
         location: '',
-        education: '',
         about: '',
         fullnameExist: false,
         successMess: false,
@@ -62,7 +61,6 @@ class MemberDetails extends Component {
                         stack: userData[0].acf.stack,
                         previous_projects: userData[0].acf.previous_projects,
                         location: userData[0].acf.location,
-                        education: userData[0].acf.education,
                         about: userData[0].acf.about
                     });
                 }
@@ -79,7 +77,6 @@ class MemberDetails extends Component {
         const previous_projects = document.getElementById('previous_projects')
             .value;
         const location = document.getElementById('location').value;
-        const education = document.getElementById('education').value;
         const about = document.getElementById('about').value;
 
         if (fullname === '') {
@@ -106,7 +103,6 @@ class MemberDetails extends Component {
                             stack,
                             previous_projects,
                             location,
-                            education,
                             about
                         }
                     },
@@ -136,7 +132,6 @@ class MemberDetails extends Component {
                             stack,
                             previous_projects,
                             location,
-                            education,
                             about
                         }
                     },
@@ -213,7 +208,6 @@ class MemberDetails extends Component {
             stack,
             previous_projects,
             location,
-            education,
             about,
             error,
             selectedImage,
@@ -356,16 +350,6 @@ class MemberDetails extends Component {
                                 onChange={this.onFieldChange}
                                 size="md"
                                 id="previous_projects"
-                                style={{ marginBottom, width: '100%' }}
-                            />
-
-                            <MDBInput
-                                label="Education"
-                                value={education}
-                                name="education"
-                                onChange={this.onFieldChange}
-                                size="md"
-                                id="education"
                                 style={{ marginBottom, width: '100%' }}
                             />
 
