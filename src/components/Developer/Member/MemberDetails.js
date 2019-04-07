@@ -23,7 +23,7 @@ class MemberDetails extends Component {
         personal_skills: '',
         other_skills: '',
         price: '',
-        position_in_cc: '',
+        stack: '',
         previous_projects: '',
         location: '',
         education: '',
@@ -61,7 +61,7 @@ class MemberDetails extends Component {
                         personal_skills: userData[0].acf.personal_skills,
                         other_skills: userData[0].acf.other_skills,
                         price: userData[0].acf.price,
-                        position_in_cc: userData[0].acf.position_in_cc,
+                        stack: userData[0].acf.stack,
                         previous_projects: userData[0].acf.previous_projects,
                         location: userData[0].acf.location,
                         education: userData[0].acf.education,
@@ -79,7 +79,7 @@ class MemberDetails extends Component {
             .value;
         const other_skills = document.getElementById('other_skills').value;
         const price = document.getElementById('price').value;
-        const position_in_cc = document.getElementById('position_in_cc').value;
+        const stack = document.getElementById('stack').value;
         const previous_projects = document.getElementById('previous_projects')
             .value;
         const location = document.getElementById('location').value;
@@ -108,7 +108,7 @@ class MemberDetails extends Component {
                             personal_skills,
                             other_skills,
                             price,
-                            position_in_cc,
+                            stack,
                             previous_projects,
                             location,
                             education,
@@ -139,7 +139,7 @@ class MemberDetails extends Component {
                             personal_skills,
                             other_skills,
                             price,
-                            position_in_cc,
+                            stack,
                             previous_projects,
                             location,
                             education,
@@ -217,7 +217,7 @@ class MemberDetails extends Component {
             personal_skills,
             other_skills,
             price,
-            position_in_cc,
+            stack,
             previous_projects,
             location,
             education,
@@ -357,12 +357,12 @@ class MemberDetails extends Component {
                             />
                                 */}
                             <MDBInput
-                                label="Position in CC"
-                                value={position_in_cc}
-                                name="position_in_cc"
+                                label="Stack"
+                                value={stack}
+                                name="stack"
                                 onChange={this.onFieldChange}
                                 size="md"
-                                id="position_in_cc"
+                                id="stack"
                                 style={{ marginBottom, width: '100%' }}
                             />
 

@@ -24,12 +24,12 @@ class MemberInfo extends Component {
         note: '',
         other_skills: '',
         personal_skills: '',
-        position_in_cc: '',
         previous_projects: '',
         price: '',
         tech_skills: '',
         avatar: '',
         about: '',
+        stack: '',
         isLoaded: false,
         graphData: [
             {skill: "Server", knowledge: 0},
@@ -87,11 +87,11 @@ class MemberInfo extends Component {
                         note: userData[0].acf.note,
                         other_skills: userData[0].acf.other_skills,
                         personal_skills: userData[0].acf.personal_skills,
-                        position_in_cc: userData[0].acf.position_in_cc,
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
                         about: userData[0].acf.about,
+                        stack: userData[0].acf.stack,
                         isLoaded: true,
                         graphData: [
                             {
@@ -160,7 +160,7 @@ class MemberInfo extends Component {
 											</MDBCol>
 											<MDBCol sm='8' fluid>
 												<h1>{this.state.fullname}</h1>
-												<h3>{this.state.position_in_cc}</h3>
+												<h3>{this.state.stack} Developer</h3>
                                                 <hr style={{borderBottom:"1px solid white"}}/>
                                                 <p style={{paddingTop:"2rem", textAlign:"center"}}>{this.state.about}</p>
 											</MDBCol>
@@ -326,13 +326,6 @@ class MemberInfo extends Component {
 														</dt>
 														<dd className="col-sm-9 mt-2">
 															{this.state.personal_skills}
-														</dd>
-														
-														<dt className="col-sm-3 mt-2">
-														Position In CC:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-															{this.state.position_in_cc}
 														</dd>
 
 														<dt className="col-sm-3 mt-2">

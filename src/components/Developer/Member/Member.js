@@ -26,11 +26,11 @@ class Member extends Component {
         note: '',
         other_skills: '',
         personal_skills: '',
-        position_in_cc: '',
         previous_projects: '',
         price: '',
         tech_skills: '',
         avatar: '',
+        stack: '',
         isLoaded: false
     };
 
@@ -81,10 +81,10 @@ class Member extends Component {
                         note: userData[0].acf.note,
                         other_skills: userData[0].acf.other_skills,
                         personal_skills: userData[0].acf.personal_skills,
-                        position_in_cc: userData[0].acf.position_in_cc,
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
+                        stack: userData[0].acf.stack,
                         isLoaded: true
                     });
                 }
@@ -149,7 +149,7 @@ class Member extends Component {
                                 </div>
                                 <MDBCardBody>
                                     <MDBCardTitle className="developer-title mdb-color white-text text-left">
-                                        {this.state.position_in_cc}
+                                        {this.state.stack}
                                     </MDBCardTitle>
 
                                     <dl className="row">
@@ -196,10 +196,10 @@ class Member extends Component {
                                     </dd>*/}
 
                                         <dt className="col-sm-3 mt-2">
-                                            Position In CC:
+                                            Stack:
                                         </dt>
                                         <dd className="col-sm-9 mt-2">
-                                            {this.state.position_in_cc}
+                                            {this.state.stack}
                                         </dd>
 
                                         <dt className="col-sm-3 mt-2">
