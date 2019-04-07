@@ -122,6 +122,8 @@ class MemberInfo extends Component {
     }
 
     render() {
+        const techSkills = this.state.tech_skills.split(',');
+        console.log(techSkills);
         if (!this.state.isLoaded) {
             return <Spinner />;
         }
@@ -307,7 +309,7 @@ class MemberInfo extends Component {
 														Tech Skills:
 														</dt>
 														<dd className="col-sm-9 mt-2">
-														{this.state.tech_skills}
+														{techSkills.map(skill => <div style={{borderBottom:"2px solid #ccc"}}>{skill}</div>)}
 														</dd>
 
 														<dt className="col-sm-3 mt-2">
