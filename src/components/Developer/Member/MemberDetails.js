@@ -18,7 +18,6 @@ class MemberDetails extends Component {
     state = {
         fullname: '',
         nickname: localStorage.getItem('username'),
-        title: '',
         language: '',
         tech_skills: '',
         personal_skills: '',
@@ -28,7 +27,7 @@ class MemberDetails extends Component {
         previous_projects: '',
         location: '',
         education: '',
-        note: '',
+        about: '',
         fullnameExist: false,
         successMess: false,
         imageUploaded: false,
@@ -57,7 +56,6 @@ class MemberDetails extends Component {
                         fullnameExist: true,
                         id: userData[0].id,
                         fullname: userData[0].acf.fullname,
-                        title: userData[0].acf.title,
                         language: userData[0].acf.language,
                         tech_skills: userData[0].acf.tech_skills,
                         personal_skills: userData[0].acf.personal_skills,
@@ -67,7 +65,7 @@ class MemberDetails extends Component {
                         previous_projects: userData[0].acf.previous_projects,
                         location: userData[0].acf.location,
                         education: userData[0].acf.education,
-                        note: userData[0].acf.note
+                        about: userData[0].acf.about
                     });
                 }
             });
@@ -75,7 +73,6 @@ class MemberDetails extends Component {
 
     onSubmit = e => {
         const fullname = document.getElementById('fullname').value;
-        const title = document.getElementById('title').value;
         const language = document.getElementById('language').value;
         const tech_skills = document.getElementById('tech_skills').value;
         const personal_skills = document.getElementById('personal_skills')
@@ -87,7 +84,7 @@ class MemberDetails extends Component {
             .value;
         const location = document.getElementById('location').value;
         const education = document.getElementById('education').value;
-        const note = document.getElementById('note').value;
+        const about = document.getElementById('about').value;
 
         if (fullname === '') {
             this.setState({ error: 'Fullname must be filled' });
@@ -106,7 +103,6 @@ class MemberDetails extends Component {
                         fields: {
                             fullname,
                             nickname,
-                            title,
                             language,
                             tech_skills,
                             personal_skills,
@@ -116,7 +112,7 @@ class MemberDetails extends Component {
                             previous_projects,
                             location,
                             education,
-                            note
+                            about
                         }
                     },
                     {
@@ -137,7 +133,6 @@ class MemberDetails extends Component {
                     {
                         fields: {
                             fullname,
-                            title,
                             nickname,
                             language,
                             tech_skills,
@@ -148,7 +143,7 @@ class MemberDetails extends Component {
                             previous_projects,
                             location,
                             education,
-                            note
+                            about
                         }
                     },
                     {
@@ -217,7 +212,6 @@ class MemberDetails extends Component {
     render() {
         const {
             fullname,
-            title,
             language,
             tech_skills,
             personal_skills,
@@ -227,7 +221,7 @@ class MemberDetails extends Component {
             previous_projects,
             location,
             education,
-            note,
+            about,
             error,
             selectedImage,
             imageUploaded,
@@ -311,16 +305,6 @@ class MemberDetails extends Component {
                                 />
                             )}
                             {err}
-
-                            <MDBInput
-                                label="Title"
-                                value={title}
-                                name="title"
-                                onChange={this.onFieldChange}
-                                size="md"
-                                id="title"
-                                style={{ marginBottom, width: '100%' }}
-                            />
 
                             <MDBInput
                                 label="Language"
@@ -413,12 +397,12 @@ class MemberDetails extends Component {
                             />
 
                             <MDBInput
-                                label="Note"
-                                value={note}
-                                name="note"
+                                label="About"
+                                value={about}
+                                name="about"
                                 onChange={this.onFieldChange}
                                 size="md"
-                                id="note"
+                                id="about"
                                 style={{ marginBottom, width: '100%' }}
                             />
 

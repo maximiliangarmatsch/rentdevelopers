@@ -30,7 +30,6 @@ class Member extends Component {
         previous_projects: '',
         price: '',
         tech_skills: '',
-        title: '',
         avatar: '',
         isLoaded: false
     };
@@ -86,7 +85,6 @@ class Member extends Component {
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
-                        title: userData[0].acf.title,
                         isLoaded: true
                     });
                 }
@@ -160,13 +158,6 @@ class Member extends Component {
                                         </dt>
                                         <dd className="col-sm-9 mt-2">
                                             {this.state.nickname}
-                                        </dd>
-
-                                        <dt className="col-sm-3 mt-2">
-                                            Title:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.title}
                                         </dd>
 
                                         <dt className="col-sm-3 mt-2">

@@ -28,7 +28,6 @@ class MemberInfo extends Component {
         previous_projects: '',
         price: '',
         tech_skills: '',
-        title: '',
         avatar: '',
         about: '',
         isLoaded: false,
@@ -92,7 +91,6 @@ class MemberInfo extends Component {
                         previous_projects: userData[0].acf.previous_projects,
                         price: userData[0].acf.price,
                         tech_skills: userData[0].acf.tech_skills,
-                        title: userData[0].acf.title,
                         about: userData[0].acf.about,
                         isLoaded: true,
                         graphData: [
@@ -347,18 +345,11 @@ class MemberInfo extends Component {
 												</MDBCol>
 												<MDBCol sm='6'>
 													<dl className='row'>
-                                                    <dt className="col-sm-3 mt-2">
+                                                        <dt className="col-sm-3 mt-2">
 														Nickname:
 														</dt>
 														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.nickname}
-														</dd>
-
-														<dt className="col-sm-3 mt-2">
-														Title:
-														</dt>
-														<dd className="dev-info-data col-sm-9 mt-2">
-														{this.state.title}
 														</dd>
 
 														<dt className="dev-info-data col-sm-3 mt-2">
