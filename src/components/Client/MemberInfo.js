@@ -329,12 +329,6 @@ class MemberInfo extends Component {
 												</MDBCol>
 												<MDBCol sm='6'>
 													<dl className='row'>
-                                                        <dt className="col-sm-3 mt-2">
-														Nickname:
-														</dt>
-														<dd className="dev-info-data col-sm-9 mt-2">
-														{this.state.nickname}
-														</dd>
 
 														<dt className="dev-info-data col-sm-3 mt-2">
 														Language:
