@@ -19,7 +19,6 @@ class MemberDetails extends Component {
         fullname: '',
         nickname: localStorage.getItem('username'),
         title: '',
-        communication_skills: '',
         language: '',
         tech_skills: '',
         personal_skills: '',
@@ -59,8 +58,6 @@ class MemberDetails extends Component {
                         id: userData[0].id,
                         fullname: userData[0].acf.fullname,
                         title: userData[0].acf.title,
-                        communication_skills:
-                            userData[0].acf.communication_skills,
                         language: userData[0].acf.language,
                         tech_skills: userData[0].acf.tech_skills,
                         personal_skills: userData[0].acf.personal_skills,
@@ -79,9 +76,6 @@ class MemberDetails extends Component {
     onSubmit = e => {
         const fullname = document.getElementById('fullname').value;
         const title = document.getElementById('title').value;
-        const communication_skills = document.getElementById(
-            'communication_skills'
-        ).value;
         const language = document.getElementById('language').value;
         const tech_skills = document.getElementById('tech_skills').value;
         const personal_skills = document.getElementById('personal_skills')
@@ -113,7 +107,6 @@ class MemberDetails extends Component {
                             fullname,
                             nickname,
                             title,
-                            communication_skills,
                             language,
                             tech_skills,
                             personal_skills,
@@ -146,7 +139,6 @@ class MemberDetails extends Component {
                             fullname,
                             title,
                             nickname,
-                            communication_skills,
                             language,
                             tech_skills,
                             personal_skills,
@@ -226,7 +218,6 @@ class MemberDetails extends Component {
         const {
             fullname,
             title,
-            communication_skills,
             language,
             tech_skills,
             personal_skills,
@@ -328,16 +319,6 @@ class MemberDetails extends Component {
                                 onChange={this.onFieldChange}
                                 size="md"
                                 id="title"
-                                style={{ marginBottom, width: '100%' }}
-                            />
-
-                            <MDBInput
-                                label="Communication skills"
-                                value={communication_skills}
-                                name="communication_skills"
-                                onChange={this.onFieldChange}
-                                size="md"
-                                id="communication_skills"
                                 style={{ marginBottom, width: '100%' }}
                             />
 

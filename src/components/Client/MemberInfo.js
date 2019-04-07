@@ -17,7 +17,6 @@ import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts';
 class MemberInfo extends Component {
     state = {
         fullname: '',
-        communication_skills: '',
         education: '',
         language: '',
         location: '',
@@ -82,8 +81,6 @@ class MemberInfo extends Component {
                 } else {
                     this.setState(oldState =>({
                         fullname: userData[0].acf.fullname,
-                        communication_skills:
-                            userData[0].acf.communication_skills,
                         education: userData[0].acf.education,
                         language: userData[0].acf.language,
                         location: userData[0].acf.location,
@@ -332,14 +329,7 @@ class MemberInfo extends Component {
 														<dd className="col-sm-9 mt-2">
 															{this.state.personal_skills}
 														</dd>
-														{/*
-														<dt className="col-sm-3 mt-2">
-														Price:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-														{this.state.price} $
-														</dd>
-														*/}
+														
 														<dt className="col-sm-3 mt-2">
 														Position In CC:
 														</dt>
@@ -369,13 +359,6 @@ class MemberInfo extends Component {
 														</dt>
 														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.title}
-														</dd>
-
-														<dt className="dev-info-data col-sm-3 mt-2">
-														Comunication skills:
-														</dt>
-														<dd className="dev-info-data col-sm-9 mt-2">
-														{this.state.communication_skills}
 														</dd>
 
 														<dt className="dev-info-data col-sm-3 mt-2">

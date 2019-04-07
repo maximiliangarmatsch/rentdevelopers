@@ -19,7 +19,6 @@ import FillData from './FillData';
 class Member extends Component {
     state = {
         fullname: '',
-        communication_skills: '',
         education: '',
         language: '',
         location: '',
@@ -76,8 +75,6 @@ class Member extends Component {
                 } else {
                     this.setState({
                         fullname: userData[0].acf.fullname,
-                        communication_skills:
-                            userData[0].acf.communication_skills,
                         education: userData[0].acf.education,
                         language: userData[0].acf.language,
                         location: userData[0].acf.location,
@@ -170,13 +167,6 @@ class Member extends Component {
                                         </dt>
                                         <dd className="col-sm-9 mt-2">
                                             {this.state.title}
-                                        </dd>
-
-                                        <dt className="col-sm-3 mt-2">
-                                            Comunication skills:
-                                        </dt>
-                                        <dd className="col-sm-9 mt-2">
-                                            {this.state.communication_skills}
                                         </dd>
 
                                         <dt className="col-sm-3 mt-2">
