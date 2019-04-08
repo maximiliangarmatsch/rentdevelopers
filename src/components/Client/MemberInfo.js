@@ -3,9 +3,9 @@ import {
     MDBContainer,
     MDBRow,
     MDBCol,
-    MDBCard,
-    MDBCardTitle,
-    MDBCardBody
+    MDBTable,
+    MDBTableBody,
+    MDBTableHead
 } from 'mdbreact';
 import Header from '../Header/Header';
 import Spinner from './Spinner/Spinner';
@@ -123,7 +123,16 @@ class MemberInfo extends Component {
 
     render() {
         const techSkills = this.state.tech_skills.split(',');
-        console.log(techSkills);
+        const otherSkills = this.state.other_skills.split(',');
+        const languages = this.state.language.split(',');
+        
+        let styleTechSkills = {};
+        if(techSkills[0] === "") styleTechSkills={display:"none"}
+        let styleOtherSkills = {};
+        if(otherSkills[0] === "") styleOtherSkills={display:"none"}
+        let styleLanguages = {};
+        if(languages[0] === "") styleLanguages={display:"none"}
+
         if (!this.state.isLoaded) {
             return <Spinner />;
         }
@@ -162,129 +171,7 @@ class MemberInfo extends Component {
                                                 <hr style={{borderBottom:"1px solid white"}}/>
                                                 <p style={{paddingTop:"2rem", textAlign:"center"}}>{this.state.about}</p>
 											</MDBCol>
-                    <MDBRow>
-                        {/*<MDBCol />*/}
-                        {/*<MDBCol sm="12" md="9">*/}
-                            {/*<MDBCard className="face font mt-5">*/}
-                                {/*/!* <Gravatar email="blahblah@blah.com" size={150} default='404' className="img-fluid rounded-circle hoverable mx-auto d-block mt-3 CustomAvatar-image" alt="aligment" /> *!/*/}
-                                {/*<div*/}
-                                    {/*className="avatar mx-auto white"*/}
-                                    {/*style={{*/}
-                                        {/*width: '200px',*/}
-                                        {/*height: '250px',*/}
-                                        {/*overflow: 'hidden'*/}
-                                    {/*}}*/}
-                                {/*>*/}
-                                    {/*<img*/}
-                                        {/*src={avatar}*/}
-                                        {/*className="img-fluid mx-auto d-block mt-3"*/}
-                                        {/*alt="Avatar"*/}
-                                        {/*style={{*/}
-                                            {/*width: '200px',*/}
-                                            {/*height: 'auto'*/}
-                                        {/*}}*/}
-                                    {/*/>*/}
-                                {/*</div>*/}
-                                {/*<MDBCardBody>*/}
-                                    {/*<MDBCardTitle className="developer-title mdb-color white-text text-left">*/}
-                                        {/*{this.state.position_in_cc}*/}
-                                    {/*</MDBCardTitle>*/}
-
-                                    {/*<dl className="row">*/}
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Nickname:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.nickname}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Title:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.title}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Comunication skills:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.communication_skills}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Language:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.language}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Tech Skills:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.tech_skills}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Other Skills:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.other_skills}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Personal Skills:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.personal_skills}*/}
-                                        {/*</dd>*/}
-                                            {/*/!**/}
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Price:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.price} $*/}
-                                        {/*</dd>*/}
-                                        {/**!/*/}
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Position In CC:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.position_in_cc}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Previous Projects:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.previous_projects}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Education:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.education}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">*/}
-                                            {/*Location:*/}
-                                        {/*</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.location}*/}
-                                        {/*</dd>*/}
-
-                                        {/*<dt className="col-sm-3 mt-2">Note:</dt>*/}
-                                        {/*<dd className="col-sm-9 mt-2">*/}
-                                            {/*{this.state.note}*/}
-                                        {/*</dd>*/}
-                                    {/*</dl>*/}
-                                {/*</MDBCardBody>*/}
-                            {/*</MDBCard>*/}
-                        {/*</MDBCol>*/}
-                        {/*<MDBCol />*/}
-                    </MDBRow>
+                    <MDBRow></MDBRow>
 										</MDBRow>
                                         <MDBRow className="member-second-row">
                                         <MDBCol lg='12'>
@@ -305,37 +192,116 @@ class MemberInfo extends Component {
 											<MDBCol className="row">
 												<MDBCol sm='6'>
 													<dl className="row">
-														<dt className="col-sm-3 mt-2">
-														Tech Skills:
-														</dt>
-														<dd className="col-sm-9 mt-2">
-														{techSkills.map(skill => <div style={{borderBottom:"2px solid #ccc"}}>{skill}</div>)}
-														</dd>
+                                                    <MDBTable bordered style={styleTechSkills}>
+                                                        <thead>
+                                                            <tr>
+                                                            <td style={{borderColor:"#aaa"}}>
+                                                                <dt className="col-sm-3 mt-2">
+                                                                    Tech Skills:
+                                                                </dt>
+                                                            </td>
+                                                            <td style={{borderColor:"#aaa"}}>
+                                                                <dt className="col-sm-3 mt-2">
+                                                                    Months:
+                                                                </dt>
+                                                            </td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {techSkills.map(skill =>{
+                                                                const show = skill.split("~")
+                                                                return(
+                                                            <tr>
+                                                                <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                    {show[0]}
+                                                                </td> 
+                                                                <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                    {show[1]}
+                                                                </td> 
+                                                            </tr>
+                                                            )})}
 
+                                                        </tbody>
+                                                    </MDBTable> 
+                                                    <dt className="col-sm-3 mt-2"></dt>
+                                                    <MDBTable bordered style={styleOtherSkills}>
+                                                        <thead>
+                                                        <tr>
+                                                            <td style={{borderColor:"#aaa"}} colSpan={2}>
+                                                                <dt className="col-sm-3 mt-2">
+                                                                    Other Skills:
+                                                                </dt>
+                                                            </td>
+                                                        </tr>    
+                                                        </thead>
+                                                    <tbody>
+                                                        {otherSkills.map(skill =><tr>
+                                                            <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                {skill}
+                                                            </td> 
+                                                                </tr>)}
+                                                    </tbody>
+                                                    </MDBTable> 
+                                                            
+                                                    {/*}
 														<dt className="col-sm-3 mt-2">
 														Other Skills:
 														</dt>
 														<dd className="col-sm-9 mt-2">
 														{this.state.other_skills}
-														</dd>
+														</dd>*/}
                                                         
-														<dt className="col-sm-3 mt-2">
+														
+                                                    </dl>
+                                                            
+												</MDBCol>
+												<MDBCol sm='6'>
+													<dl className='row'>
+                                                    <MDBTable bordered style={styleTechSkills}>
+                                                        <thead>
+                                                            <tr>
+                                                            <td style={{borderColor:"#aaa"}}>
+                                                                <dt className="col-sm-3 mt-2">
+                                                                    Language:
+                                                                </dt>
+                                                            </td>
+                                                            <td style={{borderColor:"#aaa"}}>
+                                                                <dt className="col-sm-3 mt-2">
+                                                                    Profiency:
+                                                                </dt>
+                                                            </td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {languages.map(skill =>{
+                                                                const show = skill.split("-")
+                                                                return(
+                                                            <tr>
+                                                                <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                    {show[0]}
+                                                                </td> 
+                                                                <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                    {show[1]}
+                                                                </td> 
+                                                            </tr>
+                                                            )})}
+
+                                                        </tbody>
+                                                    </MDBTable> 
+                                                    <dt className="col-sm-3 mt-2"></dt>
+                                                        <dt className="col-sm-3 mt-2">
 														Previous Projects:
 														</dt>
 														<dd className="col-sm-9 mt-2">
 															{this.state.previous_projects}
-														</dd>
-                                                    </dl>
-												</MDBCol>
-												<MDBCol sm='6'>
-													<dl className='row'>
+                                                        </dd>
 
-														<dt className="dev-info-data col-sm-3 mt-2">
+														{/*<dt className="dev-info-data col-sm-3 mt-2">
 														Language:
 														</dt>
 														<dd className="dev-info-data col-sm-9 mt-2">
 														{this.state.language}
-														</dd>
+                                                        </dd>*/}
 
 														<dt className="dev-info-data col-sm-3 mt-2">
 															Location:
@@ -343,6 +309,7 @@ class MemberInfo extends Component {
 														<dd className="dev-info-data col-sm-9 mt-2">
 															{this.state.location}
 														</dd>
+
                                                         {/*
 														<dt className="col-sm-3 mt-2">Note:</dt>
 														<dd className="col-sm-9 mt-2">
