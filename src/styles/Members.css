@@ -95,7 +95,7 @@ picked {
     position: relative;
 }
 .empty {
-    height: 10rem;
+    height: 0.5rem;
 }
 .price-pick {
     bottom: 1rem;

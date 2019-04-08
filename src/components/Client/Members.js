@@ -201,6 +201,15 @@ class Members extends Component {
                     return img.id === 234;
                 });
             }
+           const memberGraph = [
+                {skill: "", knowledge:0},
+                {skill: "Server", knowledge: member.acf.server_skills},
+                {skill: "Database", knowledge: member.acf.database_skills},
+                {skill: "Backend", knowledge: member.acf.backend_skills},
+                {skill: "Frontend", knowledge: member.acf.frontend_skills},
+                {skill: "Styling", knowledge: member.acf.styling_skills},
+                {skill: "Photoshop", knowledge: member.acf.photoshop_skills}
+             ]
             //////////////////////////
             return (
                 <MDBCard
@@ -238,7 +247,14 @@ class Members extends Component {
                         </h4>
                         <hr />
                         <h5>{member.acf.stack} Developer</h5>
-                        <h5>{member.acf.specialty}</h5>
+                       {/*} <h5>{member.acf.specialty}</h5> */}
+                        
+                        <Chart padding={[35,75,80,75]} height={300} width={300} data={memberGraph} scale={this.graphCols} forceFit>
+                            <Coord transpose />
+                            <Axis name="skill" />
+                            <Axis name="knowledge" />
+                            <Geom type="interval" position="skill*knowledge" color="skill" />
+                        </Chart>
                         <div className="empty" />
                         <div className="price-pick">
                                 {/*
