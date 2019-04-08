@@ -291,7 +291,7 @@ class MemberInfo extends Component {
 
                                                         </tbody>
                                                     </MDBTable> 
-                                                    <dt className="col-lg-3 mt-2"></dt>
+                                                    <dt className="col-lg-12 mt-2"></dt>
                                                         <dt className="col-sm-3 mt-2">
 														Previous Projects:
 														</dt>
