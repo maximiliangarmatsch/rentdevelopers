@@ -21,7 +21,6 @@ class MemberDetails extends Component {
         language: '',
         tech_skills: '',
         other_skills: '',
-        price: '',
         stack: '',
         previous_projects: '',
         location: '',
@@ -57,7 +56,6 @@ class MemberDetails extends Component {
                         language: userData[0].acf.language,
                         tech_skills: userData[0].acf.tech_skills,
                         other_skills: userData[0].acf.other_skills,
-                        price: userData[0].acf.price,
                         stack: userData[0].acf.stack,
                         previous_projects: userData[0].acf.previous_projects,
                         location: userData[0].acf.location,
@@ -72,7 +70,6 @@ class MemberDetails extends Component {
         const language = document.getElementById('language').value;
         const tech_skills = document.getElementById('tech_skills').value;
         const other_skills = document.getElementById('other_skills').value;
-        const price = document.getElementById('price').value;
         const stack = document.getElementById('stack').value;
         const previous_projects = document.getElementById('previous_projects')
             .value;
@@ -99,7 +96,6 @@ class MemberDetails extends Component {
                             language,
                             tech_skills,
                             other_skills,
-                            price,
                             stack,
                             previous_projects,
                             location,
@@ -128,7 +124,6 @@ class MemberDetails extends Component {
                             language,
                             tech_skills,
                             other_skills,
-                            price,
                             stack,
                             previous_projects,
                             location,
@@ -204,7 +199,6 @@ class MemberDetails extends Component {
             language,
             tech_skills,
             other_skills,
-            price,
             stack,
             previous_projects,
             location,
