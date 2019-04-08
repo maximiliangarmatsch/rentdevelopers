@@ -190,7 +190,7 @@ class MemberInfo extends Component {
 										<MDBRow className="member-second-row">
 											
 											<MDBCol className="row">
-												<MDBCol sm='6'>
+												<MDBCol lg='3'>
 													<dl className="row">
                                                     <MDBTable bordered style={styleTechSkills}>
                                                         <thead>
@@ -224,24 +224,7 @@ class MemberInfo extends Component {
                                                         </tbody>
                                                     </MDBTable> 
                                                     <dt className="col-sm-3 mt-2"></dt>
-                                                    <MDBTable bordered style={styleOtherSkills}>
-                                                        <thead>
-                                                        <tr>
-                                                            <td style={{borderColor:"#aaa"}} colSpan={2}>
-                                                                <dt className="col-sm-3 mt-2">
-                                                                    Other Skills:
-                                                                </dt>
-                                                            </td>
-                                                        </tr>    
-                                                        </thead>
-                                                    <tbody>
-                                                        {otherSkills.map(skill =><tr>
-                                                            <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
-                                                                {skill}
-                                                            </td> 
-                                                                </tr>)}
-                                                    </tbody>
-                                                    </MDBTable> 
+                                                    
                                                             
                                                     {/*}
 														<dt className="col-sm-3 mt-2">
@@ -255,7 +238,27 @@ class MemberInfo extends Component {
                                                     </dl>
                                                             
 												</MDBCol>
-												<MDBCol sm='6'>
+                                                <MDBCol lg='3'>
+                                                    <MDBTable bordered style={styleOtherSkills}>
+                                                            <thead>
+                                                            <tr>
+                                                                <td style={{borderColor:"#aaa"}} colSpan={2}>
+                                                                    <dt className="col-sm-3 mt-2">
+                                                                        Other Skills:
+                                                                    </dt>
+                                                                </td>
+                                                            </tr>    
+                                                            </thead>
+                                                        <tbody>
+                                                            {otherSkills.map(skill =><tr>
+                                                                <td className="col-sm-9 mt-2" style={{borderColor:"#aaa"}}>
+                                                                    {skill}
+                                                                </td> 
+                                                                    </tr>)}
+                                                        </tbody>
+                                                    </MDBTable>      
+                                                </MDBCol>
+												<MDBCol lg='6'>
 													<dl className='row'>
                                                     <MDBTable bordered style={styleTechSkills}>
                                                         <thead>
@@ -288,7 +291,7 @@ class MemberInfo extends Component {
 
                                                         </tbody>
                                                     </MDBTable> 
-                                                    <dt className="col-sm-3 mt-2"></dt>
+                                                    <dt className="col-lg-3 mt-2"></dt>
                                                         <dt className="col-sm-3 mt-2">
 														Previous Projects:
 														</dt>
