@@ -230,7 +230,7 @@ class Members extends Component {
                             onClick={() => this.onAboutMe(member.acf.fullname)}
                             className="space-around-image"
                         >
-                            <MDBCardImage
+                            <img
                                 className="memberImage"
                                 src={
                                     membersImg[0]

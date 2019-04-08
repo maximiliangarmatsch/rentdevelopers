@@ -57,6 +57,7 @@ picked {
 
 .memberUp {
     border-radius: 3%;
+    padding: 0.3rem;  
 }
 
 .memberImage {
