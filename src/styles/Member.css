@@ -60,6 +60,12 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius:  5px;
 }
+.member-fourth-row {
+  text-align: center;
+  color: #444;
+  background-color: #EBEBEB;
+  padding-top: 2rem;
+}
 .member-details-container {
     margin-top: 5rem;
     padding-bottom: 2rem;

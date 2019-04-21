@@ -17,20 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+            <state relative-caret-position="537">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="272" column="74" lean-forward="true" selection-start-line="272" selection-start-column="74" selection-end-line="272" selection-end-column="82" />
+            <state relative-caret-position="401">
+              <caret line="348" column="65" lean-forward="true" selection-start-line="348" selection-start-column="65" selection-end-line="348" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -90,8 +90,8 @@
         <option value="$PROJECT_DIR$/src/styles/Footer.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/Client/Members.js" />
-        <option value="$PROJECT_DIR$/src/styles/Member.css" />
         <option value="$PROJECT_DIR$/src/components/Client/MemberInfo.js" />
+        <option value="$PROJECT_DIR$/src/styles/Member.css" />
       </list>
     </option>
   </component>
@@ -224,7 +224,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68188000" />
+    <option name="totallyTimeSpent" value="72233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -472,17 +472,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+        <state relative-caret-position="401">
+          <caret line="348" column="65" lean-forward="true" selection-start-line="348" selection-start-column="65" selection-end-line="348" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
+    <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="272" column="74" lean-forward="true" selection-start-line="272" selection-start-column="74" selection-end-line="272" selection-end-column="82" />
+        <state relative-caret-position="537">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
         </state>
       </provider>
     </entry>

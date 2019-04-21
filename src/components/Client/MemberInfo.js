@@ -4,8 +4,8 @@ import {
 	MDBRow,
 	MDBCol,
 	MDBTable,
-	MDBTableBody,
-	MDBTableHead
+	MDBCollapse,
+	MDBBtn
 } from "mdbreact";
 import Header from "../Header/Header";
 import Spinner from "./Spinner/Spinner";
@@ -36,7 +36,8 @@ class MemberInfo extends Component {
 		  { skill: "Frontend", knowledge: 0 },
 		  { skill: "Styling", knowledge: 0 },
 		  { skill: "Photoshop", knowledge: 0 }
-		]
+		],
+		collapseID: ""
 	  };
 	  /*graphCols = {
 		level: { tickInterval: 2 }
@@ -122,6 +123,12 @@ class MemberInfo extends Component {
 				}
 			})
 			.catch(err => console.log(err));
+	}
+
+	toggleCollapse = collapseID => () => {
+		this.setState(prevState => ({
+			collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+		}));
 	}
 
 	render () {
@@ -333,6 +340,25 @@ class MemberInfo extends Component {
 							</MDBCol>
 						</MDBCol>
 						{/*<MDBCol lg='8'></MDBCol>*/}
+					</MDBRow>
+					<MDBRow className="member-fourth-row">
+
+						<MDBCol>
+							<MDBBtn color="info"
+									onClick={this.toggleCollapse("basicCollapse")}
+									style={{ marginBottom: "1rem" }}>
+								Show More Details
+							</MDBBtn>
+							<MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
+								<p>
+									Anim pariatur cliche reprehenderit, enim eiusmod high life
+									accusamus terry richardson ad squid. Nihil anim keffiyeh
+									helvetica, craft beer labore wes anderson cred nesciunt sapiente
+									ea proident.
+								</p>
+							</MDBCollapse>
+						</MDBCol>
+
 					</MDBRow>
 				</MDBContainer>
 				<Footer/>
