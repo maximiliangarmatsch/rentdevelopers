@@ -168,6 +168,7 @@ class MemberInfo extends Component {
             <MDBCol sm="8" fluid>
               <h1>{this.state.fullname}</h1>
               <h3>{this.state.stack} Developer</h3>
+							<h6 style={{fontStyle: "italic"}}>Location: {this.state.location}</h6>
               <hr style={{ borderBottom: "1px solid white" }} />
               <p style={{ paddingTop: "2rem", textAlign: "center" }}>
                 {this.state.about}
@@ -310,10 +311,7 @@ class MemberInfo extends Component {
 														{this.state.language}
                                                         </dd>*/}
 
-                  <dt className="dev-info-data col-sm-3 mt-2">Location:</dt>
-                  <dd className="dev-info-data col-sm-9 mt-2">
-                    {this.state.location}
-                  </dd>
+
 
                   {/*
 														<dt className="col-sm-3 mt-2">Note:</dt>
