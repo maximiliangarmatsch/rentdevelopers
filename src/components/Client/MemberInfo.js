@@ -28,8 +28,8 @@ class MemberInfo extends Component {
 		avatar           : "",
 		about            : "",
 		stack            : "",
-		isLoaded         : false
-		/*  graphData: [
+		isLoaded         : false,
+		  graphData: [
 		  { skill: "Server", knowledge: 0 },
 		  { skill: "Database", knowledge: 0 },
 		  { skill: "Backend", knowledge: 0 },
@@ -38,9 +38,9 @@ class MemberInfo extends Component {
 		  { skill: "Photoshop", knowledge: 0 }
 		]
 	  };
-	  graphCols = {
-		level: { tickInterval: 2 } */
-	};
+	  /*graphCols = {
+		level: { tickInterval: 2 }
+	};*/
 
 	componentDidMount () {
 		axios
@@ -91,8 +91,8 @@ class MemberInfo extends Component {
 						tech_skills      : userData[0].acf.tech_skills,
 						about            : userData[0].acf.about,
 						stack            : userData[0].acf.stack,
-						isLoaded         : true
-						/* graphData: [
+						isLoaded         : true,
+						 graphData: [
 						  {
 							skill: "Server",
 							knowledge: parseInt(userData[0].acf.server_skills)
@@ -117,7 +117,7 @@ class MemberInfo extends Component {
 							skill: "Photoshop",
 							knowledge: parseInt(userData[0].acf.photoshop_skills)
 						  }
-						] */
+						]
 					}));
 				}
 			})
@@ -197,7 +197,7 @@ class MemberInfo extends Component {
 						<MDBCol className="row">
 							<MDBCol lg="3">
 								<dl className="row">
-									<MDBTable bordered style={styleTechSkills}>
+									{/*<MDBTable bordered style={styleTechSkills}>
 										<thead>
 										<tr>
 											<td style={{ borderColor: "#aaa" }}>
@@ -224,6 +224,38 @@ class MemberInfo extends Component {
 														style={{ borderColor: "#aaa" }}
 													>
 														{show[1]}
+													</td>
+												</tr>
+											);
+										})}
+										</tbody>
+									</MDBTable>*/}
+									<MDBTable bordered style={styleTechSkills}>
+										<thead>
+										<tr>
+											<td style={{ borderColor: "#aaa" }}>
+												<dt className="col-sm-3 mt-2">Skills:</dt>
+											</td>
+											<td style={{ borderColor: "#aaa" }}>
+												<dt className="col-sm-3 mt-2">Experience:</dt>
+											</td>
+										</tr>
+										</thead>
+										<tbody>
+										{this.state.graphData.map((skill) => {
+											return (
+												<tr>
+													<td
+														className="col-sm-9 mt-2"
+														style={{ borderColor: "#aaa" }}
+													>
+														{skill.skill}
+													</td>
+													<td
+														className="col-sm-9 mt-2"
+														style={{ borderColor: "#aaa" }}
+													>
+														{skill.knowledge}/50 concepts
 													</td>
 												</tr>
 											);
