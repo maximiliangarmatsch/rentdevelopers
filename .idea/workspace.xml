@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4dae36f-1766-4b5e-91b4-08e996e59048" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Member.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Member.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="537">
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="348" column="65" lean-forward="true" selection-start-line="348" selection-start-column="65" selection-end-line="348" selection-end-column="65" />
+            <state relative-caret-position="571">
+              <caret line="367" column="46" lean-forward="true" selection-start-line="367" selection-start-column="46" selection-end-line="367" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -90,13 +90,14 @@
         <option value="$PROJECT_DIR$/src/styles/Footer.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/Client/Members.js" />
-        <option value="$PROJECT_DIR$/src/components/Client/MemberInfo.js" />
         <option value="$PROJECT_DIR$/src/styles/Member.css" />
+        <option value="$PROJECT_DIR$/src/components/Client/MemberInfo.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="22" />
+    <option name="x" value="-104" />
+    <option name="y" value="-1" />
     <option name="width" value="1700" />
     <option name="height" value="947" />
   </component>
@@ -224,7 +225,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72233000" />
+    <option name="totallyTimeSpent" value="73746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -474,8 +475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="348" column="65" lean-forward="true" selection-start-line="348" selection-start-column="65" selection-end-line="348" selection-end-column="65" />
+        <state relative-caret-position="571">
+          <caret line="367" column="46" lean-forward="true" selection-start-line="367" selection-start-column="46" selection-end-line="367" selection-end-column="46" />
         </state>
       </provider>
     </entry>

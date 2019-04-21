@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
 import {
 	MDBContainer,
 	MDBRow,
@@ -350,12 +352,35 @@ class MemberInfo extends Component {
 								Show More Details
 							</MDBBtn>
 							<MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-								<p>
-									Anim pariatur cliche reprehenderit, enim eiusmod high life
-									accusamus terry richardson ad squid. Nihil anim keffiyeh
-									helvetica, craft beer labore wes anderson cred nesciunt sapiente
-									ea proident.
-								</p>
+								<Tabs>
+									<TabList>
+										<Tab>Server</Tab>
+										<Tab>Database</Tab>
+										<Tab>Backend</Tab>
+										<Tab>Frontend</Tab>
+										<Tab>Styling</Tab>
+										<Tab>Photoshop</Tab>
+									</TabList>
+
+									<TabPanel>
+										<h2>Apache</h2>
+									</TabPanel>
+									<TabPanel>
+										<h2>mySQL</h2>
+									</TabPanel>
+									<TabPanel>
+										<h2>PHP</h2>
+									</TabPanel>
+									<TabPanel>
+										<h2>ReactJS</h2>
+									</TabPanel>
+									<TabPanel>
+										<h2>MDBootstrap</h2>
+									</TabPanel>
+									<TabPanel>
+										<h2>Advanced Image Editing</h2>
+									</TabPanel>
+								</Tabs>
 							</MDBCollapse>
 						</MDBCol>
 
