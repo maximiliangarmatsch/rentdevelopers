@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4dae36f-1766-4b5e-91b4-08e996e59048" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Member.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Member.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+            <state relative-caret-position="605">
+              <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -27,17 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="257" column="85" selection-start-line="257" selection-start-column="85" selection-end-line="257" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Client/Members.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="116" column="22" lean-forward="true" selection-end-line="334" />
+            <state relative-caret-position="576">
+              <caret line="272" column="74" lean-forward="true" selection-start-line="272" selection-start-column="74" selection-end-line="272" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -96,8 +89,8 @@
         <option value="$PROJECT_DIR$/src/components/Developer/Member/Member.js" />
         <option value="$PROJECT_DIR$/src/styles/Footer.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/styles/Member.css" />
         <option value="$PROJECT_DIR$/src/components/Client/Members.js" />
+        <option value="$PROJECT_DIR$/src/styles/Member.css" />
         <option value="$PROJECT_DIR$/src/components/Client/MemberInfo.js" />
       </list>
     </option>
@@ -231,7 +224,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66706000" />
+    <option name="totallyTimeSpent" value="68188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -450,13 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -481,15 +467,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/Members.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="116" column="22" lean-forward="true" selection-end-line="334" />
+        <state relative-caret-position="418">
+          <caret line="125" column="47" lean-forward="true" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Member.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="257" column="85" selection-start-line="257" selection-start-column="85" selection-end-line="257" selection-end-column="85" />
+        <state relative-caret-position="576">
+          <caret line="272" column="74" lean-forward="true" selection-start-line="272" selection-start-column="74" selection-end-line="272" selection-end-column="82" />
         </state>
       </provider>
     </entry>

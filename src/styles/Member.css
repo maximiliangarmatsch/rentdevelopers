@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.member-first-row, .member-second-row {
+.member-first-row, .member-second-row , .member-third-row{
   min-height: 250px;
   padding: 40px;
   margin-bottom: -50px;
@@ -44,6 +44,7 @@
   background-color: #EBEBEB;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius:  5px;
+  margin-bottom: -7rem;
 }
 
 .member-second-row h3 {
@@ -53,7 +54,12 @@
 .member-second-row .developer-about-span {
   color: #1F83C6;
 }
-
+.member-third-row {
+  padding-top: 0;
+  background-color: #EBEBEB;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:  5px;
+}
 .member-details-container {
     margin-top: 5rem;
     padding-bottom: 2rem;

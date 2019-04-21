@@ -193,7 +193,7 @@ class MemberInfo extends Component {
 										</Chart>
 									</MDBCol> */}
 					</MDBRow>
-					<MDBRow className="member-second-row">
+					<MDBRow className="member-third-row">
 						<MDBCol className="row">
 							<MDBCol lg="3">
 								<dl className="row">
@@ -270,7 +270,7 @@ class MemberInfo extends Component {
 									<thead>
 									<tr>
 										<td style={{ borderColor: "#aaa" }} colSpan={2}>
-											<dt className="col-sm-3 mt-2">Other Skills:</dt>
+											<dt className="col-sm-3 mt-2">Business Skills:</dt>
 										</td>
 									</tr>
 									</thead>
@@ -297,7 +297,7 @@ class MemberInfo extends Component {
 												<dt className="col-sm-3 mt-2">Language:</dt>
 											</td>
 											<td style={{ borderColor: "#aaa" }}>
-												<dt className="col-sm-3 mt-2">Profiency:</dt>
+												<dt className="col-sm-3 mt-2">Proficiency:</dt>
 											</td>
 										</tr>
 										</thead>
