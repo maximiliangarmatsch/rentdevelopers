@@ -173,6 +173,7 @@ class MemberInfo extends Component {
 						<MDBCol sm="8" fluid>
 							<h1>{this.state.fullname}</h1>
 							<h3>{this.state.stack} Developer</h3>
+							<h6 style={{ fontStyle: "italic" }}>Languages: {this.state.language}</h6>
 							<h6 style={{ fontStyle: "italic" }}>Location: {this.state.location}</h6>
 							<hr style={{ borderBottom: "1px solid white" }}/>
 							<p style={{ paddingTop: "2rem", textAlign: "center" }}>
@@ -294,39 +295,7 @@ class MemberInfo extends Component {
 							</MDBCol>
 							<MDBCol lg="6">
 								<dl className="row">
-									<MDBTable bordered style={styleTechSkills}>
-										<thead>
-										<tr>
-											<td style={{ borderColor: "#aaa" }}>
-												<dt className="col-sm-3 mt-2">Language:</dt>
-											</td>
-											<td style={{ borderColor: "#aaa" }}>
-												<dt className="col-sm-3 mt-2">Proficiency:</dt>
-											</td>
-										</tr>
-										</thead>
-										<tbody>
-										{languages.map(skill => {
-											const show = skill.split("-");
-											return (
-												<tr>
-													<td
-														className="col-sm-9 mt-2"
-														style={{ borderColor: "#aaa" }}
-													>
-														{show[0]}
-													</td>
-													<td
-														className="col-sm-9 mt-2"
-														style={{ borderColor: "#aaa" }}
-													>
-														{show[1]}
-													</td>
-												</tr>
-											);
-										})}
-										</tbody>
-									</MDBTable>
+									
 									<dt className="col-lg-12 mt-2"/>
 									<dt className="col-sm-3 mt-2">Previous Projects:</dt>
 									<dd className="col-sm-9 mt-2">
