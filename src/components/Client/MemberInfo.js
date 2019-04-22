@@ -15,6 +15,7 @@ import Footer from "../Footer/Footer";
 import axios from "axios";
 import "../../styles/Member.css";
 import { Chart, Geom, Axis, Tooltip, Legend, Coord } from "bizcharts";
+import SkillTabPanel from "./SkillTabPanel";
 
 class MemberInfo extends Component {
 	state = {
@@ -295,7 +296,7 @@ class MemberInfo extends Component {
 							</MDBCol>
 							<MDBCol lg="6">
 								<dl className="row">
-									
+
 									<dt className="col-lg-12 mt-2"/>
 									<dt className="col-sm-3 mt-2">Previous Projects:</dt>
 									<dd className="col-sm-9 mt-2">
@@ -326,19 +327,19 @@ class MemberInfo extends Component {
 									</TabList>
 
 									<TabPanel>
-										<h2>Apache</h2>
+										<h2><SkillTabPanel data={this.state}/></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2>mySQL</h2>
+										<h2><SkillTabPanel data={this.state}/></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2>PHP</h2>
+										<h2><SkillTabPanel data={this.state}/></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2>ReactJS</h2>
+										<h2><SkillTabPanel data={this.state}/></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2>MDBootstrap</h2>
+										<h2><SkillTabPanel data={this.state}/></h2>
 									</TabPanel>
 								</Tabs>
 							</MDBCollapse>
