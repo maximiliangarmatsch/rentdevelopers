@@ -36,8 +36,7 @@ class MemberInfo extends Component {
 		  { skill: "Database", knowledge: 0 },
 		  { skill: "Backend", knowledge: 0 },
 		  { skill: "Frontend", knowledge: 0 },
-		  { skill: "Styling", knowledge: 0 },
-		  { skill: "Photoshop", knowledge: 0 }
+		  { skill: "Styling", knowledge: 0 }
 		],
 		collapseID: ""
 	  };
@@ -115,10 +114,6 @@ class MemberInfo extends Component {
 						  {
 							skill: "Styling",
 							knowledge: parseInt(userData[0].acf.styling_skills)
-						  },
-						  {
-							skill: "Photoshop",
-							knowledge: parseInt(userData[0].acf.photoshop_skills)
 						  }
 						]
 					}));
@@ -359,7 +354,6 @@ class MemberInfo extends Component {
 										<Tab>Backend</Tab>
 										<Tab>Frontend</Tab>
 										<Tab>Styling</Tab>
-										<Tab>Photoshop</Tab>
 									</TabList>
 
 									<TabPanel>
@@ -376,9 +370,6 @@ class MemberInfo extends Component {
 									</TabPanel>
 									<TabPanel>
 										<h2>MDBootstrap</h2>
-									</TabPanel>
-									<TabPanel>
-										<h2>Advanced Image Editing</h2>
 									</TabPanel>
 								</Tabs>
 							</MDBCollapse>
