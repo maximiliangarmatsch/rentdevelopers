@@ -31,6 +31,7 @@ class MemberInfo extends Component {
 		avatar           : "",
 		about            : "",
 		stack            : "",
+		backend			 : {},
 		isLoaded         : false,
 		  graphData: [
 		  { skill: "Server", knowledge: 0 },
@@ -94,6 +95,7 @@ class MemberInfo extends Component {
 						tech_skills      : userData[0].acf.tech_skills,
 						about            : userData[0].acf.about,
 						stack            : userData[0].acf.stack,
+						backend			 : userData[0].acf.backend,
 						isLoaded         : true,
 						 graphData: [
 						  {
@@ -201,7 +203,7 @@ class MemberInfo extends Component {
 					</MDBRow>
 					<MDBRow className="member-third-row">
 						<MDBCol className="row">
-							<MDBCol lg="3">
+							<MDBCol lg="4">
 								<dl className="row">
 									{/*<MDBTable bordered style={styleTechSkills}>
 										<thead>
@@ -271,7 +273,7 @@ class MemberInfo extends Component {
 									<dt className="col-sm-3 mt-2"/>
 								</dl>
 							</MDBCol>
-							<MDBCol lg="3">
+							<MDBCol lg="4">
 								<MDBTable bordered style={styleOtherSkills}>
 									<thead>
 									<tr>
@@ -294,7 +296,7 @@ class MemberInfo extends Component {
 									</tbody>
 								</MDBTable>
 							</MDBCol>
-							<MDBCol lg="6">
+							<MDBCol lg="4">
 								<dl className="row">
 
 									<dt className="col-lg-12 mt-2"/>
@@ -327,19 +329,19 @@ class MemberInfo extends Component {
 									</TabList>
 
 									<TabPanel>
-										<h2><SkillTabPanel data={this.state}/></h2>
+										<h2></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2><SkillTabPanel data={this.state}/></h2>
+										<h2></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2><SkillTabPanel data={this.state}/></h2>
+										<h2><SkillTabPanel data={this.state.backend}/></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2><SkillTabPanel data={this.state}/></h2>
+										<h2></h2>
 									</TabPanel>
 									<TabPanel>
-										<h2><SkillTabPanel data={this.state}/></h2>
+										<h2></h2>
 									</TabPanel>
 								</Tabs>
 							</MDBCollapse>

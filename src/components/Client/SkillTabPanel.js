@@ -3,9 +3,11 @@ import {MDBRow,MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBConta
 
 class SkillTabPanel extends Component{
 	render () {
+		const data = this.props.data;
+		const lang = data.language.language_name;
 		return (
 			<div>
-				{this.props.data.stack}
+				{lang}
 				<MDBRow>
 					<MDBCol>
 				<MDBContainer>
