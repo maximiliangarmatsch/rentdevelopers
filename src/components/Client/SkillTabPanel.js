@@ -2,22 +2,19 @@ import React, {Component} from "react";
 import {MDBRow,MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 
 class SkillTabPanel extends Component{
-	render () {
 
-		const data = this.props.data;
+	getResults = (res) => {
 
-		const langName = data.language.language_name;
-		const basic = data.language.php.basic;
-		const array = Object.keys(basic).map(function(key) {
-			return [String(key), basic[key]];
+		const array = Object.keys(res).map(function(key) {
+			return [String(key), res[key]];
 		});
 
-		const basicResults = array.map((row) => {
+		const results = array.map((row) => {
 			let name = "";
 			let checked = false;
-			 row.map((cell, index) => {
+			row.map((cell, index) => {
 				if (index == 0){
-					 name = cell;
+					name = cell;
 				}else {
 					if (cell){
 						checked = true;
@@ -27,12 +24,21 @@ class SkillTabPanel extends Component{
 
 			return (
 				<div>
-				<input type="checkbox" name="skill" value={name} checked={checked}/> {name.replace("_"," ")}
-				<br/>
+					<input readOnly type="checkbox" name="skill" value={name} checked={checked}/> {name.replace(/_/g," ")}
+					<br/>
 				</div>
 			);
 		});
 
+		return  results;
+	};
+
+	render () {
+		const data = this.props.data;
+		const langName = data.language.language_name;
+		const resBasic = data.language.php.basic;
+		const resAdvanced = data.language.php.advanced;
+		const resExpert = data.language.php.expert;
 		return (
 			<div>
 				{langName}
@@ -41,7 +47,7 @@ class SkillTabPanel extends Component{
 				<MDBContainer>
 					<MDBCard className="card-body" style={{  marginTop: "1rem" }}>
 						<MDBCardTitle>Basic</MDBCardTitle>
-						<MDBCardBody>{basicResults}</MDBCardBody>
+						<MDBCardBody>{this.getResults(resBasic)}</MDBCardBody>
 					</MDBCard>
 				</MDBContainer>
 					</MDBCol>
@@ -49,7 +55,7 @@ class SkillTabPanel extends Component{
 				<MDBContainer>
 					<MDBCard className="card-body" style={{  marginTop: "1rem" }}>
 						<MDBCardTitle>Advanced</MDBCardTitle>
-						<MDBCardBody>Checkboxes will go here.</MDBCardBody>
+						<MDBCardBody>{this.getResults(resAdvanced)}</MDBCardBody>
 					</MDBCard>
 				</MDBContainer>
 					</MDBCol>
@@ -57,7 +63,7 @@ class SkillTabPanel extends Component{
 				<MDBContainer>
 					<MDBCard className="card-body" style={{  marginTop: "1rem" }}>
 						<MDBCardTitle>Expert</MDBCardTitle>
-						<MDBCardBody>Checkboxes will go here.</MDBCardBody>
+						<MDBCardBody>{this.getResults(resExpert)}</MDBCardBody>
 					</MDBCard>
 				</MDBContainer>
 					</MDBCol>
