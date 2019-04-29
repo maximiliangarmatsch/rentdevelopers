@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e4dae36f-1766-4b5e-91b4-08e996e59048" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/MemberInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Client/SkillTabPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Client/SkillTabPanel.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="342" column="80" selection-start-line="342" selection-start-column="80" selection-end-line="342" selection-end-column="80" />
+            <state relative-caret-position="1523">
+              <caret line="359" column="26" selection-start-line="359" selection-start-column="26" selection-end-line="359" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -47,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Client/SkillTabPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+            <state relative-caret-position="493">
+              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -65,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/MemberDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4335">
+            <state relative-caret-position="2118">
               <caret line="255" column="48" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
             </state>
           </provider>
@@ -170,8 +169,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-263" />
-    <option name="y" value="115" />
+    <option name="x" value="-22" />
+    <option name="y" value="423" />
     <option name="width" value="1700" />
     <option name="height" value="947" />
   </component>
@@ -237,7 +236,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/xampp/htdocs/cms" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -247,7 +246,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -299,12 +298,12 @@
       <workItem from="1556002697659" duration="7844000" />
       <workItem from="1556280935117" duration="2640000" />
       <workItem from="1556354057022" duration="5232000" />
-      <workItem from="1556521232570" duration="1266000" />
+      <workItem from="1556521232570" duration="6905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113065000" />
+    <option name="totallyTimeSpent" value="118704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -496,20 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/Member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/MemberDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
-          <caret line="255" column="48" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/FillData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -538,17 +523,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/Member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Developer/Member/MemberDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2118">
+          <caret line="255" column="48" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/MemberInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="342" column="80" selection-start-line="342" selection-start-column="80" selection-end-line="342" selection-end-column="80" />
+        <state relative-caret-position="1523">
+          <caret line="359" column="26" selection-start-line="359" selection-start-column="26" selection-end-line="359" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Client/SkillTabPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+        <state relative-caret-position="493">
+          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
         </state>
       </provider>
     </entry>

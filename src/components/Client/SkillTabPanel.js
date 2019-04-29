@@ -34,26 +34,22 @@ class SkillTabPanel extends Component{
 	};
 
 	render () {
-		let data = this.props.data;
-		let chosenLanguage = "";
-		let langName = "";
+
+		const data = this.props.data;
+		const langName = data.language.language_name;
 		let resBasic = {};
 		let resAdvanced = {};
 		let resExpert = {};
-		if(typeof data.chosen_language !== "undefined") {
-			 chosenLanguage = data.chosen_language;
-			 langName = data.language.language_name;
-
-
-
-		if (chosenLanguage === langName) {
-			resBasic = data.language.basic;
-			resAdvanced = data.language.advanced;
-			resExpert = data.language.expert;
-
+		if(!data.language[langName]){
+			return <h1>NO DATA</h1>
+		}else {
+			 resBasic = data.language[langName].basic;
+			 resAdvanced = data.language[langName].advanced;
+			 resExpert = data.language[langName].expert;
+		}
 			return (
 				<div>
-					{langName}
+					<h2>{langName}</h2>
 					<MDBRow>
 						<MDBCol>
 							<MDBContainer>
@@ -83,10 +79,8 @@ class SkillTabPanel extends Component{
 				</div>
 			)
 		}
-		} else {
-			return <div>NO LANGUAGE CHOOSEN</div>
-		}
-	}
+
+
 }
 
 export default SkillTabPanel;
