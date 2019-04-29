@@ -33,6 +33,7 @@ class MemberInfo extends Component {
 		stack            : "",
 		backend			 : {},
 		frontend		 : {},
+		styling			 : {},
 		isLoaded         : false,
 		  graphData: [
 		  { skill: "Server", knowledge: 0 },
@@ -98,6 +99,7 @@ class MemberInfo extends Component {
 						stack            : userData[0].acf.stack,
 						backend			 : userData[0].acf.backend,
 						frontend		 : userData[0].acf.frontend,
+						styling		 : userData[0].acf.styling,
 						isLoaded         : true,
 						 graphData: [
 						  {
@@ -343,7 +345,7 @@ class MemberInfo extends Component {
 										<SkillTabPanel data={this.state.frontend}/>
 									</TabPanel>
 									<TabPanel>
-										<h2></h2>
+										<SkillTabPanel data={this.state.styling}/>
 									</TabPanel>
 								</Tabs>
 							</MDBCollapse>
